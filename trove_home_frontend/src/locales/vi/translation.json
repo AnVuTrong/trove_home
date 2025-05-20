@@ -12,7 +12,8 @@
     "dashboard": "Bảng điều khiển",
     "settings": "Cài đặt",
     "logout": "Đăng xuất",
-    "graphql": "API GraphQL"
+    "graphql": "API GraphQL",
+    "notFound": "Không tìm thấy trang"
   },
   "common": {
     "welcome": "Chào mừng đến với Trove Home",

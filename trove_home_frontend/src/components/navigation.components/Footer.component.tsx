@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NAVIGATION_ITEMS } from '../../constants/Navigation.constant';
 import { useTranslation } from 'react-i18next';
+import { routeConfig } from '../../routes/RouteConfig.route';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  
+  // Get only routes that should be shown in navigation
+  const navigationRoutes = Object.values(routeConfig).filter(route => route.showInNavigation);
 
   return (
     <footer className="bg-background-secondary text-text-secondary py-8">
@@ -25,10 +28,10 @@ const Footer: React.FC = () => {
               {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
-              {NAVIGATION_ITEMS.map((item) => (
-                <li key={item.path}>
-                  <Link to={item.path} className="hover:text-primary transition-colors duration-200">
-                    {t(item.translationKey)}
+              {navigationRoutes.map((route) => (
+                <li key={route.path}>
+                  <Link to={route.path} className="hover:text-primary transition-colors duration-200">
+                    {t(route.translationKey)}
                   </Link>
                 </li>
               ))}

@@ -1,5 +1,5 @@
-export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  GRAPHQL: '/graphql',
-}; 
+export enum ROUTES {
+  HOME = '/',
+  GRAPHQL = '/graphql',
+  NOT_FOUND = '*'
+} 
