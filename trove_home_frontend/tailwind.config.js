@@ -6,38 +6,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        white: '#FFFFFF',
         primary: {
-          DEFAULT: '#005f69',
-          light: '#007780',
-          dark: '#004850',
-        },
-        secondary: {
-          DEFAULT: '#e5e7eb',
-          light: '#f3f4f6',
-          dark: '#d1d5db',
-        },
-        background: {
-          primary: '#f9fafb',
-          secondary: '#ffffff',
-        },
-        text: {
-          primary: '#111827',
-          secondary: '#4b5563',
-          light: '#9ca3af',
+          DEFAULT: '#003422',
+          light: '#287756',
+          dark: '#13231E',
         },
         accent: {
-          success: '#10b981',
-          error: '#ef4444',
-          warning: '#f59e0b',
-          info: '#3b82f6',
+          DEFAULT: '#00B774',
+          light: '#60CE88',
         },
-        highlight: {
-          red: '#ef4444',
-          green: '#10b981',
-          blue: '#3b82f6',
-          yellow: '#f59e0b',
-          orange: '#F36F32',
-        }
+        neutral: {
+          DEFAULT: '#2D2D2D',
+        },
+        text: {
+          primary: '#13231E',    // Corresponds to the darkest green
+          secondary: '#2D2D2D', // Corresponds to the dark grey
+        },
+        background: {
+          primary: '#FFFFFF',   // Standard white background
+          secondary: '#f3f4f6', // Standard light grey background
+        },
       }
     },
   },

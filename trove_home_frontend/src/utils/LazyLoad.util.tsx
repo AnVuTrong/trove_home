@@ -10,8 +10,6 @@ const PageLoading: React.FC<LoadingProps> = ({ message = 'Loading...' }) => (
   </div>
 );
 
-type LazyComponentType = React.LazyExoticComponent<React.ComponentType<any>>;
-
 export const lazyLoad = (
   importFunc: () => Promise<{ default: React.ComponentType<any> }>,
   loadingMessage?: string

@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '../constants/Routes.constant';
 import { lazyLoad } from '../utils/LazyLoad.util';
-import { useTranslation } from 'react-i18next';
 
 // Layouts
 import MainLayout from '../layouts/MainLayout.layout';
@@ -13,8 +12,6 @@ const GraphQLPage = lazyLoad(() => import('../pages/GraphQL.page'), 'Loading Gra
 const NotFoundPage = lazyLoad(() => import('../pages/NotFound.page'), 'Loading...');
 
 const AppRoutes: React.FC = () => {
-  const { t } = useTranslation();
-  
   return (
     <Routes>
       <Route path={ROUTES.HOME} element={<MainLayout />}>
