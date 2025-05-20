@@ -1,0 +1,45 @@
+{
+  "app": {
+    "title": "Trove Home",
+    "description": "Your home management solution"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout",
+    "graphql": "GraphQL API"
+  },
+  "common": {
+    "welcome": "Welcome to Trove Home",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit"
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Vietnamese",
+    "switchLanguage": "Switch Language"
+  },
+  "demo": {
+    "counter": "You clicked {{count}} times",
+    "increment": "Increment",
+    "currentLanguage": "Current language: {{language}}"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us"
+  }
+} 

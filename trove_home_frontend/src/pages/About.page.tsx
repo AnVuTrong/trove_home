@@ -1,19 +1,24 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext.context';
+import { useTranslation } from 'react-i18next';
+import TranslationDemo from '../components/demo/TranslationDemo.component';
 
 const AboutPage: React.FC = () => {
-  const { language } = useLanguage();
+  const { t } = useTranslation();
   
   return (
-    <div className="prose max-w-none">
-      <h1 className="text-3xl font-bold text-primary mb-6">
-        {language === 'en' ? 'About Us' : 'Về chúng tôi'}
-      </h1>
-      <p className="mb-4">
-        {language === 'en'
-          ? 'We are a team of passionate developers building modern web applications.'
-          : 'Chúng tôi là một nhóm các nhà phát triển đam mê xây dựng các ứng dụng web hiện đại.'}
-      </p>
+    <div className="space-y-8">
+      <div className="prose max-w-none">
+        <h1 className="text-3xl font-bold text-primary mb-6">
+          {t('navigation.about')}
+        </h1>
+        <p className="mb-4">
+          {t('app.description')}
+        </p>
+      </div>
+      
+      <div className="mt-8">
+        <TranslationDemo />
+      </div>
     </div>
   );
 };

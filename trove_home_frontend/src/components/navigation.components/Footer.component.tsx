@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NAVIGATION_ITEMS } from '../../constants/Navigation.constant';
-import { useLanguage } from '../../contexts/LanguageContext.context';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
-  const { language } = useLanguage();
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,13 +22,13 @@ const Footer: React.FC = () => {
           {/* Navigation */}
           <div>
             <h3 className="text-primary font-bold mb-4">
-              {language === 'en' ? 'Quick Links' : 'Liên kết nhanh'}
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.path}>
                   <Link to={item.path} className="hover:text-primary transition-colors duration-200">
-                    {item.label[language]}
+                    {t(item.translationKey)}
                   </Link>
                 </li>
               ))}
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h3 className="text-primary font-bold mb-4">
-              {language === 'en' ? 'Contact Us' : 'Liên hệ'}
+              {t('footer.contactUs')}
             </h3>
             <p className="mb-2">Email: info@example.com</p>
             <p>Phone: +1 234 567 8900</p>

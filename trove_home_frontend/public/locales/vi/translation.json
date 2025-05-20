@@ -1,0 +1,45 @@
+{
+  "app": {
+    "title": "Trove Home",
+    "description": "Giải pháp quản lý nhà của bạn"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "dashboard": "Bảng điều khiển",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất",
+    "graphql": "API GraphQL"
+  },
+  "common": {
+    "welcome": "Chào mừng đến với Trove Home",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "add": "Thêm",
+    "search": "Tìm kiếm",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "submit": "Gửi"
+  },
+  "language": {
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
+    "switchLanguage": "Đổi ngôn ngữ"
+  },
+  "demo": {
+    "counter": "Bạn đã nhấp {{count}} lần",
+    "increment": "Tăng",
+    "currentLanguage": "Ngôn ngữ hiện tại: {{language}}"
+  },
+  "footer": {
+    "quickLinks": "Liên kết nhanh",
+    "contactUs": "Liên hệ"
+  }
+} 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NAVIGATION_ITEMS } from '../../constants/Navigation.constant';
-import { useLanguage } from '../../contexts/LanguageContext.context';
+import { useTranslation } from 'react-i18next';
 
 interface NavigationMenuProps {
   isMobile?: boolean;
@@ -9,7 +9,7 @@ interface NavigationMenuProps {
 }
 
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ isMobile = false, onItemClick }) => {
-  const { language } = useLanguage();
+  const { t } = useTranslation();
   
   return (
     <nav className={`${isMobile ? 'flex flex-col space-y-2' : 'flex items-center space-x-6'}`}>
@@ -37,7 +37,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isMobile = false, onIte
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
             </svg>
           )}
-          <span>{item.label[language]}</span>
+          <span>{t(item.translationKey)}</span>
         </NavLink>
       ))}
     </nav>

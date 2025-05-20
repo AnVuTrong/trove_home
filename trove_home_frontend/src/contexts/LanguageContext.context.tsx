@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type Language = 'en' | 'vi';
 
@@ -10,7 +11,20 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const { i18n } = useTranslation();
+  
+  const setLanguage = (lang: Language) => {
+    i18n.changeLanguage(lang);
+  };
+
+  // Get current language from i18n
+  const language = i18n.language as Language;
+
+  // Initialize language from browser or localStorage if available
+  useEffect(() => {
+    // i18n's language detector will handle this automatically
+    // This is just to ensure our context stays in sync
+  }, [i18n]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
