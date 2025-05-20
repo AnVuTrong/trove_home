@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="prose max-w-none">
       <h1 className="text-3xl font-bold text-primary mb-6">
-        {t('common.welcome')}
+        {t('navigation.map')}
       </h1>
       <p className="mb-4">
         {t('app.description')}

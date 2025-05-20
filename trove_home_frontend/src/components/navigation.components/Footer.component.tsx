@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About section */}
-          <div>
-            <h3 className="text-primary font-bold mb-4">React Boilerplate</h3>
-            <p className="mb-4">
+          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+            <h3 className="text-primary font-bold mb-4">TROVE</h3>
+            <p className="text-sm">
               A modern, scalable React boilerplate with multilanguage support.
             </p>
           </div>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="mt-8 pt-4 border-t border-gray-200 text-center">
-          <p>© {currentYear} React Boilerplate. All rights reserved.</p>
+          <p>© {currentYear} TROVE. All rights reserved.</p>
         </div>
       </div>
     </footer>

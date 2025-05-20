@@ -12,7 +12,8 @@
     "dashboard": "Dashboard",
     "settings": "Settings",
     "logout": "Logout",
-    "graphql": "GraphQL API"
+    "graphql": "GraphQL API",
+    "map": "Trove Map"
   },
   "common": {
     "welcome": "Welcome to Trove Home",

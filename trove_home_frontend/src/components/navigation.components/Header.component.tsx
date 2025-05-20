@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import NavigationMenu from './NavigationMenu.component';
-import LanguageSwitcher from './LanguageSwitcher.component';
+import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../constants/Routes.constant';
+import LanguageSwitcher from './LanguageSwitcher.component';
+import NavigationMenu from './NavigationMenu.component';
+import TroveLogo from '../../assets/trove_images/trove_simple_green_logo.png';
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const { t } = useTranslation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="bg-background-secondary shadow-md">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-background-paper shadow-md sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to={ROUTES.HOME} className="text-primary text-xl font-bold">
-            React Boilerplate
+          <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-primary">
+            <img src={TroveLogo} alt="Trove Logo" className="h-8 w-auto mr-2" />
+            TROVE
           </Link>
 
           {/* Desktop Navigation */}
@@ -27,32 +26,27 @@ const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-primary focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-6" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
+          <div className="md:hidden flex items-center">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-text-primary focus:outline-none ml-2"
             >
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4">
-            <NavigationMenu isMobile={true} onItemClick={() => setIsMenuOpen(false)} />
-            <div className="mt-4 pt-4 border-t border-gray-200">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-3 py-2 border-t border-border-color">
+            <NavigationMenu isMobile onItemClick={() => setIsMobileMenuOpen(false)} />
+            <div className="mt-4 pt-2 border-t border-border-color">
               <LanguageSwitcher />
             </div>
           </div>
