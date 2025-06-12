@@ -4,7 +4,10 @@ globs:
 alwaysApply: true
 ---
 # Cursor rules:
-
+- Always write and run test for every functions to check if it's in correct schemas, type and functionality
+- Always follow OOP rules and industrial best practices
+- Each function can only do one job and single purposes
+ 
 ## Frontend Code:
 - Prefer YARN instead of NPM or NPX
 - Use GraphQL, Relay or Redux
@@ -13,7 +16,6 @@ alwaysApply: true
 ## Project frontend stucture:
 - Use Prettier format
 - Use Tailwind CSS
-- Don't let a file get too long pass 200 lines
 - All code must be placed in src directory with separate backend and frontend
 - Always add a suffix at the end of the files' name and directory to clarify its beloging.
     - First example: a head component file name should be HomePageHeader.component.tsx

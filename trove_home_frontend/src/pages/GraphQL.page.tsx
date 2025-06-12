@@ -1,61 +1,19 @@
 import React, { useState } from 'react';
-import { useQuery, useMutation, gql } from '@apollo/client';
-
-// GraphQL query to get all todos
-const GET_TODOS = gql`
-  query GetTodos {
-    todos {
-      id
-      title
-      description
-      completed
-      user {
-        id
-        name
-      }
-    }
-  }
-`;
-
-// GraphQL query to get all users
-const GET_USERS = gql`
-  query GetUsers {
-    users {
-      id
-      name
-      email
-    }
-  }
-`;
-
-// GraphQL mutation to create a new todo
-const CREATE_TODO = gql`
-  mutation CreateTodo($input: TodoInput!) {
-    createTodo(input: $input) {
-      id
-      title
-      description
-      completed
-    }
-  }
-`;
-
-// GraphQL mutation to toggle todo completion status
-const TOGGLE_TODO_STATUS = gql`
-  mutation ToggleTodoStatus($id: ID!) {
-    toggleTodoStatus(id: $id) {
-      id
-      completed
-    }
-  }
-`;
-
-// GraphQL mutation to delete a todo
-const DELETE_TODO = gql`
-  mutation DeleteTodo($id: ID!) {
-    deleteTodo(id: $id)
-  }
-`;
+import { useQuery, useMutation } from '@apollo/client';
+import {
+  GET_TODOS,
+  GET_USERS,
+  CREATE_TODO,
+  TOGGLE_TODO_STATUS,
+  DELETE_TODO,
+} from '../apollo/operations.apollo';
+import {
+  Todo,
+  User,
+  TodoInput,
+  GetTodosResponse,
+  GetUsersResponse,
+} from '../apollo/types.apollo';
 
 const GraphQLPage: React.FC = () => {
   // State for form inputs
@@ -64,8 +22,8 @@ const GraphQLPage: React.FC = () => {
   const [selectedUserId, setSelectedUserId] = useState('');
 
   // Execute the GraphQL queries
-  const { loading: loadingTodos, data: todoData, refetch: refetchTodos } = useQuery(GET_TODOS);
-  const { loading: loadingUsers, data: userData } = useQuery(GET_USERS);
+  const { loading: loadingTodos, data: todoData, refetch: refetchTodos } = useQuery<GetTodosResponse>(GET_TODOS);
+  const { loading: loadingUsers, data: userData } = useQuery<GetUsersResponse>(GET_USERS);
 
   // Set up GraphQL mutations
   const [createTodo] = useMutation(CREATE_TODO, {
@@ -160,7 +118,7 @@ const GraphQLPage: React.FC = () => {
               required
             >
               <option value="">Select a user</option>
-              {userData?.users.map((user: any) => (
+              {userData?.users.map((user: User) => (
                 <option key={user.id} value={user.id}>{user.name}</option>
               ))}
             </select>
