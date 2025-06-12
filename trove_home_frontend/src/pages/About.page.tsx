@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import TranslationDemo from '../components/demo/TranslationDemo.component';
 import TroveLogo from '../assets/trove_images/trove_green_text.png';
 
 const AboutPage: React.FC = () => {
@@ -26,10 +25,6 @@ const AboutPage: React.FC = () => {
           We are dedicated to providing the best solutions for your needs. 
           Our team is passionate about technology and innovation, constantly striving to improve and deliver excellence.
         </p>
-      </div>
-      
-      <div className="mt-8 p-8">
-        <TranslationDemo />
       </div>
     </div>
   );

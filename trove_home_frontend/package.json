@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd ../trove_home_backend && yarn dev",
+    "server": "cd ../trove_home_backend && yarn start",
     "dev": "concurrently \"yarn start\" \"yarn server\""
   },
   "dependencies": {

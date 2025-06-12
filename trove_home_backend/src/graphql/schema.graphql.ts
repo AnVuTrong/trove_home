@@ -1,49 +1,13 @@
 export const typeDefs = `#graphql
-  # User type
-  type User {
-    id: ID!
-    name: String!
-    email: String!
-  }
-
-  # Todo type
-  type Todo {
-    id: ID!
-    title: String!
-    description: String
-    completed: Boolean!
-    userId: ID!
-    user: User
-  }
-
-  # Input types
-  input TodoInput {
-    title: String!
-    description: String
-    userId: ID!
-  }
-
-  # Queries
+  # Basic Query type (GraphQL requires at least one query)
   type Query {
-    # Get all users
-    users: [User]
-    
-    # Get all todos
-    todos: [Todo]
-    
-    # Get a specific todo by ID
-    todo(id: ID!): Todo
+    # Health check endpoint
+    health: String
   }
 
-  # Mutations
+  # Basic Mutation type
   type Mutation {
-    # Create a new todo
-    createTodo(input: TodoInput!): Todo
-    
-    # Toggle the completed status of a todo
-    toggleTodoStatus(id: ID!): Todo
-    
-    # Delete a todo
-    deleteTodo(id: ID!): Boolean
+    # Placeholder mutation
+    _empty: String
   }
 `; 

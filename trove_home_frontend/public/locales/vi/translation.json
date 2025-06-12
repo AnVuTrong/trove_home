@@ -11,8 +11,7 @@
     "register": "Đăng ký",
     "dashboard": "Bảng điều khiển",
     "settings": "Cài đặt",
-    "logout": "Đăng xuất",
-    "graphql": "API GraphQL"
+    "logout": "Đăng xuất"
   },
   "common": {
     "welcome": "Chào mừng đến với Trove Home",
@@ -32,11 +31,6 @@
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt",
     "switchLanguage": "Đổi ngôn ngữ"
-  },
-  "demo": {
-    "counter": "Bạn đã nhấp {{count}} lần",
-    "increment": "Tăng",
-    "currentLanguage": "Ngôn ngữ hiện tại: {{language}}"
   },
   "footer": {
     "quickLinks": "Liên kết nhanh",

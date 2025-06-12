@@ -8,7 +8,6 @@ import MainLayout from '../layouts/MainLayout.layout';
 
 // Lazy loaded pages
 const HomePage = lazyLoad(() => import('../pages/Home.page'), 'Loading Home...');
-const GraphQLPage = lazyLoad(() => import('../pages/GraphQL.page'), 'Loading GraphQL Explorer...');
 const NotFoundPage = lazyLoad(() => import('../pages/NotFound.page'), 'Loading...');
 
 const AppRoutes: React.FC = () => {
@@ -16,7 +15,6 @@ const AppRoutes: React.FC = () => {
     <Routes>
       <Route path={ROUTES.HOME} element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path={ROUTES.GRAPHQL} element={<GraphQLPage />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
       </Route>
     </Routes>

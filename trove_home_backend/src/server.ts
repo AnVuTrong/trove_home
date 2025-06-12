@@ -13,19 +13,6 @@ import bodyParser from 'body-parser';
 import { typeDefs } from './graphql/schema.graphql';
 import { resolvers } from './graphql/resolvers.graphql';
 
-// Import our data sources
-import { UserDataSource } from './data/User.dataSource';
-import { TodoDataSource } from './data/Todo.dataSource';
-
-// This defines what data is available in our GraphQL context
-// Think of context as data that all resolvers can access
-export interface MyContext {
-  dataSources: {
-    userDataSource: UserDataSource; // For user-related operations
-    todoDataSource: TodoDataSource;  // For todo-related operations
-  };
-}
-
 // Main function to start our server
 const startServer = async () => {
   // STEP 1: Create a basic Express web server
@@ -33,7 +20,7 @@ const startServer = async () => {
   const httpServer = http.createServer(app);
 
   // STEP 2: Create our GraphQL server with Apollo
-  const server = new ApolloServer<MyContext>({
+  const server = new ApolloServer({
     typeDefs,    // This is our schema (the menu of available data)
     resolvers,   // These are our functions that fetch the data
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })], // This helps shut down the server properly
@@ -50,17 +37,8 @@ const startServer = async () => {
     expressMiddleware(server, {
       // This function runs for every GraphQL request
       context: async () => {
-        // Create fresh instances of our data sources
-        const userDataSource = new UserDataSource();
-        const todoDataSource = new TodoDataSource();
-
-        // Return these data sources so resolvers can use them
-        return {
-          dataSources: {
-            userDataSource,
-            todoDataSource,
-          },
-        };
+        // Return empty context for now
+        return {};
       },
     }),
   );

@@ -11,9 +11,7 @@
     "register": "Register",
     "dashboard": "Dashboard",
     "settings": "Settings",
-    "logout": "Logout",
-    "graphql": "GraphQL API",
-    "map": "Trove Map"
+    "logout": "Logout"
   },
   "common": {
     "welcome": "Welcome to Trove Home",
@@ -33,11 +31,6 @@
     "english": "English",
     "vietnamese": "Vietnamese",
     "switchLanguage": "Switch Language"
-  },
-  "demo": {
-    "counter": "You clicked {{count}} times",
-    "increment": "Increment",
-    "currentLanguage": "Current language: {{language}}"
   },
   "footer": {
     "quickLinks": "Quick Links",
