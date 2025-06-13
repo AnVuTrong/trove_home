@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-primary">
             <img src={TroveLogo} alt="Trove Logo" className="h-8 w-auto mr-2" />
-            TROVE
+            TROVE INVESTMENT
           </Link>
 
           {/* Desktop Navigation */}
