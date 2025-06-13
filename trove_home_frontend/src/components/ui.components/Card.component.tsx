@@ -33,10 +33,10 @@ class Card extends React.Component<CardProps, CardState> {
     const { variant = 'default' } = this.props;
     
     const variantClasses = {
-      default: 'bg-white border border-gray-200',
-      outlined: 'bg-white border-2 border-gray-300',
-      elevated: 'bg-white border border-gray-100',
-      filled: 'bg-gray-50 border border-gray-200'
+      default: 'bg-background-primary border border-gray-200',
+      outlined: 'bg-background-primary border-2 border-primary',
+      elevated: 'bg-background-primary border border-gray-100',
+      filled: 'bg-background-secondary border border-gray-200'
     };
     
     return variantClasses[variant];

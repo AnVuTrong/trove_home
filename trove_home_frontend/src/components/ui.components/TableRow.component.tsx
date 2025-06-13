@@ -53,7 +53,7 @@ class TableRow extends React.Component<TableRowProps, TableRowState> {
     const baseHoverClass = 'transition-colors duration-150';
     
     if (isHovered && (hover || clickable)) {
-      return `${baseHoverClass} bg-gray-50`;
+      return `${baseHoverClass} bg-background-secondary`;
     }
     
     return baseHoverClass;

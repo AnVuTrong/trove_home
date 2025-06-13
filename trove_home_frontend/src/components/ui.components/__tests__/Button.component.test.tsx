@@ -24,7 +24,7 @@ describe('Button Component', () => {
       
       expect(button).toHaveAttribute('type', 'button');
       expect(button).not.toBeDisabled();
-      expect(button).toHaveClass('bg-blue-600'); // primary variant
+      expect(button).toHaveClass('bg-primary'); // primary variant
       expect(button).toHaveClass('px-4', 'py-2'); // md size
     });
 
@@ -38,13 +38,13 @@ describe('Button Component', () => {
     it('should apply primary variant classes', () => {
       render(<Button {...defaultProps} variant="primary" />);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-blue-600', 'hover:bg-blue-700', 'text-white', 'border-blue-600');
+      expect(button).toHaveClass('bg-primary', 'hover:bg-primary-dark', 'text-white', 'border-primary');
     });
 
     it('should apply secondary variant classes', () => {
       render(<Button {...defaultProps} variant="secondary" />);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-gray-600', 'hover:bg-gray-700', 'text-white', 'border-gray-600');
+      expect(button).toHaveClass('bg-neutral', 'hover:bg-text-secondary', 'text-white', 'border-neutral');
     });
 
     it('should apply danger variant classes', () => {
@@ -56,13 +56,13 @@ describe('Button Component', () => {
     it('should apply success variant classes', () => {
       render(<Button {...defaultProps} variant="success" />);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-green-600', 'hover:bg-green-700', 'text-white', 'border-green-600');
+      expect(button).toHaveClass('bg-accent', 'hover:bg-accent-light', 'text-white', 'border-accent');
     });
 
     it('should apply outline variant classes', () => {
       render(<Button {...defaultProps} variant="outline" />);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-transparent', 'hover:bg-gray-50', 'text-gray-700', 'border-gray-300');
+      expect(button).toHaveClass('bg-transparent', 'hover:bg-background-secondary', 'text-text-primary', 'border-primary');
     });
   });
 

@@ -14,9 +14,9 @@ class TableHeader extends React.Component<TableHeaderProps> {
     const { variant = 'default' } = this.props;
     
     const variantClasses = {
-      default: 'bg-gray-50 text-gray-700',
-      dark: 'bg-gray-800 text-white',
-      light: 'bg-white text-gray-900'
+      default: 'bg-background-secondary text-text-primary',
+      dark: 'bg-primary text-white',
+      light: 'bg-background-primary text-text-primary'
     };
     
     return variantClasses[variant];

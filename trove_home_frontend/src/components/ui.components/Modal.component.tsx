@@ -104,13 +104,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
       >
         <div
           ref={this.modalRef}
-          className={`relative w-full mx-4 bg-white rounded-lg shadow-xl ${sizeClasses} ${className}`.trim()}
+          className={`relative w-full mx-4 bg-background-primary rounded-lg shadow-xl ${sizeClasses} ${className}`.trim()}
           id={id}
         >
           {showCloseButton && (
             <button
               type="button"
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              className="absolute top-4 right-4 text-text-secondary hover:text-text-primary"
               onClick={this.props.onClose}
               aria-label={translate('common.close', 'Close')}
             >
@@ -122,7 +122,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           
           {title && (
             <div className="px-6 py-4 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+              <h2 className="text-lg font-semibold text-text-primary">{title}</h2>
             </div>
           )}
           

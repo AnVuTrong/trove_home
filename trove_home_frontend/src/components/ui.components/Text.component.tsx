@@ -59,15 +59,15 @@ class Text extends React.Component<TextProps> {
     const { color = 'dark' } = this.props;
     
     const colorClasses = {
-      primary: 'text-blue-600',
-      secondary: 'text-gray-600',
-      success: 'text-green-600',
+      primary: 'text-primary',
+      secondary: 'text-text-secondary',
+      success: 'text-accent',
       danger: 'text-red-600',
       warning: 'text-yellow-600',
-      info: 'text-cyan-600',
+      info: 'text-background-teal',
       light: 'text-gray-300',
-      dark: 'text-gray-900',
-      muted: 'text-gray-500'
+      dark: 'text-text-primary',
+      muted: 'text-text-secondary'
     };
     
     return colorClasses[color];

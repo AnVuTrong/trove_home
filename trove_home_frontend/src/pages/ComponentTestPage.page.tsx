@@ -115,12 +115,11 @@ const ComponentTestPage: React.FC = () => {
             label={t('componentTest.inputs.errorLabel') as string}
             placeholder={t('componentTest.inputs.errorPlaceholder') as string}
             errorMessage={t('componentTest.inputs.errorMessage') as string}
-            variant="error"
           />
           <Input
             label={t('componentTest.inputs.successLabel') as string}
             placeholder={t('componentTest.inputs.successPlaceholder') as string}
-            variant="success"
+            variant="filled"
             helperText={t('componentTest.inputs.successHelper') as string}
           />
         </Stack>

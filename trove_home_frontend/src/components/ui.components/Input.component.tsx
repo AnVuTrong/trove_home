@@ -10,7 +10,7 @@ interface InputProps {
   readOnly?: boolean;
   required?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'error' | 'success';
+  variant?: 'outlined' | 'filled' | 'underlined';
   label?: string;
   helperText?: string;
   errorMessage?: string;
@@ -65,22 +65,24 @@ class Input extends React.Component<InputProps, InputState> {
   }
 
   private getVariantClasses(): string {
-    const { variant = 'default', errorMessage } = this.props;
+    const { variant = 'outlined', errorMessage } = this.props;
     const { hasError } = this.state;
     
-    if (errorMessage || hasError || variant === 'error') {
-      return 'border-red-500 focus:border-red-500 focus:ring-red-500';
+    if (errorMessage || hasError) {
+      return 'border-red-500 focus:border-red-500 focus:ring-red-200';
     }
     
-    if (variant === 'success') {
-      return 'border-green-500 focus:border-green-500 focus:ring-green-500';
-    }
+    const variantClasses = {
+      outlined: 'border-gray-300 focus:border-primary focus:ring-primary focus:ring-opacity-20',
+      filled: 'border-transparent bg-background-secondary focus:border-primary focus:ring-primary focus:ring-opacity-20',
+      underlined: 'border-0 border-b-2 border-gray-300 focus:border-primary bg-transparent rounded-none focus:ring-0'
+    };
     
-    return 'border-gray-300 focus:border-blue-500 focus:ring-blue-500';
+    return variantClasses[variant];
   }
 
   private getDisabledClasses(): string {
-    return this.props.disabled ? 'bg-gray-50 cursor-not-allowed opacity-50' : 'bg-white';
+    return this.props.disabled ? 'bg-background-secondary cursor-not-allowed opacity-50' : 'bg-background-primary';
   }
 
   private handleFocus = (event: React.FocusEvent<HTMLInputElement>): void => {
@@ -185,7 +187,7 @@ class Input extends React.Component<InputProps, InputState> {
           <label 
             htmlFor={id} 
             className={`block text-sm font-medium mb-1 ${
-              shouldShowError ? 'text-red-700' : 'text-gray-700'
+              shouldShowError ? 'text-red-700' : 'text-text-primary'
             }`}
           >
             {label}

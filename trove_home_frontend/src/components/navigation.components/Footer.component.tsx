@@ -16,9 +16,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About section */}
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
-            <h3 className="text-primary font-bold mb-4">TROVE</h3>
+            <h3 className="text-primary font-bold mb-4">TROVE INVESTMENT</h3>
             <p className="text-sm">
-              A modern, scalable React boilerplate with multilanguage support.
+              Developed by TROVE INVESTMENT
             </p>
           </div>
 
@@ -43,14 +43,14 @@ const Footer: React.FC = () => {
             <h3 className="text-primary font-bold mb-4">
               {t('footer.contactUs')}
             </h3>
-            <p className="mb-2">Email: info@example.com</p>
-            <p>Phone: +1 234 567 8900</p>
+            <p className="mb-2">Email: vta.bsn@gmail.com</p>
+            <p>Phone: +84 93 824 7283</p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-4 border-t border-gray-200 text-center">
-          <p>© {currentYear} TROVE. All rights reserved.</p>
+          <p>© {currentYear} TROVE INVESTMENT. All rights reserved.</p>
         </div>
       </div>
     </footer>
