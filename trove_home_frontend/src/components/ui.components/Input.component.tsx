@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from '../../i18n/TranslationUtils.utils';
 
 interface InputProps {
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
@@ -249,7 +250,7 @@ class Input extends React.Component<InputProps, InputState> {
             className="mt-1 text-sm text-red-600"
             role="alert"
           >
-            {errorMessage || 'This field is invalid'}
+            {errorMessage || translate('common.invalidField', 'This field is invalid')}
           </p>
         )}
         

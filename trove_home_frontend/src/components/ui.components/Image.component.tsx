@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from '../../i18n/TranslationUtils.utils';
 
 interface ImageProps {
   src: string;
@@ -189,7 +190,7 @@ class Image extends React.Component<ImageProps, ImageState> {
               clipRule="evenodd"
             />
           </svg>
-          <p className="text-xs text-gray-500">{alt || 'Image not found'}</p>
+          <p className="text-xs text-gray-500">{alt || translate('common.imageNotFound', 'Image not found')}</p>
         </div>
       </div>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Input,
@@ -22,157 +22,150 @@ import {
   Form,
   Modal
 } from '../components/ui.components';
+import { useAppTranslation } from '../i18n/TranslationUtils.utils';
 
-interface ComponentTestPageState {
-  inputValue: string;
-  isModalOpen: boolean;
-  selectedListItem: string | null;
-  tableData: Array<{
-    id: number;
-    name: string;
-    email: string;
-    role: string;
-    status: 'active' | 'inactive';
-  }>;
+interface TableDataItem {
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+  status: 'active' | 'inactive';
 }
 
-class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      inputValue: '',
-      isModalOpen: false,
-      selectedListItem: null,
-      tableData: [
-        { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'active' },
-        { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'User', status: 'active' },
-        { id: 3, name: 'Bob Johnson', email: 'bob@example.com', role: 'Moderator', status: 'inactive' }
-      ]
-    };
-  }
+const ComponentTestPage: React.FC = () => {
+  const { t } = useAppTranslation();
+  
+  const [inputValue, setInputValue] = useState<string>('');
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedListItem, setSelectedListItem] = useState<string | null>(null);
+  const [tableData] = useState<TableDataItem[]>([
+    { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'active' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'User', status: 'active' },
+    { id: 3, name: 'Bob Johnson', email: 'bob@example.com', role: 'Moderator', status: 'inactive' }
+  ]);
 
-  private handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    this.setState({ inputValue: event.target.value });
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setInputValue(event.target.value);
   };
 
-  private handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log('Form submitted with:', this.state.inputValue);
+    console.log('Form submitted with:', inputValue);
   };
 
-  private handleModalOpen = (): void => {
-    this.setState({ isModalOpen: true });
+  const handleModalOpen = (): void => {
+    setIsModalOpen(true);
   };
 
-  private handleModalClose = (): void => {
-    this.setState({ isModalOpen: false });
+  const handleModalClose = (): void => {
+    setIsModalOpen(false);
   };
 
-  private handleListItemClick = (item: string): void => {
-    this.setState({ selectedListItem: item });
+  const handleListItemClick = (item: string): void => {
+    setSelectedListItem(item);
   };
 
-  private renderButtonsSection(): React.ReactNode {
+  const renderButtonsSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Button Components
+          {t('componentTest.buttons.title')}
         </Text>
         <Stack direction="horizontal" spacing="md" wrap>
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="danger">Danger</Button>
-          <Button variant="success">Success</Button>
-          <Button variant="outline">Outline</Button>
-          <Button size="sm">Small</Button>
-          <Button size="lg">Large</Button>
-          <Button loading>Loading</Button>
-          <Button disabled>Disabled</Button>
+          <Button variant="primary">{t('componentTest.buttons.primary')}</Button>
+          <Button variant="secondary">{t('componentTest.buttons.secondary')}</Button>
+          <Button variant="danger">{t('componentTest.buttons.danger')}</Button>
+          <Button variant="success">{t('componentTest.buttons.success')}</Button>
+          <Button variant="outline">{t('componentTest.buttons.outline')}</Button>
+          <Button size="sm">{t('componentTest.buttons.small')}</Button>
+          <Button size="lg">{t('componentTest.buttons.large')}</Button>
+          <Button loading>{t('componentTest.buttons.loading')}</Button>
+          <Button disabled>{t('componentTest.buttons.disabled')}</Button>
         </Stack>
       </Card>
     );
-  }
+  };
 
-  private renderInputsSection(): React.ReactNode {
+  const renderInputsSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Input Components
+          {t('componentTest.inputs.title')}
         </Text>
         <Stack spacing="md">
           <Input
-            label="Basic Input"
-            placeholder="Enter text here"
-            value={this.state.inputValue}
-            onChange={this.handleInputChange}
+            label={t('componentTest.inputs.basicLabel') as string}
+            placeholder={t('componentTest.inputs.basicPlaceholder') as string}
+            value={inputValue}
+            onChange={handleInputChange}
           />
           <Input
-            label="Email Input"
+            label={t('componentTest.inputs.emailLabel') as string}
             type="email"
-            placeholder="your@email.com"
-            helperText="We'll never share your email"
+            placeholder={t('componentTest.inputs.emailPlaceholder') as string}
+            helperText={t('componentTest.inputs.emailHelper') as string}
           />
           <Input
-            label="Password Input"
+            label={t('componentTest.inputs.passwordLabel') as string}
             type="password"
-            placeholder="••••••••"
+            placeholder={t('componentTest.inputs.passwordPlaceholder') as string}
             required
           />
           <Input
-            label="Error State"
-            placeholder="Invalid input"
-            errorMessage="This field is required"
+            label={t('componentTest.inputs.errorLabel') as string}
+            placeholder={t('componentTest.inputs.errorPlaceholder') as string}
+            errorMessage={t('componentTest.inputs.errorMessage') as string}
             variant="error"
           />
           <Input
-            label="Success State"
-            placeholder="Valid input"
+            label={t('componentTest.inputs.successLabel') as string}
+            placeholder={t('componentTest.inputs.successPlaceholder') as string}
             variant="success"
-            helperText="Looks good!"
+            helperText={t('componentTest.inputs.successHelper') as string}
           />
         </Stack>
       </Card>
     );
-  }
+  };
 
-  private renderTextSection(): React.ReactNode {
+  const renderTextSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Text Components
+          {t('componentTest.text.title')}
         </Text>
         <Stack spacing="sm">
-          <Text as="h1" size="4xl" weight="bold">Heading 1</Text>
-          <Text as="h2" size="3xl" weight="bold">Heading 2</Text>
-          <Text as="h3" size="2xl" weight="semibold">Heading 3</Text>
-          <Text as="p" size="lg">Large paragraph text</Text>
-          <Text as="p">Regular paragraph text</Text>
-          <Text as="p" size="sm" color="muted">Small muted text</Text>
-          <Text as="p" color="primary">Primary colored text</Text>
-          <Text as="p" color="danger" weight="bold">Bold danger text</Text>
-          <Text as="p" italic underline>Italic underlined text</Text>
+          <Text as="h1" size="4xl" weight="bold">{t('componentTest.text.heading1')}</Text>
+          <Text as="h2" size="3xl" weight="bold">{t('componentTest.text.heading2')}</Text>
+          <Text as="h3" size="2xl" weight="semibold">{t('componentTest.text.heading3')}</Text>
+          <Text as="p" size="lg">{t('componentTest.text.largeParagraph')}</Text>
+          <Text as="p">{t('componentTest.text.regularParagraph')}</Text>
+          <Text as="p" size="sm" color="muted">{t('componentTest.text.smallMuted')}</Text>
+          <Text as="p" color="primary">{t('componentTest.text.primaryColor')}</Text>
+          <Text as="p" color="danger" weight="bold">{t('componentTest.text.boldDanger')}</Text>
+          <Text as="p" italic underline>{t('componentTest.text.italicUnderlined')}</Text>
         </Stack>
       </Card>
     );
-  }
+  };
 
-  private renderImageSection(): React.ReactNode {
+  const renderImageSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Image Components
+          {t('componentTest.images.title')}
         </Text>
         <Grid cols={3} gap="md">
           <Image
             src="https://via.placeholder.com/200x150"
-            alt="Placeholder image"
+            alt={t('componentTest.images.placeholder')}
             width={200}
             height={150}
             rounded="md"
           />
           <Image
             src="https://via.placeholder.com/200x150/ff0000"
-            alt="Red placeholder"
+            alt={t('componentTest.images.redPlaceholder')}
             width={200}
             height={150}
             rounded="lg"
@@ -180,7 +173,7 @@ class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
           />
           <Image
             src="https://via.placeholder.com/200x150/00ff00"
-            alt="Green placeholder"
+            alt={t('componentTest.images.greenPlaceholder')}
             width={200}
             height={150}
             rounded="full"
@@ -188,26 +181,26 @@ class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
         </Grid>
       </Card>
     );
-  }
+  };
 
-  private renderLayoutSection(): React.ReactNode {
+  const renderLayoutSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Layout Components
+          {t('componentTest.layout.title')}
         </Text>
         
         <Text as="h3" size="lg" weight="semibold" className="mb-2">
-          Flex Layout
+          {t('componentTest.layout.flexTitle')}
         </Text>
         <Flex justify="between" align="center" className="bg-gray-100 p-4 rounded mb-4">
-          <Box className="bg-blue-200 p-2 rounded">Box 1</Box>
-          <Box className="bg-green-200 p-2 rounded">Box 2</Box>
-          <Box className="bg-red-200 p-2 rounded">Box 3</Box>
+          <Box className="bg-blue-200 p-2 rounded">{t('componentTest.layout.box1')}</Box>
+          <Box className="bg-green-200 p-2 rounded">{t('componentTest.layout.box2')}</Box>
+          <Box className="bg-red-200 p-2 rounded">{t('componentTest.layout.box3')}</Box>
         </Flex>
 
         <Text as="h3" size="lg" weight="semibold" className="mb-2">
-          Grid Layout
+          {t('componentTest.layout.gridTitle')}
         </Text>
         <Grid cols={4} gap="md" className="mb-4">
           <Box className="bg-purple-200 p-4 rounded text-center">1</Box>
@@ -217,88 +210,88 @@ class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
         </Grid>
 
         <Text as="h3" size="lg" weight="semibold" className="mb-2">
-          Stack Layout
+          {t('componentTest.layout.stackTitle')}
         </Text>
         <Stack spacing="sm" className="bg-gray-100 p-4 rounded">
-          <Box className="bg-orange-200 p-2 rounded">Stack Item 1</Box>
-          <Box className="bg-teal-200 p-2 rounded">Stack Item 2</Box>
-          <Box className="bg-cyan-200 p-2 rounded">Stack Item 3</Box>
+          <Box className="bg-orange-200 p-2 rounded">{t('componentTest.layout.stackItem1')}</Box>
+          <Box className="bg-teal-200 p-2 rounded">{t('componentTest.layout.stackItem2')}</Box>
+          <Box className="bg-cyan-200 p-2 rounded">{t('componentTest.layout.stackItem3')}</Box>
         </Stack>
       </Card>
     );
-  }
+  };
 
-  private renderListSection(): React.ReactNode {
+  const renderListSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          List Components
+          {t('componentTest.lists.title')}
         </Text>
         <Grid cols={2} gap="lg">
           <div>
             <Text as="h3" size="lg" weight="semibold" className="mb-2">
-              Unordered List
+              {t('componentTest.lists.unorderedTitle')}
             </Text>
             <List variant="disc" spacing="sm">
-              <ListItem>First item</ListItem>
-              <ListItem>Second item</ListItem>
-              <ListItem>Third item</ListItem>
+              <ListItem>{t('componentTest.lists.firstItem')}</ListItem>
+              <ListItem>{t('componentTest.lists.secondItem')}</ListItem>
+              <ListItem>{t('componentTest.lists.thirdItem')}</ListItem>
             </List>
           </div>
           <div>
             <Text as="h3" size="lg" weight="semibold" className="mb-2">
-              Interactive List
+              {t('componentTest.lists.interactiveTitle')}
             </Text>
             <List variant="none" spacing="none">
               <ListItem
                 variant="interactive"
                 clickable
-                selected={this.state.selectedListItem === 'item1'}
-                onClick={() => this.handleListItemClick('item1')}
+                selected={selectedListItem === 'item1'}
+                onClick={() => handleListItemClick('item1')}
               >
-                Clickable Item 1
+                {t('componentTest.lists.clickableItem1')}
               </ListItem>
               <ListItem
                 variant="interactive"
                 clickable
-                selected={this.state.selectedListItem === 'item2'}
-                onClick={() => this.handleListItemClick('item2')}
+                selected={selectedListItem === 'item2'}
+                onClick={() => handleListItemClick('item2')}
               >
-                Clickable Item 2
+                {t('componentTest.lists.clickableItem2')}
               </ListItem>
               <ListItem
                 variant="interactive"
                 clickable
-                selected={this.state.selectedListItem === 'item3'}
-                onClick={() => this.handleListItemClick('item3')}
+                selected={selectedListItem === 'item3'}
+                onClick={() => handleListItemClick('item3')}
               >
-                Clickable Item 3
+                {t('componentTest.lists.clickableItem3')}
               </ListItem>
             </List>
           </div>
         </Grid>
       </Card>
     );
-  }
+  };
 
-  private renderTableSection(): React.ReactNode {
+  const renderTableSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Table Components
+          {t('componentTest.table.title')}
         </Text>
         <Table variant="bordered" responsive>
           <TableHeader>
             <TableRow>
-              <TableCell as="th" scope="col">ID</TableCell>
-              <TableCell as="th" scope="col">Name</TableCell>
-              <TableCell as="th" scope="col">Email</TableCell>
-              <TableCell as="th" scope="col">Role</TableCell>
-              <TableCell as="th" scope="col">Status</TableCell>
+              <TableCell as="th" scope="col">{t('componentTest.table.id')}</TableCell>
+              <TableCell as="th" scope="col">{t('componentTest.table.name')}</TableCell>
+              <TableCell as="th" scope="col">{t('componentTest.table.email')}</TableCell>
+              <TableCell as="th" scope="col">{t('componentTest.table.role')}</TableCell>
+              <TableCell as="th" scope="col">{t('componentTest.table.status')}</TableCell>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {this.state.tableData.map((row) => (
+            {tableData.map((row) => (
               <TableRow key={row.id} hover>
                 <TableCell>{row.id}</TableCell>
                 <TableCell>{row.name}</TableCell>
@@ -311,7 +304,7 @@ class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
                     color={row.status === 'active' ? 'success' : 'warning'}
                     weight="medium"
                   >
-                    {row.status}
+                    {t(`componentTest.table.${row.status}`)}
                   </Text>
                 </TableCell>
               </TableRow>
@@ -320,122 +313,120 @@ class ComponentTestPage extends React.Component<{}, ComponentTestPageState> {
         </Table>
       </Card>
     );
-  }
+  };
 
-  private renderFormSection(): React.ReactNode {
+  const renderFormSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Form Components
+          {t('componentTest.form.title')}
         </Text>
-        <Form onSubmit={this.handleFormSubmit} spacing="md">
+        <Form onSubmit={handleFormSubmit} spacing="md">
           <Input
-            label="Full Name"
-            placeholder="Enter your full name"
+            label={t('componentTest.form.fullNameLabel') as string}
+            placeholder={t('componentTest.form.fullNamePlaceholder') as string}
             required
             name="fullName"
           />
           <Input
-            label="Email Address"
+            label={t('componentTest.form.emailLabel') as string}
             type="email"
-            placeholder="your@email.com"
+            placeholder={t('componentTest.form.emailPlaceholder') as string}
             required
             name="email"
           />
           <Input
-            label="Message"
-            placeholder="Enter your message"
+            label={t('componentTest.form.messageLabel') as string}
+            placeholder={t('componentTest.form.messagePlaceholder') as string}
             name="message"
           />
           <Flex justify="end" gap="md">
             <Button variant="outline" type="reset">
-              Reset
+              {t('componentTest.form.reset')}
             </Button>
             <Button variant="primary" type="submit">
-              Submit Form
+              {t('componentTest.form.submitForm')}
             </Button>
           </Flex>
         </Form>
       </Card>
     );
-  }
+  };
 
-  private renderModalSection(): React.ReactNode {
+  const renderModalSection = (): React.ReactNode => {
     return (
       <Card className="mb-8">
         <Text as="h2" size="2xl" weight="bold" className="mb-4">
-          Modal Components
+          {t('componentTest.modal.title')}
         </Text>
-        <Button onClick={this.handleModalOpen}>
-          Open Modal
+        <Button onClick={handleModalOpen}>
+          {t('componentTest.modal.openModal')}
         </Button>
         
         <Modal
-          isOpen={this.state.isModalOpen}
-          onClose={this.handleModalClose}
-          title="Test Modal"
+          isOpen={isModalOpen}
+          onClose={handleModalClose}
+          title={t('componentTest.modal.testModal') as string}
           size="md"
         >
           <Stack spacing="md">
             <Text as="p">
-              This is a test modal to demonstrate the Modal component functionality.
+              {t('componentTest.modal.modalDescription')}
             </Text>
             <Input
-              label="Sample Input"
-              placeholder="Try typing here"
+              label={t('componentTest.modal.sampleInput') as string}
+              placeholder={t('componentTest.modal.samplePlaceholder') as string}
             />
             <Flex justify="end" gap="md">
-              <Button variant="outline" onClick={this.handleModalClose}>
-                Cancel
+              <Button variant="outline" onClick={handleModalClose}>
+                {t('common.cancel')}
               </Button>
-              <Button variant="primary" onClick={this.handleModalClose}>
-                Save
+              <Button variant="primary" onClick={handleModalClose}>
+                {t('componentTest.modal.save')}
               </Button>
             </Flex>
           </Stack>
         </Modal>
       </Card>
     );
-  }
+  };
 
-  render(): React.ReactNode {
-    return (
-      <Container size="6xl" centerContent padding="lg">
-        <Text as="h1" size="4xl" weight="bold" align="center" className="mb-8">
-          UI Components Test Page
+  return (
+    <Container size="6xl" centerContent padding="lg">
+      <Text as="h1" size="4xl" weight="bold" align="center" className="mb-8">
+        {t('componentTest.title')}
+      </Text>
+      
+      <Text as="p" size="lg" color="muted" align="center" className="mb-12">
+        {t('componentTest.description')}
+      </Text>
+
+      {renderButtonsSection()}
+      {renderInputsSection()}
+      {renderTextSection()}
+      {renderImageSection()}
+      {renderLayoutSection()}
+      {renderListSection()}
+      {renderTableSection()}
+      {renderFormSection()}
+      {renderModalSection()}
+
+      <Card>
+        <Text as="h2" size="2xl" weight="bold" className="mb-4">
+          {t('componentTest.links.title')}
         </Text>
-        
-        <Text as="p" size="lg" color="muted" align="center" className="mb-12">
-          This page showcases all the available UI components in the design system.
-        </Text>
-
-        {this.renderButtonsSection()}
-        {this.renderInputsSection()}
-        {this.renderTextSection()}
-        {this.renderImageSection()}
-        {this.renderLayoutSection()}
-        {this.renderListSection()}
-        {this.renderTableSection()}
-        {this.renderFormSection()}
-        {this.renderModalSection()}
-
-        <Card>
-          <Text as="h2" size="2xl" weight="bold" className="mb-4">
-            Links & Navigation
-          </Text>
-          <Stack spacing="md">
-            <Link href="#" variant="primary">Primary Link</Link>
-            <Link href="#" variant="secondary">Secondary Link</Link>
-            <Link href="#" variant="danger">Danger Link</Link>
-            <Link href="https://example.com" external>
-              External Link
-            </Link>
-            <Link href="#" disabled>Disabled Link</Link>
-          </Stack>
-        </Card>
-      </Container>
-    );
-  }
-}
+        <Stack spacing="md">
+          <Link href="#" variant="primary">{t('componentTest.links.primaryLink')}</Link>
+          <Link href="#" variant="secondary">{t('componentTest.links.secondaryLink')}</Link>
+          <Link href="#" variant="danger">{t('componentTest.links.dangerLink')}</Link>
+          <Link href="https://example.com" external>
+            {t('componentTest.links.externalLink')}
+          </Link>
+          <Link href="#" disabled>{t('componentTest.links.disabledLink')}</Link>
+        </Stack>
+      </Card>
+    </Container>
+  );
+};
 
 export default ComponentTestPage; 

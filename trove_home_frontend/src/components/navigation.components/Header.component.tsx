@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../constants/Routes.constant';
 import LanguageSwitcher from './LanguageSwitcher.component';
 import NavigationMenu from './NavigationMenu.component';
 import TroveLogo from '../../assets/trove_images/trove_simple_green_logo.png';
 
 const Header: React.FC = () => {
-  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (

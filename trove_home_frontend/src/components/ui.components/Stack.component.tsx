@@ -45,7 +45,7 @@ class Stack extends React.Component<StackProps> {
   }
 
   private getAlignClasses(): string {
-    const { align, direction = 'vertical' } = this.props;
+    const { align } = this.props;
     
     if (!align) return '';
     

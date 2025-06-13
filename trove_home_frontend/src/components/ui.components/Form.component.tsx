@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from '../../i18n/TranslationUtils.utils';
 
 interface FormProps {
   children: React.ReactNode;
@@ -61,7 +62,7 @@ class Form extends React.Component<FormProps, FormState> {
       await onSubmit(event);
       
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error(translate('common.formSubmissionError', 'Form submission error:'), error);
       this.setState({ hasErrors: true });
     } finally {
       this.setState({ isSubmitting: false });

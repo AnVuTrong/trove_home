@@ -25,7 +25,11 @@
     "search": "Search",
     "back": "Back",
     "next": "Next",
-    "submit": "Submit"
+    "submit": "Submit",
+    "close": "Close",
+    "invalidField": "This field is invalid",
+    "imageNotFound": "Image not found",
+    "formSubmissionError": "Form submission error:"
   },
   "language": {
     "english": "English",
@@ -35,5 +39,116 @@
   "footer": {
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us"
+  },
+  "componentTest": {
+    "title": "UI Components Test Page",
+    "description": "This page showcases all the available UI components in the design system.",
+    "buttons": {
+      "title": "Button Components",
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "danger": "Danger",
+      "success": "Success",
+      "outline": "Outline",
+      "small": "Small",
+      "large": "Large",
+      "loading": "Loading",
+      "disabled": "Disabled"
+    },
+    "inputs": {
+      "title": "Input Components",
+      "basicLabel": "Basic Input",
+      "basicPlaceholder": "Enter text here",
+      "emailLabel": "Email Input",
+      "emailPlaceholder": "your@email.com",
+      "emailHelper": "We'll never share your email",
+      "passwordLabel": "Password Input",
+      "passwordPlaceholder": "••••••••",
+      "errorLabel": "Error State",
+      "errorPlaceholder": "Invalid input",
+      "errorMessage": "This field is required",
+      "successLabel": "Success State",
+      "successPlaceholder": "Valid input",
+      "successHelper": "Looks good!"
+    },
+    "text": {
+      "title": "Text Components",
+      "heading1": "Heading 1",
+      "heading2": "Heading 2",
+      "heading3": "Heading 3",
+      "largeParagraph": "Large paragraph text",
+      "regularParagraph": "Regular paragraph text",
+      "smallMuted": "Small muted text",
+      "primaryColor": "Primary colored text",
+      "boldDanger": "Bold danger text",
+      "italicUnderlined": "Italic underlined text"
+    },
+    "images": {
+      "title": "Image Components",
+      "placeholder": "Placeholder image",
+      "redPlaceholder": "Red placeholder",
+      "greenPlaceholder": "Green placeholder"
+    },
+    "layout": {
+      "title": "Layout Components",
+      "flexTitle": "Flex Layout",
+      "gridTitle": "Grid Layout",
+      "stackTitle": "Stack Layout",
+      "box1": "Box 1",
+      "box2": "Box 2",
+      "box3": "Box 3",
+      "stackItem1": "Stack Item 1",
+      "stackItem2": "Stack Item 2",
+      "stackItem3": "Stack Item 3"
+    },
+    "lists": {
+      "title": "List Components",
+      "unorderedTitle": "Unordered List",
+      "firstItem": "First item",
+      "secondItem": "Second item",
+      "thirdItem": "Third item",
+      "interactiveTitle": "Interactive List",
+      "clickableItem1": "Clickable Item 1",
+      "clickableItem2": "Clickable Item 2",
+      "clickableItem3": "Clickable Item 3"
+    },
+    "table": {
+      "title": "Table Components",
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "active": "active",
+      "inactive": "inactive"
+    },
+    "form": {
+      "title": "Form Components",
+      "fullNameLabel": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Enter your message",
+      "reset": "Reset",
+      "submitForm": "Submit Form"
+    },
+    "modal": {
+      "title": "Modal Components",
+      "openModal": "Open Modal",
+      "testModal": "Test Modal",
+      "modalDescription": "This is a test modal to demonstrate the Modal component functionality.",
+      "sampleInput": "Sample Input",
+      "samplePlaceholder": "Try typing here",
+      "save": "Save"
+    },
+    "links": {
+      "title": "Links & Navigation",
+      "primaryLink": "Primary Link",
+      "secondaryLink": "Secondary Link",
+      "dangerLink": "Danger Link",
+      "externalLink": "External Link",
+      "disabledLink": "Disabled Link"
+    }
   }
 } 
