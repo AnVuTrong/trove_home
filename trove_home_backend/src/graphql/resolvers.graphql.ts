@@ -1,7 +1,11 @@
+import { HealthService } from '../services/Health.service';
+
+const healthService = new HealthService();
+
 export const resolvers = {
   Query: {
     // Health check resolver
-    health: () => 'GraphQL API is running!'
+    health: () => healthService.health(),
   },
 
   Mutation: {
