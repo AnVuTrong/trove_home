@@ -1,6 +1,22 @@
-- Add unit test for all graphql service
-- Refactor code to have better OOP
-
-## Completed
-- [x] Add unit test for all GraphQL service
-- [x] Refactor code to follow better OOP structure
+- ✅ Create a button component
+- ✅ Create a input component
+- ✅ Create a Text/Label component
+- ✅ Create a Image component
+- ✅ Create a Card component
+- ✅ Create a Grid component
+- ✅ Create a Flex component
+- ✅ Create a Stack component
+- ✅ Create a Box component
+- ✅ Create a Container component
+- ✅ Create a Link component
+- ✅ Create a List component
+- ✅ Create a ListItem component
+- ✅ Create a Table component
+- ✅ Create a TableRow component
+- ✅ Create a TableCell component
+- ✅ Create a TableHeader component
+- ✅ Create a TableBody component
+- ✅ Create a TableFooter component
+- ✅ Create a Form component
+- ✅ Create a Modal/Dialog component
+- ✅ Add a hidden page to test the components on the UI

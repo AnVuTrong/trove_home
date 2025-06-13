@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../constants/Routes.constant';
 import LanguageSwitcher from './LanguageSwitcher.component';
 import NavigationMenu from './NavigationMenu.component';
 import TroveLogo from '../../assets/trove_images/trove_simple_green_logo.png';
 
 const Header: React.FC = () => {
-  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="bg-background-paper shadow-md sticky top-0 z-50">
+    <header className="bg-background-primary shadow-md sticky top-0 z-50 border-b border-gray-200">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-primary">
@@ -44,9 +42,9 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 py-2 border-t border-border-color">
+          <div className="md:hidden mt-3 py-2 border-t border-gray-200">
             <NavigationMenu isMobile onItemClick={() => setIsMobileMenuOpen(false)} />
-            <div className="mt-4 pt-2 border-t border-border-color">
+            <div className="mt-4 pt-2 border-t border-gray-200">
               <LanguageSwitcher />
             </div>
           </div>

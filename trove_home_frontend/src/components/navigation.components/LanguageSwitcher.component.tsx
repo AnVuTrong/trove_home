@@ -1,10 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext.context';
-import { useTranslation } from 'react-i18next';
+import { translate } from '../../i18n/TranslationUtils.utils';
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
-  const { t } = useTranslation();
 
   return (
     <div className="flex items-center space-x-2">
@@ -15,7 +14,7 @@ const LanguageSwitcher: React.FC = () => {
             ? 'bg-primary text-white' 
             : 'bg-secondary text-text-secondary hover:bg-primary-light hover:text-white'
         } transition-colors duration-200`}
-        title={t('language.english')}
+        title={translate('language.english', 'English')}
       >
         EN
       </button>
@@ -26,7 +25,7 @@ const LanguageSwitcher: React.FC = () => {
             ? 'bg-primary text-white' 
             : 'bg-secondary text-text-secondary hover:bg-primary-light hover:text-white'
         } transition-colors duration-200`}
-        title={t('language.vietnamese')}
+        title={translate('language.vietnamese', 'Vietnamese')}
       >
         VI
       </button>
