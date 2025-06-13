@@ -4,7 +4,7 @@ globs:
 alwaysApply: true
 ---
 # Cursor rules:
-- Always write and run test for every functions to check if it's in correct schemas, type and functionality
+- Always write and run unit test for every functions to check if it's in correct schemas, type and functionality
 - Always follow OOP rules and industrial best practices
 - Each function can only do one job and single purposes
  

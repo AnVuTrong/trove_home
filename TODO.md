@@ -1,0 +1,2 @@
+- Add unit test for all graphql service
+- Refactor code to have better OOP
