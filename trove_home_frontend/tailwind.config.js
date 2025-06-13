@@ -26,6 +26,7 @@ module.exports = {
         background: {
           primary: '#FFFFFF',   // Standard white background
           secondary: '#f3f4f6', // Standard light grey background
+          teal: '#008080',
         },
       }
     },

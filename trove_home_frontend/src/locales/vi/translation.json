@@ -42,5 +42,116 @@
   "footer": {
     "quickLinks": "Liên kết nhanh",
     "contactUs": "Liên hệ"
+  },
+  "componentTest": {
+    "title": "Trang Test UI Components",
+    "description": "Trang này trình bày tất cả các UI components có sẵn trong hệ thống thiết kế.",
+    "buttons": {
+      "title": "Button Components",
+      "primary": "Chính",
+      "secondary": "Phụ",
+      "danger": "Nguy hiểm",
+      "success": "Thành công",
+      "outline": "Viền",
+      "small": "Nhỏ",
+      "large": "Lớn",
+      "loading": "Đang tải",
+      "disabled": "Vô hiệu hóa"
+    },
+    "inputs": {
+      "title": "Input Components",
+      "basicLabel": "Input Cơ bản",
+      "basicPlaceholder": "Nhập văn bản tại đây",
+      "emailLabel": "Email Input",
+      "emailPlaceholder": "email@cuaban.com",
+      "emailHelper": "Chúng tôi sẽ không bao giờ chia sẻ email của bạn",
+      "passwordLabel": "Password Input",
+      "passwordPlaceholder": "••••••••",
+      "errorLabel": "Trạng thái Lỗi",
+      "errorPlaceholder": "Input không hợp lệ",
+      "errorMessage": "Trường này là bắt buộc",
+      "successLabel": "Trạng thái Thành công",
+      "successPlaceholder": "Input hợp lệ",
+      "successHelper": "Trông ổn!"
+    },
+    "text": {
+      "title": "Text Components",
+      "heading1": "Tiêu đề 1",
+      "heading2": "Tiêu đề 2",
+      "heading3": "Tiêu đề 3",
+      "largeParagraph": "Văn bản đoạn lớn",
+      "regularParagraph": "Văn bản đoạn thường",
+      "smallMuted": "Văn bản nhỏ mờ",
+      "primaryColor": "Văn bản màu chính",
+      "boldDanger": "Văn bản đậm nguy hiểm",
+      "italicUnderlined": "Văn bản nghiêng gạch chân"
+    },
+    "images": {
+      "title": "Image Components",
+      "placeholder": "Hình ảnh giữ chỗ",
+      "redPlaceholder": "Giữ chỗ màu đỏ",
+      "greenPlaceholder": "Giữ chỗ màu xanh"
+    },
+    "layout": {
+      "title": "Layout Components",
+      "flexTitle": "Flex Layout",
+      "gridTitle": "Grid Layout",
+      "stackTitle": "Stack Layout",
+      "box1": "Hộp 1",
+      "box2": "Hộp 2",
+      "box3": "Hộp 3",
+      "stackItem1": "Stack Item 1",
+      "stackItem2": "Stack Item 2",
+      "stackItem3": "Stack Item 3"
+    },
+    "lists": {
+      "title": "List Components",
+      "unorderedTitle": "Danh sách không thứ tự",
+      "firstItem": "Mục đầu tiên",
+      "secondItem": "Mục thứ hai",
+      "thirdItem": "Mục thứ ba",
+      "interactiveTitle": "Danh sách Tương tác",
+      "clickableItem1": "Mục Nhấp được 1",
+      "clickableItem2": "Mục Nhấp được 2",
+      "clickableItem3": "Mục Nhấp được 3"
+    },
+    "table": {
+      "title": "Table Components",
+      "id": "ID",
+      "name": "Tên",
+      "email": "Email",
+      "role": "Vai trò",
+      "status": "Trạng thái",
+      "active": "hoạt động",
+      "inactive": "không hoạt động"
+    },
+    "form": {
+      "title": "Form Components",
+      "fullNameLabel": "Họ và Tên",
+      "fullNamePlaceholder": "Nhập họ và tên của bạn",
+      "emailLabel": "Địa chỉ Email",
+      "emailPlaceholder": "email@cuaban.com",
+      "messageLabel": "Tin nhắn",
+      "messagePlaceholder": "Nhập tin nhắn của bạn",
+      "reset": "Đặt lại",
+      "submitForm": "Gửi Form"
+    },
+    "modal": {
+      "title": "Modal Components",
+      "openModal": "Mở Modal",
+      "testModal": "Test Modal",
+      "modalDescription": "Đây là một test modal để thể hiện chức năng của Modal component.",
+      "sampleInput": "Input Mẫu",
+      "samplePlaceholder": "Thử gõ tại đây",
+      "save": "Lưu"
+    },
+    "links": {
+      "title": "Links & Navigation",
+      "primaryLink": "Link Chính",
+      "secondaryLink": "Link Phụ",
+      "dangerLink": "Link Nguy hiểm",
+      "externalLink": "Link Ngoài",
+      "disabledLink": "Link Vô hiệu hóa"
+    }
   }
 } 
