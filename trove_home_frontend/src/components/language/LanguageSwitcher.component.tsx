@@ -15,8 +15,8 @@ const LanguageSwitcher: React.FC = () => {
         <button
           className={`px-3 py-1 text-sm rounded-md transition-colors ${
             i18n.language === 'en'
-              ? 'bg-blue-500 text-white'
-              : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+              ? 'bg-primary text-white'
+              : 'bg-background-light hover:bg-background-surface_dark text-text-light dark:bg-background-dark dark:hover:bg-background-surface_dark dark:text-text-dark'
           }`}
           onClick={() => changeLanguage('en')}
         >
@@ -25,8 +25,8 @@ const LanguageSwitcher: React.FC = () => {
         <button
           className={`px-3 py-1 text-sm rounded-md transition-colors ${
             i18n.language === 'vi'
-              ? 'bg-blue-500 text-white'
-              : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+              ? 'bg-primary text-white'
+              : 'bg-background-light hover:bg-background-surface_dark text-text-light dark:bg-background-dark dark:hover:bg-background-surface_dark dark:text-text-dark'
           }`}
           onClick={() => changeLanguage('vi')}
         >

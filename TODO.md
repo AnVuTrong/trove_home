@@ -1,22 +1,3 @@
-- ✅ Create a button component
-- ✅ Create a input component
-- ✅ Create a Text/Label component
-- ✅ Create a Image component
-- ✅ Create a Card component
-- ✅ Create a Grid component
-- ✅ Create a Flex component
-- ✅ Create a Stack component
-- ✅ Create a Box component
-- ✅ Create a Container component
-- ✅ Create a Link component
-- ✅ Create a List component
-- ✅ Create a ListItem component
-- ✅ Create a Table component
-- ✅ Create a TableRow component
-- ✅ Create a TableCell component
-- ✅ Create a TableHeader component
-- ✅ Create a TableBody component
-- ✅ Create a TableFooter component
-- ✅ Create a Form component
-- ✅ Create a Modal/Dialog component
-- ✅ Add a hidden page to test the components on the UI
+- ✅ Fixed the ThemeToggle component bug that icons were being covered by the thumb and the icons didn't change color when the toggle is checked or unchecked
+- ✅ Fixed the ThemeToggle component displaying unwanted "Theme" label and duplicate icons outside the toggle
+- ✅ Fixed the LanguageSwitcher component in the header component - replaced with LanguageToggle component that matches ThemeToggle style
