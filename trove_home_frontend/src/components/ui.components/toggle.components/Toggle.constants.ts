@@ -10,17 +10,17 @@ export const TOGGLE_SIZE_CLASSES: Record<ToggleSize, ToggleSizeClasses> = {
   sm: {
     toggle: 'w-16 h-8',
     thumb: 'w-6 h-6',
-    icon: 'w-3 h-3'
+    icon: 'w-4 h-4'
   },
   md: {
     toggle: 'w-20 h-10',
     thumb: 'w-8 h-8',
-    icon: 'w-4 h-4'
+    icon: 'w-6 h-6'
   },
   lg: {
     toggle: 'w-24 h-12',
     thumb: 'w-10 h-10',
-    icon: 'w-5 h-5'
+    icon: 'w-7 h-7'
   }
 };
 
