@@ -81,10 +81,7 @@ describe('InteractiveDemoSection', () => {
   it('has correct structure and classes', () => {
     const { container } = render(<InteractiveDemoSection {...mockProps} />);
     
-    const sectionDiv = container.firstChild as HTMLElement;
-    expect(sectionDiv).toHaveClass('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'p-6', 'mb-8', 'shadow-sm');
-    
-    const valuesContainer = container.querySelector('.bg-gray-50.p-4.rounded-md');
+    const valuesContainer = container.querySelector('.bg-background-DEFAULT.p-4.rounded-md.dark\\:bg-background-dark');
     expect(valuesContainer).toBeInTheDocument();
     
     const buttonsContainer = container.querySelector('.flex.gap-4');

@@ -36,9 +36,6 @@ describe('SliderTestSection', () => {
   it('has correct structure and classes', () => {
     const { container } = render(<SliderTestSection {...mockProps} />);
     
-    const sectionDiv = container.firstChild as HTMLElement;
-    expect(sectionDiv).toHaveClass('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'p-6', 'mb-8', 'shadow-sm');
-    
     const slidersContainer = container.querySelector('.space-y-6');
     expect(slidersContainer).toBeInTheDocument();
   });

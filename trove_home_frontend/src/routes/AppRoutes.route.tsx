@@ -8,7 +8,7 @@ import MainLayout from '../layouts/MainLayout.layout';
 
 // Lazy loaded pages
 const HomePage = lazyLoad(() => import('../pages/Home.page'), 'Loading Home...');
-const ComponentTestPage = lazyLoad(() => import('../pages/ComponentTestPage.page'), 'Loading Components...');
+const ComponentTestPage = lazyLoad(() => import('../pages/hidden/ComponentTestPage.page'), 'Loading Components...');
 const NotFoundPage = lazyLoad(() => import('../pages/NotFound.page'), 'Loading...');
 
 const AppRoutes: React.FC = () => {
