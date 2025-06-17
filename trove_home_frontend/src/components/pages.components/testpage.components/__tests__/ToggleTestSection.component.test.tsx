@@ -38,8 +38,6 @@ describe('ToggleTestSection', () => {
     );
     
     expect(screen.getByText('Enable Notifications')).toBeInTheDocument();
-    expect(screen.getByText('Light')).toBeInTheDocument();
-    expect(screen.getByText('Dark')).toBeInTheDocument();
     expect(screen.getByText('Theme Mode')).toBeInTheDocument();
     expect(screen.getByText('Auto Save Documents')).toBeInTheDocument();
     expect(screen.getByText('Manual')).toBeInTheDocument();

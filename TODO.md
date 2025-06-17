@@ -1,2 +1,3 @@
-- Fix the ThemeToggle component bug that icons is being covered by the thumb and the icons doesn't change color when the toggle is checked or unchecked
+- ✅ Fixed the ThemeToggle component bug that icons were being covered by the thumb and the icons didn't change color when the toggle is checked or unchecked
+- ✅ Fixed the ThemeToggle component displaying unwanted "Theme" label and duplicate icons outside the toggle
 - Fix the LanguageSwitcher component in the header component

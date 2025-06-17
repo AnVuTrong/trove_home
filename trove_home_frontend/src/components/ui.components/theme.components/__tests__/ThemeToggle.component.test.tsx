@@ -12,6 +12,7 @@ const mockUseTheme = useTheme as jest.MockedFunction<typeof useTheme>;
 
 describe('ThemeToggle', () => {
   const mockToggleTheme = jest.fn();
+  const mockSetTheme = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -21,20 +22,20 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle />);
     
     expect(screen.getByTestId('theme-toggle')).toBeInTheDocument();
     expect(screen.getByText('Theme')).toBeInTheDocument();
-    expect(screen.getByText('Light')).toBeInTheDocument();
-    expect(screen.getByText('Dark')).toBeInTheDocument();
   });
 
   it('reflects current theme state', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: true,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle />);
@@ -47,6 +48,7 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle />);
@@ -61,19 +63,19 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle showLabel={false} />);
     
     expect(screen.queryByText('Theme')).not.toBeInTheDocument();
-    expect(screen.getByText('Light')).toBeInTheDocument();
-    expect(screen.getByText('Dark')).toBeInTheDocument();
   });
 
   it('renders without icons when showIcons is false', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle showIcons={false} />);
@@ -87,6 +89,7 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(
@@ -98,14 +101,13 @@ describe('ThemeToggle', () => {
     );
     
     expect(screen.getByText('Theme Mode')).toBeInTheDocument();
-    expect(screen.getByText('Day')).toBeInTheDocument();
-    expect(screen.getByText('Night')).toBeInTheDocument();
   });
 
   it('renders with different sizes', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     const { rerender } = render(<ThemeToggle size="sm" />);
@@ -119,6 +121,7 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     const { rerender } = render(<ThemeToggle variant="primary" />);
@@ -135,6 +138,7 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle className="custom-class" />);
@@ -147,6 +151,7 @@ describe('ThemeToggle', () => {
     mockUseTheme.mockReturnValue({
       isDarkMode: false,
       toggleTheme: mockToggleTheme,
+      setTheme: mockSetTheme,
     });
 
     render(<ThemeToggle data-testid="custom-theme-toggle" />);

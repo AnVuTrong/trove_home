@@ -48,8 +48,6 @@ const ToggleTestSection: React.FC<ToggleTestSectionProps> = ({
           
           <ThemeToggle
             label="Theme Mode"
-            leftLabel="Light"
-            rightLabel="Dark"
             variant="primary"
           />
           

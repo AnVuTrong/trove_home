@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             <ThemeToggle
               size="sm"
               variant="primary"
-              label="Theme"
+              showLabel={false}
               data-testid="theme-toggle"
             />
             

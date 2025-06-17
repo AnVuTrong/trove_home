@@ -46,13 +46,8 @@ class Toggle extends React.Component<ToggleProps> {
 
     return (
       <div className={`${TOGGLE_BASE_CLASSES.CONTAINER} ${className}`.trim()}>
-        {(leftLabel || leftIcon) && (
+        {leftLabel && (
           <div className={TOGGLE_BASE_CLASSES.SIDE_CONTAINER}>
-            {leftIcon && (
-              <span className={`${sizeClasses.icon} ${getTextColorClass(!checked)}`}>
-                {leftIcon}
-              </span>
-            )}
             {leftLabel && (
               <span className={`${TOGGLE_BASE_CLASSES.SIDE_LABEL} ${getTextColorClass(!checked)}`}>
                 {leftLabel}

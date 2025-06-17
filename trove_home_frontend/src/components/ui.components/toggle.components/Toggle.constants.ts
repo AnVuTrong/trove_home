@@ -37,10 +37,10 @@ export const TOGGLE_TRANSLATE_CLASSES: Record<ToggleSize, string> = {
 };
 
 export const TOGGLE_BASE_CLASSES = {
-  TOGGLE: 'relative inline-flex items-center justify-between border-2 rounded-md cursor-pointer transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 p-1',
-  THUMB: 'absolute bg-white rounded-md shadow-lg transform transition-transform duration-150 ease-in-out z-0',
-  ICON_LEFT: 'absolute left-2 z-10 flex items-center justify-center transition-all duration-150 ease-in-out',
-  ICON_RIGHT: 'absolute right-2 z-10 flex items-center justify-center transition-all duration-150 ease-in-out',
+  TOGGLE: 'relative inline-flex items-center justify-between border-2 rounded-md cursor-pointer transition-all duration-100 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 p-1',
+  THUMB: 'absolute bg-white rounded-md shadow-lg transform transition-transform duration-100 ease-in-out z-10',
+  ICON_LEFT: 'absolute left-2 z-20 flex items-center justify-center transition-all duration-100 ease-in-out',
+  ICON_RIGHT: 'absolute right-2 z-20 flex items-center justify-center transition-all duration-100 ease-in-out',
   DISABLED: 'opacity-50 cursor-not-allowed',
   UNCHECKED_BG: 'bg-gray-200 border-gray-300',
   CONTAINER: 'flex items-center space-x-3',
