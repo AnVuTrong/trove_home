@@ -46,7 +46,7 @@ export const TOGGLE_BASE_CLASSES = {
   CONTAINER: 'flex items-center space-x-3',
   SIDE_CONTAINER: 'flex items-center space-x-1',
   LABEL_CONTAINER: 'flex flex-col items-center',
-  LABEL: 'mt-1 text-xs text-text-light text-center',
+  LABEL: 'mt-1 text-xs text-text-light text-center dark:text-text-dark',
   SIDE_LABEL: 'text-sm font-medium transition-colors duration-300 ease-in-out',
   ACTIVE_TEXT: 'text-text-DEFAULT font-semibold',
   INACTIVE_TEXT: 'text-gray-400',
