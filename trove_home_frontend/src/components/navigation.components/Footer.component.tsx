@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { routeConfig } from '../../routes/RouteConfig.route';
+import TroveWordmarkGreen from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_green_fit_svg.svg';
+import TroveWordmarkWhite from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_white_fit_svg.svg';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -16,7 +18,20 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About section */}
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
-            <h3 className="text-primary font-bold mb-4">TROVE INVESTMENT</h3>
+            <div className="mb-4">
+              {/* Light theme wordmark */}
+              <img 
+                src={TroveWordmarkWhite} 
+                alt="Trove Investment" 
+                className="h-20 w-auto dark:hidden" 
+              />
+              {/* Dark theme wordmark */}
+              <img 
+                src={TroveWordmarkGreen} 
+                alt="Trove Investment" 
+                className="h-20 w-auto hidden dark:block" 
+              />
+            </div>
             <p className="text-sm">
               Developed by TROVE INVESTMENT
             </p>
