@@ -1,17 +1,23 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { HeroSection } from '../components/ui.components';
+import troveLogoGreen from '../assets/trove_logo_v1/2_horizontal/2_horizontal_green_fit_svg.svg';
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="prose max-w-none">
-      <h1 className="text-3xl font-bold text-light dark:text-primary-dark mb-6">
-        {t('app.title')}
-      </h1>
-      <p className="mb-4 text-text-DEFAULT dark:text-text-dark">
-        {t('app.description')}
-      </p>
+    <div className="min-h-screen">
+      <HeroSection
+        imageSrc={troveLogoGreen}
+        imageAlt="Trove - Investment Tools Platform"
+        header={t('app.title') as string}
+        subheader={t('common.welcome') as string}
+        paragraph={t('app.description') as string}
+        className="py-16 lg:py-24"
+        imageClassName="max-w-md mx-auto"
+        data-testid="home-hero-section"
+      />
     </div>
   );
 };

@@ -17,3 +17,16 @@ export { default as Toggle } from './toggle.components/Toggle.component';
 export type { ToggleProps, ToggleSize, ToggleVariant } from './toggle.components/Toggle.types';
 
 export { ThemeToggle } from './theme.components';
+
+export { default as HeroSection } from './hero.components/HeroSection.component';
+export type { HeroSectionProps, HeroSectionVariant, HeroSectionSize } from './hero.components/HeroSection.types';
+export { HeroSectionStyleUtils } from './hero.components/HeroSection.utils';
+export {
+  HERO_SECTION_BASE_CLASSES,
+  HERO_SECTION_CONTAINER_CLASSES,
+  HERO_SECTION_IMAGE_CLASSES,
+  HERO_SECTION_TEXT_CONTAINER_CLASSES,
+  HERO_SECTION_HEADER_CLASSES,
+  HERO_SECTION_SUBHEADER_CLASSES,
+  HERO_SECTION_PARAGRAPH_CLASSES
+} from './hero.components/HeroSection.constants';
