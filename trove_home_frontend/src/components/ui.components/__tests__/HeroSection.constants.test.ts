@@ -22,7 +22,7 @@ describe('HeroSection Constants', () => {
         expect(HERO_SECTION_BASE_CLASSES).toBeDefined();
         expect(typeof HERO_SECTION_BASE_CLASSES).toBe('string');
         expect(HERO_SECTION_BASE_CLASSES).toContain('flex');
-        expect(HERO_SECTION_BASE_CLASSES).toContain('items-center');
+        expect(HERO_SECTION_BASE_CLASSES).toContain('items-stretch');
       });
     });
 

@@ -14,8 +14,8 @@ const HomePage: React.FC = () => {
         header={t('app.title') as string}
         subheader={t('common.welcome') as string}
         paragraph={t('app.description') as string}
-        fullScreen={true}
-        imageClassName="blur-md"
+        fullScreen={false}
+        imageClassName="blur-sm"
         data-testid="home-hero-section"
       />
     </div>

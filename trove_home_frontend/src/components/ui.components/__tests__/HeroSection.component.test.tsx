@@ -20,7 +20,10 @@ describe('HeroSection Component', () => {
     expect(screen.getByText('Test Header')).toBeInTheDocument();
     expect(screen.getByText('Test Subheader')).toBeInTheDocument();
     expect(screen.getByText('This is a test paragraph for the hero section component.')).toBeInTheDocument();
-    expect(screen.getByAltText('Test image')).toBeInTheDocument();
+    
+    // Component now renders both mobile and desktop images
+    const images = screen.getAllByAltText('Test image');
+    expect(images).toHaveLength(2); // Mobile + Desktop images
   });
 
   it('renders without subheader when not provided', () => {
@@ -40,7 +43,8 @@ describe('HeroSection Component', () => {
     
     render(<HeroSection {...propsWithoutAlt} />);
     
-    expect(screen.getByAltText('Hero image')).toBeInTheDocument();
+    const images = screen.getAllByAltText('Hero image');
+    expect(images).toHaveLength(2); // Mobile + Desktop images
   });
 
   it('applies custom className when provided', () => {
@@ -57,8 +61,11 @@ describe('HeroSection Component', () => {
     
     render(<HeroSection {...defaultProps} imageClassName={customImageClassName} />);
     
-    const image = screen.getByAltText('Test image');
-    expect(image).toHaveClass(customImageClassName);
+    const images = screen.getAllByAltText('Test image');
+    // Both mobile and desktop images should have the custom class
+    images.forEach(image => {
+      expect(image).toHaveClass(customImageClassName);
+    });
   });
 
   it('applies custom textClassName when provided', () => {
@@ -67,89 +74,115 @@ describe('HeroSection Component', () => {
     render(<HeroSection {...defaultProps} textClassName={customTextClassName} />);
     
     const heroSection = screen.getByTestId('hero-section');
-    expect(heroSection.querySelector('.space-y-4')).toHaveClass(customTextClassName);
+    const textContainer = heroSection.querySelector('.space-y-4');
+    expect(textContainer).toHaveClass(customTextClassName);
   });
 
   it('has correct image src', () => {
     render(<HeroSection {...defaultProps} />);
     
-    const image = screen.getByAltText('Test image') as HTMLImageElement;
-    expect(image.src).toContain('/test-image.jpg');
+    const images = screen.getAllByAltText('Test image') as HTMLImageElement[];
+    images.forEach(image => {
+      expect(image.src).toContain('/test-image.jpg');
+    });
   });
 
   it('renders with proper semantic HTML structure', () => {
     render(<HeroSection {...defaultProps} />);
     
     // Check for semantic HTML elements
-    expect(screen.getByRole('img')).toBeInTheDocument();
+    const images = screen.getAllByRole('img');
+    expect(images).toHaveLength(2); // Mobile + Desktop images
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
   });
 
-  describe('Full-screen mode', () => {
-    const fullScreenProps: HeroSectionProps = {
-      ...defaultProps,
-      fullScreen: true
-    };
-
-    it('renders in full-screen mode when fullScreen prop is true', () => {
-      render(<HeroSection {...fullScreenProps} />);
+  describe('Responsive Layout', () => {
+    it('renders responsive container with correct classes', () => {
+      render(<HeroSection {...defaultProps} />);
       
       const heroSection = screen.getByTestId('hero-section');
-      expect(heroSection).toHaveClass('relative', 'w-full', 'h-screen', 'overflow-hidden');
+      // Should have responsive classes for mobile fullscreen and desktop layout
+      expect(heroSection).toHaveClass('relative', 'w-full', 'h-screen');
+      expect(heroSection).toHaveClass('lg:h-auto', 'lg:max-w-7xl', 'lg:mx-auto');
     });
 
-    it('applies full-screen styling to image container', () => {
-      render(<HeroSection {...fullScreenProps} />);
+    it('renders mobile fullscreen image with correct classes', () => {
+      render(<HeroSection {...defaultProps} />);
       
-      const image = screen.getByAltText('Test image');
-      expect(image).toHaveClass('absolute', 'inset-0', 'w-full', 'h-full', 'object-cover');
+      const images = screen.getAllByAltText('Test image');
+      // Find the mobile image (should be in lg:hidden container)
+      const mobileImage = images.find(img => 
+        img.parentElement?.classList.contains('lg:hidden')
+      );
+      
+      expect(mobileImage).toBeDefined();
+      expect(mobileImage?.parentElement).toHaveClass('lg:hidden', 'absolute', 'inset-0');
     });
 
-    it('applies full-screen styling to text content', () => {
-      render(<HeroSection {...fullScreenProps} />);
+    it('renders desktop image with correct classes', () => {
+      render(<HeroSection {...defaultProps} />);
+      
+      const images = screen.getAllByAltText('Test image');
+      // Find the desktop image (should be in hidden lg:block container)
+      const desktopImage = images.find(img => 
+        img.parentElement?.classList.contains('hidden') &&
+        img.parentElement?.classList.contains('lg:block')
+      );
+      
+      expect(desktopImage).toBeDefined();
+      expect(desktopImage?.parentElement).toHaveClass('hidden', 'lg:block', 'lg:w-1/2', 'order-1');
+    });
+
+    it('renders mobile overlay for fullscreen mode', () => {
+      render(<HeroSection {...defaultProps} />);
+      
+      const heroSection = screen.getByTestId('hero-section');
+      const overlay = heroSection.querySelector('.lg\\:hidden.absolute.inset-0.bg-black\\/30');
+      expect(overlay).toBeInTheDocument();
+    });
+
+    it('renders text content with responsive styling', () => {
+      render(<HeroSection {...defaultProps} />);
       
       const header = screen.getByText('Test Header');
-      expect(header).toHaveClass('text-white', 'drop-shadow-2xl');
-      
       const subheader = screen.getByText('Test Subheader');
-      expect(subheader).toHaveClass('text-white/90', 'drop-shadow-lg');
-      
       const paragraph = screen.getByText('This is a test paragraph for the hero section component.');
-      expect(paragraph).toHaveClass('text-white/80', 'drop-shadow-lg');
+      
+      // Should have white text for mobile (with drop shadows) and gray text for desktop
+      expect(header).toHaveClass('text-white', 'drop-shadow-2xl', 'lg:text-gray-900', 'lg:drop-shadow-none');
+      expect(subheader).toHaveClass('text-white/90', 'drop-shadow-lg', 'lg:text-gray-600', 'lg:drop-shadow-none');
+      expect(paragraph).toHaveClass('text-white/80', 'drop-shadow-lg', 'lg:text-gray-700', 'lg:drop-shadow-none');
     });
 
-    it('uses default layout when fullScreen is false', () => {
+    it('renders text container with responsive positioning', () => {
+      render(<HeroSection {...defaultProps} />);
+      
+      const heroSection = screen.getByTestId('hero-section');
+      const textContainer = heroSection.querySelector('.relative.z-20');
+      
+      expect(textContainer).toHaveClass(
+        'relative', 'z-20', 'flex', 'flex-col', 'justify-center', 'items-center', 'text-center',
+        'lg:items-start', 'lg:text-left', 'lg:w-1/2', 'lg:order-2'
+      );
+    });
+  });
+
+  describe('Legacy Props Compatibility', () => {
+    it('ignores fullScreen prop since component is now fully responsive', () => {
+      render(<HeroSection {...defaultProps} fullScreen={true} />);
+      
+      const heroSection = screen.getByTestId('hero-section');
+      // Should still render responsive layout regardless of fullScreen prop
+      expect(heroSection).toHaveClass('relative', 'w-full', 'h-screen', 'lg:h-auto');
+    });
+
+    it('maintains same behavior when fullScreen is false', () => {
       render(<HeroSection {...defaultProps} fullScreen={false} />);
       
       const heroSection = screen.getByTestId('hero-section');
-      expect(heroSection).not.toHaveClass('h-screen');
-      expect(heroSection).toHaveClass('max-w-7xl', 'mx-auto');
-    });
-
-    it('uses default layout when fullScreen prop is not provided', () => {
-      render(<HeroSection {...defaultProps} />);
-      
-      const heroSection = screen.getByTestId('hero-section');
-      expect(heroSection).not.toHaveClass('h-screen');
-      expect(heroSection).toHaveClass('max-w-7xl', 'mx-auto');
-    });
-
-    it('renders image with absolute positioning in full-screen mode', () => {
-      render(<HeroSection {...fullScreenProps} />);
-      
-      const image = screen.getByAltText('Test image');
-      const imageContainer = image.parentElement;
-      expect(imageContainer).toHaveClass('absolute', 'inset-0');
-    });
-
-    it('renders image with flex layout in default mode', () => {
-      render(<HeroSection {...defaultProps} />);
-      
-      const image = screen.getByAltText('Test image');
-      const imageContainer = image.parentElement;
-      expect(imageContainer).toHaveClass('w-full', 'lg:w-1/2');
-      expect(imageContainer).not.toHaveClass('absolute');
+      // Should still render responsive layout
+      expect(heroSection).toHaveClass('relative', 'w-full', 'h-screen', 'lg:h-auto');
     });
   });
 }); 

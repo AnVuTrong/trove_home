@@ -3,78 +3,80 @@ import { HeroSectionProps } from './HeroSection.types';
 import { HeroSectionStyleUtils } from './HeroSection.utils';
 
 class HeroSection extends React.Component<HeroSectionProps> {
-  private renderImage(): React.ReactNode {
-    const { imageSrc, imageAlt, imageClassName, fullScreen } = this.props;
+  private renderMobileFullscreenImage(): React.ReactNode {
+    const { imageSrc, imageAlt, imageClassName } = this.props;
     
     return (
-      <div className={fullScreen ? "absolute inset-0" : "w-full lg:w-1/2"}>
+      <div className="lg:hidden absolute inset-0">
         <img
           src={imageSrc}
           alt={imageAlt || 'Hero image'}
-          className={HeroSectionStyleUtils.getImageClasses(imageClassName, fullScreen)}
+          className={HeroSectionStyleUtils.getMobileFullscreenImageClasses(imageClassName)}
+        />
+      </div>
+    );
+  }
+
+  private renderDesktopImage(): React.ReactNode {
+    const { imageSrc, imageAlt, imageClassName } = this.props;
+    
+    return (
+      <div className="hidden lg:block lg:w-1/2 order-1">
+        <img
+          src={imageSrc}
+          alt={imageAlt || 'Hero image'}
+          className={HeroSectionStyleUtils.getDesktopImageClasses(imageClassName)}
         />
       </div>
     );
   }
 
   private renderTextContent(): React.ReactNode {
-    const { header, subheader, paragraph, textClassName, fullScreen } = this.props;
+    const { header, subheader, paragraph, textClassName } = this.props;
     
     return (
-      <div className={HeroSectionStyleUtils.getTextContainerClasses(textClassName, fullScreen)}>
-        <h1 className={HeroSectionStyleUtils.getHeaderClasses(fullScreen)}>
+      <div className={HeroSectionStyleUtils.getResponsiveTextContainerClasses(textClassName)}>
+        <h1 className={HeroSectionStyleUtils.getResponsiveHeaderClasses()}>
           {header}
         </h1>
         
         {subheader && (
-          <h2 className={HeroSectionStyleUtils.getSubheaderClasses(fullScreen)}>
+          <h2 className={HeroSectionStyleUtils.getResponsiveSubheaderClasses()}>
             {subheader}
           </h2>
         )}
         
-        <p className={HeroSectionStyleUtils.getParagraphClasses(fullScreen)}>
+        <p className={HeroSectionStyleUtils.getResponsiveParagraphClasses()}>
           {paragraph}
         </p>
       </div>
     );
   }
 
-  private renderFullScreenLayout(): React.ReactNode {
-    const { className, 'data-testid': dataTestId } = this.props;
-
-    return (
-      <section 
-        className={HeroSectionStyleUtils.getContainerClasses(className, true)}
-        data-testid={dataTestId}
-      >
-        {this.renderImage()}
-        <div className={HeroSectionStyleUtils.getBaseClasses(true)}>
-          {this.renderTextContent()}
-        </div>
-      </section>
-    );
-  }
-
-  private renderDefaultLayout(): React.ReactNode {
-    const { className, 'data-testid': dataTestId } = this.props;
-
-    return (
-      <section 
-        className={HeroSectionStyleUtils.getContainerClasses(className, false)}
-        data-testid={dataTestId}
-      >
-        <div className={HeroSectionStyleUtils.getBaseClasses(false)}>
-          {this.renderImage()}
-          {this.renderTextContent()}
-        </div>
-      </section>
-    );
-  }
-
   render(): React.ReactNode {
-    const { fullScreen } = this.props;
+    const { className, 'data-testid': dataTestId } = this.props;
 
-    return fullScreen ? this.renderFullScreenLayout() : this.renderDefaultLayout();
+    return (
+      <section 
+        className={HeroSectionStyleUtils.getResponsiveContainerClasses(className)}
+        data-testid={dataTestId}
+      >
+        {/* Mobile fullscreen background image */}
+        {this.renderMobileFullscreenImage()}
+        
+        {/* Mobile fullscreen overlay */}
+        <div className="lg:hidden absolute inset-0 bg-black/30"></div>
+        
+        {/* Content container */}
+        <div className={HeroSectionStyleUtils.getResponsiveContentClasses()}>
+          {/* Desktop left side image */}
+          {this.renderDesktopImage()}
+          
+          {/* Text content - mobile centered, desktop right side */}
+          {this.renderTextContent()}
+        </div>
+      </section>
+    );
   }
 }
 
