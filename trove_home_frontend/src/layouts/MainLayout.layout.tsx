@@ -9,7 +9,7 @@ const MainLayout: React.FC = () => {
     <LanguageProvider>
       <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark text-text-DEFAULT dark:text-text-dark transition-colors duration-150">
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow">
           <Outlet />
         </main>
         <Footer />
