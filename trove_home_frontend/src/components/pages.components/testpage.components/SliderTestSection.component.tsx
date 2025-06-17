@@ -19,7 +19,7 @@ const SliderTestSection: React.FC<SliderTestSectionProps> = ({
   handleBrightnessChange,
 }) => {
   return (
-    <div className="bg-background-light border border-gray-200 rounded-lg p-6 mb-8 shadow-sm dark:bg-background-surface_dark dark:border-gray-600">
+    <div className="bg-background-light border border-gray-200 rounded-lg p-6 mb-8 shadow-sm dark:bg-background-dark dark:border-gray-600">
       <h2 className="text-2xl font-bold mb-4 text-text-DEFAULT dark:text-text-dark">
         Slider Components
       </h2>

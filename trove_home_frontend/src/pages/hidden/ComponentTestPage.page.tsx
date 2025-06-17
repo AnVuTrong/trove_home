@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useAppTranslation } from '../i18n/TranslationUtils.utils';
+import { useAppTranslation } from '../../i18n/TranslationUtils.utils';
 import {
   ButtonTestSection,
   ToggleTestSection,
   SliderTestSection,
   InteractiveDemoSection,
-} from '../components/pages.components/testpage.components';
+} from '../../components/pages.components/testpage.components';
 
 const ComponentTestPage: React.FC = () => {
   const { t } = useAppTranslation();
@@ -61,12 +61,12 @@ const ComponentTestPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-white">
-      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+    <div className="max-w-6xl mx-auto p-8 bg-background-light dark:bg-background-dark">
+      <h1 className="text-4xl font-bold text-center mb-8 text-dark">
         {t('componentTest.title')}
       </h1>
       
-      <p className="text-lg text-gray-600 text-center mb-12">
+      <p className="text-lg text-gray-600 text-center mb-12 text-text-DEFAULT dark:text-text-dark">
         {t('componentTest.description')}
       </p>
 

@@ -52,6 +52,6 @@ export const TOGGLE_BASE_CLASSES = {
   INACTIVE_TEXT: 'text-gray-400',
   ACTIVE_ICON: 'text-text-light opacity-100',
   INACTIVE_ICON: 'text-white opacity-90',
-  THUMB_COVERED_ICON: 'text-text-DEFAULT opacity-100',
+  THUMB_COVERED_ICON: 'text-gray-800 dark:text-gray-800 opacity-100',
   THUMB_UNCOVERED_ICON: 'text-white opacity-90',
 } as const;
