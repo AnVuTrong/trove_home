@@ -25,15 +25,15 @@ const InteractiveDemoSection: React.FC<InteractiveDemoSectionProps> = ({
   onResetToDefaults,
 }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">
+    <div className="bg-background-light border border-gray-200 rounded-lg p-6 mb-8 shadow-sm dark:bg-background-surface_dark dark:border-gray-600">
+      <h2 className="text-2xl font-bold mb-4 text-text-DEFAULT dark:text-text-dark">
         Interactive Demo
       </h2>
       <div className="space-y-4">
-        <p className="text-gray-700">
+        <p className="text-text-light dark:text-text-dark">
           Use the controls above to adjust values and click the button to see the current state:
         </p>
-        <div className="bg-gray-50 p-4 rounded-md">
+        <div className="bg-background-DEFAULT p-4 rounded-md dark:bg-background-dark">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <h3 className="font-semibold mb-2">Slider Values:</h3>

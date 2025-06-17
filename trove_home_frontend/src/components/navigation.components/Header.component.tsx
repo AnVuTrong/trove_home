@@ -11,7 +11,7 @@
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
     return (
-      <header className="bg-background-primary shadow-md sticky top-0 z-50 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <header className="bg-background-light shadow-md sticky top-0 z-50 border-b border-gray-200 dark:bg-background-dark dark:border-gray-700">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-primary dark:text-white">
@@ -62,7 +62,7 @@
               
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-text-primary dark:text-white focus:outline-none"
+                className="text-text-DEFAULT dark:text-text-dark focus:outline-none"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMobileMenuOpen ? (

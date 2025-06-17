@@ -23,8 +23,8 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isMobile = false, onIte
           className={({ isActive }) => 
             `flex items-center px-2 py-1 transition-colors duration-200 ${
               isActive 
-                ? 'text-primary font-semibold'
-                : 'text-text-secondary hover:text-primary'
+                ? 'text-primary dark:text-primary-dark font-semibold'
+                : 'text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary-dark'
             }`
           }
           onClick={onItemClick}

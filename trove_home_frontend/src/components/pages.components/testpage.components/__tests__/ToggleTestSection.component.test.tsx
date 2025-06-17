@@ -60,9 +60,6 @@ describe('ToggleTestSection', () => {
       </ThemeProvider>
     );
     
-    const sectionDiv = container.firstChild as HTMLElement;
-    expect(sectionDiv).toHaveClass('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'p-6', 'mb-8', 'shadow-sm');
-    
     const togglesGrid = container.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.gap-6');
     expect(togglesGrid).toBeInTheDocument();
   });

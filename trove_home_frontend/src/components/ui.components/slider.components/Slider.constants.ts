@@ -11,9 +11,9 @@ export const SLIDER_CLASSES = {
   DISABLED: 'opacity-50 cursor-not-allowed',
   CONTAINER: 'w-full',
   LABEL_CONTAINER: 'flex justify-between items-center mb-2',
-  LABEL: 'block text-sm font-medium text-gray-700',
-  VALUE_DISPLAY: 'text-sm text-gray-500 font-medium',
-  MIN_MAX_CONTAINER: 'flex justify-between text-xs text-gray-500 mt-1',
+  LABEL: 'block text-sm font-medium text-text-DEFAULT',
+  VALUE_DISPLAY: 'text-sm text-text-light font-medium',
+  MIN_MAX_CONTAINER: 'flex justify-between text-xs text-text-light mt-1',
 } as const;
 
 export const SLIDER_STYLES = `
@@ -22,25 +22,25 @@ export const SLIDER_STYLES = `
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #3b82f6;
+    background: #3BBF95;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
   slider::-webkit-slider-thumb:hover {
-    background: #2563eb;
+    background: #71F1A1;
     transform: scale(1.1);
   }
   slider::-moz-range-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #3b82f6;
+    background: #3BBF95;
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
   }
   slider::-moz-range-thumb:hover {
-    background: #2563eb;
+    background: #71F1A1;
     transform: scale(1.1);
   }
 `; 

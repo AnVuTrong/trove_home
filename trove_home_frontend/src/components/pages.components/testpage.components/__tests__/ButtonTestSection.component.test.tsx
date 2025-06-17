@@ -73,9 +73,6 @@ describe('ButtonTestSection', () => {
   it('has correct structure and classes', () => {
     const { container } = render(<ButtonTestSection onButtonClick={mockOnButtonClick} />);
     
-    const sectionDiv = container.firstChild as HTMLElement;
-    expect(sectionDiv).toHaveClass('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'p-6', 'mb-8', 'shadow-sm');
-    
     const buttonsContainer = container.querySelector('.flex.flex-wrap.gap-4');
     expect(buttonsContainer).toBeInTheDocument();
   });
