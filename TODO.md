@@ -1,6 +1,2 @@
-- ✅ Check the components in the UI and simplify the code for robust and reusable components
-  - ✅ Delete all UI components
-  - ✅ Only keep the Button component and the Slider component
-  - ✅ Created comprehensive Slider component with tests
-  - ✅ Updated ComponentTestPage to showcase only Button and Slider components
-  - ✅ Simplified index.ts to export only essential components
+- Fix the ThemeToggle component bug that icons is being covered by the thumb and the icons doesn't change color when the toggle is checked or unchecked
+- Fix the LanguageSwitcher component in the header component

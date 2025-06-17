@@ -64,7 +64,7 @@ class Toggle extends React.Component<ToggleProps> {
         <div className={TOGGLE_BASE_CLASSES.LABEL_CONTAINER}>
           <button
             type="button"
-            className={toggleClasses}
+            className={`${toggleClasses} ${className}`.trim()}
             role="switch"
             aria-checked={checked}
             aria-label={label}

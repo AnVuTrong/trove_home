@@ -6,7 +6,6 @@ interface InteractiveDemoSectionProps {
   volumeValue: number;
   brightnessValue: number;
   notificationToggle: boolean;
-  darkModeToggle: boolean;
   autoSaveToggle: boolean;
   largeToggle: boolean;
   smallToggle: boolean;
@@ -19,7 +18,6 @@ const InteractiveDemoSection: React.FC<InteractiveDemoSectionProps> = ({
   volumeValue,
   brightnessValue,
   notificationToggle,
-  darkModeToggle,
   autoSaveToggle,
   largeToggle,
   smallToggle,
@@ -46,7 +44,7 @@ const InteractiveDemoSection: React.FC<InteractiveDemoSectionProps> = ({
             <div>
               <h3 className="font-semibold mb-2">Toggle States:</h3>
               <p><strong>Notifications:</strong> {notificationToggle ? 'On' : 'Off'}</p>
-              <p><strong>Dark Mode:</strong> {darkModeToggle ? 'On' : 'Off'}</p>
+              <p><strong>Theme:</strong> Controlled by global theme context</p>
               <p><strong>Auto Save:</strong> {autoSaveToggle ? 'On' : 'Off'}</p>
               <p><strong>Large Toggle:</strong> {largeToggle ? 'On' : 'Off'}</p>
               <p><strong>Small Toggle:</strong> {smallToggle ? 'On' : 'Off'}</p>

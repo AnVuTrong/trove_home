@@ -9,7 +9,6 @@ describe('InteractiveDemoSection', () => {
     volumeValue: 75,
     brightnessValue: 30,
     notificationToggle: true,
-    darkModeToggle: false,
     autoSaveToggle: true,
     largeToggle: false,
     smallToggle: true,
@@ -48,7 +47,7 @@ describe('InteractiveDemoSection', () => {
       return element?.textContent === 'Notifications: On';
     })).toBeInTheDocument();
     expect(screen.getByText((content, element) => {
-      return element?.textContent === 'Dark Mode: Off';
+      return element?.textContent === 'Theme: Controlled by global theme context';
     })).toBeInTheDocument();
     expect(screen.getByText((content, element) => {
       return element?.textContent === 'Auto Save: On';

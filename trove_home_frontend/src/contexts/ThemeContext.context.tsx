@@ -14,17 +14,37 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') {
+      return false; // Default to light mode in SSR/test environments
+    }
+
     // Check if theme preference is stored in localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme === 'dark';
     }
     
-    // Check system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Check system preference (with fallback for test environments)
+    if (window.matchMedia) {
+      try {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        return mediaQuery && mediaQuery.matches;
+      } catch (error) {
+        // Fallback if matchMedia fails
+        return false;
+      }
+    }
+    
+    return false; // Default fallback
   });
 
   useEffect(() => {
+    // Only run in browser environment
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     // Save theme preference to localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     

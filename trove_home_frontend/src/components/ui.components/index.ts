@@ -15,3 +15,5 @@ export type { SliderProps } from './slider.components/Slider.types';
 
 export { default as Toggle } from './toggle.components/Toggle.component';
 export type { ToggleProps, ToggleSize, ToggleVariant } from './toggle.components/Toggle.types';
+
+export { ThemeToggle } from './theme.components';

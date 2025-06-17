@@ -17,7 +17,6 @@ const ComponentTestPage: React.FC = () => {
   
   // Toggle states
   const [notificationToggle, setNotificationToggle] = useState<boolean>(true);
-  const [darkModeToggle, setDarkModeToggle] = useState<boolean>(false);
   const [autoSaveToggle, setAutoSaveToggle] = useState<boolean>(true);
   const [largeToggle, setLargeToggle] = useState<boolean>(false);
   const [smallToggle, setSmallToggle] = useState<boolean>(true);
@@ -45,7 +44,6 @@ const ComponentTestPage: React.FC = () => {
       Volume: ${volumeValue}
       Brightness: ${brightnessValue}
       Notifications: ${notificationToggle}
-      Dark Mode: ${darkModeToggle}
       Auto Save: ${autoSaveToggle}
       Large Toggle: ${largeToggle}
       Small Toggle: ${smallToggle}
@@ -57,7 +55,6 @@ const ComponentTestPage: React.FC = () => {
     setVolumeValue(75);
     setBrightnessValue(30);
     setNotificationToggle(true);
-    setDarkModeToggle(false);
     setAutoSaveToggle(true);
     setLargeToggle(false);
     setSmallToggle(true);
@@ -77,12 +74,10 @@ const ComponentTestPage: React.FC = () => {
 
       <ToggleTestSection
         notificationToggle={notificationToggle}
-        darkModeToggle={darkModeToggle}
         autoSaveToggle={autoSaveToggle}
         largeToggle={largeToggle}
         smallToggle={smallToggle}
         setNotificationToggle={setNotificationToggle}
-        setDarkModeToggle={setDarkModeToggle}
         setAutoSaveToggle={setAutoSaveToggle}
         setLargeToggle={setLargeToggle}
         setSmallToggle={setSmallToggle}
@@ -102,7 +97,6 @@ const ComponentTestPage: React.FC = () => {
         volumeValue={volumeValue}
         brightnessValue={brightnessValue}
         notificationToggle={notificationToggle}
-        darkModeToggle={darkModeToggle}
         autoSaveToggle={autoSaveToggle}
         largeToggle={largeToggle}
         smallToggle={smallToggle}

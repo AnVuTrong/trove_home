@@ -2,16 +2,15 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ToggleTestSection from '../ToggleTestSection.component';
+import { ThemeProvider } from '../../../../contexts/ThemeContext.context';
 
 describe('ToggleTestSection', () => {
   const mockProps = {
     notificationToggle: true,
-    darkModeToggle: false,
     autoSaveToggle: true,
     largeToggle: false,
     smallToggle: true,
     setNotificationToggle: jest.fn(),
-    setDarkModeToggle: jest.fn(),
     setAutoSaveToggle: jest.fn(),
     setLargeToggle: jest.fn(),
     setSmallToggle: jest.fn(),
@@ -22,25 +21,46 @@ describe('ToggleTestSection', () => {
   });
 
   it('renders the toggle test section with correct title', () => {
-    render(<ToggleTestSection {...mockProps} />);
+    render(
+      <ThemeProvider>
+        <ToggleTestSection {...mockProps} />
+      </ThemeProvider>
+    );
     
     expect(screen.getByText('Toggle Components')).toBeInTheDocument();
   });
 
   it('renders all toggle components with correct labels', () => {
-    render(<ToggleTestSection {...mockProps} />);
+    render(
+      <ThemeProvider>
+        <ToggleTestSection {...mockProps} />
+      </ThemeProvider>
+    );
     
-    expect(screen.getByText('Notifications')).toBeInTheDocument();
+    expect(screen.getByText('Enable Notifications')).toBeInTheDocument();
     expect(screen.getByText('Light')).toBeInTheDocument();
     expect(screen.getByText('Dark')).toBeInTheDocument();
-    expect(screen.getByText('Auto Save')).toBeInTheDocument();
-    expect(screen.getByText('Disabled Toggle')).toBeInTheDocument();
-    expect(screen.getByText('Large Size')).toBeInTheDocument();
-    expect(screen.getByText('Small Size')).toBeInTheDocument();
+    expect(screen.getByText('Theme Mode')).toBeInTheDocument();
+    expect(screen.getByText('Auto Save Documents')).toBeInTheDocument();
+    expect(screen.getByText('Manual')).toBeInTheDocument();
+    expect(screen.getByText('Auto')).toBeInTheDocument();
+    expect(screen.getByText('Disabled Feature')).toBeInTheDocument();
+    expect(screen.getByText('Large Display Size')).toBeInTheDocument();
+    expect(screen.getByText('Compact View Mode')).toBeInTheDocument();
+    expect(screen.getByText('Off')).toBeInTheDocument();
+    expect(screen.getByText('On')).toBeInTheDocument();
+    expect(screen.getByText('Normal')).toBeInTheDocument();
+    expect(screen.getByText('Large')).toBeInTheDocument();
+    expect(screen.getByText('Full')).toBeInTheDocument();
+    expect(screen.getByText('Compact')).toBeInTheDocument();
   });
 
   it('has correct structure and classes', () => {
-    const { container } = render(<ToggleTestSection {...mockProps} />);
+    const { container } = render(
+      <ThemeProvider>
+        <ToggleTestSection {...mockProps} />
+      </ThemeProvider>
+    );
     
     const sectionDiv = container.firstChild as HTMLElement;
     expect(sectionDiv).toHaveClass('bg-white', 'border', 'border-gray-200', 'rounded-lg', 'p-6', 'mb-8', 'shadow-sm');
@@ -50,7 +70,11 @@ describe('ToggleTestSection', () => {
   });
 
   it('passes correct props to toggle components', () => {
-    render(<ToggleTestSection {...mockProps} />);
+    render(
+      <ThemeProvider>
+        <ToggleTestSection {...mockProps} />
+      </ThemeProvider>
+    );
     
     // Check if toggles are rendered with correct initial states
     const toggleElements = screen.getAllByRole('switch');
