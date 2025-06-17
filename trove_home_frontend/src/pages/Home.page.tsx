@@ -14,8 +14,7 @@ const HomePage: React.FC = () => {
         header={t('app.title') as string}
         subheader={t('common.welcome') as string}
         paragraph={t('app.description') as string}
-        className="py-16 lg:py-24"
-        imageClassName="max-w-md mx-auto"
+        fullScreen={true}
         data-testid="home-hero-section"
       />
     </div>

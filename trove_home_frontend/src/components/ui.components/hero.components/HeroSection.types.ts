@@ -9,6 +9,7 @@ export interface HeroSectionProps {
   className?: string;
   imageClassName?: string;
   textClassName?: string;
+  fullScreen?: boolean;
   'data-testid'?: string;
 }
 

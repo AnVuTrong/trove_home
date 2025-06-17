@@ -11,11 +11,11 @@
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
     return (
-      <header className="bg-background-light shadow-md sticky top-0 z-50 border-b border-gray-200 dark:bg-background-dark dark:border-gray-700">
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-sm hover:bg-white/90 hover:backdrop-blur-md dark:bg-black/10 dark:hover:bg-black/90 hover:shadow-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-primary dark:text-white">
-              {/* Light theme logo */}
+            <Link to={ROUTES.HOME} className="flex items-center text-xl font-bold text-white hover:text-gray-900 dark:text-white dark:hover:text-white transition-colors duration-300">
+              {/* Light theme logo - now using white for overlay */}
               <img 
                 src={TroveLogoGreen} 
                 alt="Trove Logo" 
@@ -62,7 +62,7 @@
               
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-text-DEFAULT dark:text-text-dark focus:outline-none"
+                className="text-white hover:text-gray-900 dark:text-white dark:hover:text-white focus:outline-none transition-colors duration-300"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMobileMenuOpen ? (
@@ -77,9 +77,9 @@
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-3 py-2 border-t border-gray-200 dark:border-gray-700">
+            <div className="md:hidden mt-3 py-2 border-t border-white/20 hover:border-gray-200 dark:border-white/20 dark:hover:border-gray-700 transition-colors duration-300">
               <NavigationMenu isMobile onItemClick={() => setIsMobileMenuOpen(false)} />
-              <div className="mt-4 pt-2 border-t border-gray-200 dark:border-gray-700">
+              <div className="mt-4 pt-2 border-t border-white/20 hover:border-gray-200 dark:border-white/20 dark:hover:border-gray-700 transition-colors duration-300">
                 <LanguageToggle
                   size="sm"
                   variant="primary"

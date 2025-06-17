@@ -10,9 +10,12 @@ module.exports = {
         // Primary branding colors are based on the core identity.
         // Brunswick Green is the anchor, while Mint is used for primary components in Dark Mode.
         primary: {
-          DEFAULT: '#2D4C3C', // Brunswick Green: For main branding, footers, solid sections.
+          DEFAULT: '#3BBF95',
           light: '#61CA7F',   // Emerald: A lighter variant for hover states or secondary branding.
           dark: '#3BBF95',    // Mint: The primary color for components in Dark Mode.
+        },
+        secondary: {
+          DEFAULT: '#2D4C3C', // Brunswick Green: For main branding, footers, solid sections.
         },
         // Accent colors are for user interaction and calls-to-action (CTAs).
         accent: {
