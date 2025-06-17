@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="min-h-screen">
+    <div>
       <HeroSection
         imageSrc={fluidHolograph}
         imageAlt="Trove - Investment Tools Platform"
