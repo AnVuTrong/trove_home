@@ -25,6 +25,20 @@ module.exports = {
           DEFAULT: '#2D2D2D', // Jet: Main text color on light backgrounds for max readability.
           light: '#363B38',   // Black Olive: Softer text for subtitles or less important info.
           dark: '#FFFFFF',    // White: Main text color on dark backgrounds.
+          // Heading colors for light theme
+          light_h1: '#3bbf95',      // Darker variant for main headings
+          light_h2: '#3bbf95',      // Primary text color for secondary headings
+          light_h3: '#3bbf95',      // Slightly softer for tertiary headings
+          light_h4: '#3bbf95',      // Medium gray for quaternary headings
+          light_h5: '#3bbf95',      // Lighter gray for quinary headings
+          light_h6: '#3bbf95',      // Lightest gray for senary headings
+          // Heading colors for dark theme
+          dark_h1: '#71f1a1',    // Pure white for main headings in dark mode
+          dark_h2: '#71f1a1',    // Slightly off-white for secondary headings
+          dark_h3: '#71f1a1',    // Light gray for tertiary headings
+          dark_h4: '#71f1a1',    // Medium light gray for quaternary headings
+          dark_h5: '#71f1a1',    // Darker gray for quinary headings
+          dark_h6: '#71f1a1',    // Even darker gray for senary headings
         },
         // Background colors for the overall theme.
         background: {

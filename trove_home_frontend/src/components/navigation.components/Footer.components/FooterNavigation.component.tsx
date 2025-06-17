@@ -11,7 +11,7 @@ const FooterNavigation: React.FC = () => {
 
   return (
     <div>
-      <h3 className="text-primary dark:text-primary-dark font-bold mb-4">
+      <h3 className="text-primary dark:text-text-dark_h1 font-bold mb-4">
         {t('footer.quickLinks')}
       </h3>
       <ul className="space-y-2">

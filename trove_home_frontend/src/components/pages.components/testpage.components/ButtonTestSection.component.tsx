@@ -11,7 +11,7 @@ const ButtonTestSection: React.FC<ButtonTestSectionProps> = ({ onButtonClick }) 
 
   return (
     <div className="bg-background-light border border-gray-200 rounded-lg p-6 mb-8 shadow-sm dark:bg-background-dark dark:border-gray-600">
-      <h2 className="text-2xl font-bold mb-4 text-text-DEFAULT dark:text-text-dark">
+      <h2 className="text-2xl font-bold mb-4 text-text-DEFAULT dark:text-text-dark_h1">
         {t('componentTest.buttons.title')}
       </h2>
       <div className="flex flex-wrap gap-4">
