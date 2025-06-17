@@ -4,7 +4,7 @@ globs:
 alwaysApply: true
 ---
 # Cursor rules:
-- Always write and run unit test for every functions to check if it's in correct schemas, type and functionality
+- Always write and run unit test for every functions to check if it's in correct schemas, type and functionality. You don't have to test the appearance of the UI such as Tailwind CSS
 - Always follow OOP rules and industrial best practices
 - Each function can only do one job and single purposes
 - Keep code simple and easy to maintain, function and smooth operation so hundred of people can works on this project without getting mad

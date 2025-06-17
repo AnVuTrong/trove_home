@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Slider, { SliderProps } from '../Slider.component';
+import Slider from '../slider.components/Slider.component';
+import { SliderProps } from '../slider.components/Slider.types';
 
 describe('Slider Component', () => {
   const defaultProps: SliderProps = {
