@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/Routes.constant';
 import { ThemeToggle } from '../ui.components';
-import LanguageSwitcher from './LanguageSwitcher.component';
+import LanguageToggle from './LanguageToggle.component';
 import NavigationMenu from './NavigationMenu.component';
 import TroveLogo from '../../assets/trove_images/trove_simple_green_logo.png';
 
@@ -30,7 +30,13 @@ const Header: React.FC = () => {
               data-testid="theme-toggle"
             />
             
-            <LanguageSwitcher />
+            {/* Language Toggle */}
+            <LanguageToggle
+              size="sm"
+              variant="primary"
+              showLabel={false}
+              data-testid="language-toggle"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -63,7 +69,12 @@ const Header: React.FC = () => {
           <div className="md:hidden mt-3 py-2 border-t border-gray-200 dark:border-gray-700">
             <NavigationMenu isMobile onItemClick={() => setIsMobileMenuOpen(false)} />
             <div className="mt-4 pt-2 border-t border-gray-200 dark:border-gray-700">
-              <LanguageSwitcher />
+              <LanguageToggle
+                size="sm"
+                variant="primary"
+                showLabel={true}
+                data-testid="mobile-language-toggle"
+              />
             </div>
           </div>
         )}
