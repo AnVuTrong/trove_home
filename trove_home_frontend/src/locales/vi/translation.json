@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Trove Home",
-    "description": "Tools đầu tư Trove"
+    "description": "Tools đầu tư Trove"
   },
   "navigation": {
     "home": "Trang chủ",
@@ -42,6 +42,64 @@
   "footer": {
     "quickLinks": "Liên kết nhanh",
     "contactUs": "Liên hệ"
+  },
+  "about": {
+    "title": "Giới thiệu Trove",
+    "subtitle": "Đổi mới trong Công nghệ Đầu tư",
+    "hero": {
+      "title": "Giới thiệu Trove",
+      "description": "Chúng tôi cam kết cách mạng hóa bối cảnh đầu tư thông qua công nghệ đổi mới và trải nghiệm người dùng đặc biệt."
+    },
+    "company": {
+      "title": "Về Công ty Chúng tôi",
+      "description": "Trove là một nền tảng đầu tư tiên tiến kết hợp công nghệ tiên tiến với thiết kế lấy người dùng làm trung tâm để cung cấp các giải pháp đầu tư liền mạch. Sứ mệnh của chúng tôi là dân chủ hóa việc tiếp cận các công cụ đầu tư tinh vi và làm cho tăng trưởng tài chính có thể tiếp cận được với mọi người.",
+      "placeholder": "Phần này được dành riêng cho thông tin chi tiết về công ty Trove. Tại đây bạn có thể giải thích tầm nhìn, sứ mệnh, giá trị, lịch sử của công ty và điều gì làm cho Trove trở nên độc đáo trong lĩnh vực công nghệ đầu tư."
+    },
+    "team": {
+      "title": "Đội ngũ của chúng tôi",
+      "subtitle": "Gặp gỡ những cá nhân đầy đam mê đứng sau Trove",
+      "members": {
+        "member1": {
+          "name": "Thành viên 1",
+          "position": "Chức danh",
+          "description": "Mô tả ngắn gọn về vai trò và chuyên môn của thành viên 1 trong công ty."
+        },
+        "member2": {
+          "name": "Thành viên 2",
+          "position": "Chức danh",
+          "description": "Mô tả ngắn gọn về vai trò và chuyên môn của thành viên 2 trong công ty."
+        },
+        "member3": {
+          "name": "Thành viên 3",
+          "position": "Chức danh",
+          "description": "Mô tả ngắn gọn về vai trò và chuyên môn của thành viên 3 trong công ty."
+        },
+        "member4": {
+          "name": "Thành viên 4",
+          "position": "Chức danh",
+          "description": "Mô tả ngắn gọn về vai trò và chuyên môn của thành viên 4 trong công ty."
+        }
+      }
+    },
+    "values": {
+      "title": "Giá trị của chúng tôi",
+      "innovation": {
+        "title": "Đổi mới",
+        "description": "Chúng tôi liên tục đẩy mạnh ranh giới của những gì có thể trong công nghệ đầu tư."
+      },
+      "transparency": {
+        "title": "Minh bạch",
+        "description": "Chúng tôi tin vào giao tiếp rõ ràng, trung thực và thực tiễn kinh doanh minh bạch."
+      },
+      "excellence": {
+        "title": "Xuất sắc",
+        "description": "Chúng tôi phấn đấu cho sự xuất sắc trong mọi việc chúng tôi làm, từ phát triển sản phẩm đến dịch vụ khách hàng."
+      },
+      "accessibility": {
+        "title": "Khả năng tiếp cận",
+        "description": "Chúng tôi làm cho các công cụ đầu tư tinh vi có thể tiếp cận được với mọi người, bất kể mức độ kinh nghiệm của họ."
+      }
+    }
   },
   "componentTest": {
     "title": "Trang Test UI Components",

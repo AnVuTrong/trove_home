@@ -43,6 +43,64 @@
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us"
   },
+  "about": {
+    "title": "About Trove",
+    "subtitle": "Innovation in Investment Technology",
+    "hero": {
+      "title": "About Trove",
+      "description": "We are dedicated to revolutionizing the investment landscape through innovative technology and exceptional user experiences."
+    },
+    "company": {
+      "title": "About Our Company",
+      "description": "Trove is a cutting-edge investment platform that combines advanced technology with user-centric design to provide seamless investment solutions. Our mission is to democratize access to sophisticated investment tools and make financial growth accessible to everyone.",
+      "placeholder": "This section is reserved for detailed company information about Trove. Here you can explain your company's vision, mission, values, history, and what makes Trove unique in the investment technology space."
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Meet the passionate individuals behind Trove",
+      "members": {
+        "member1": {
+          "name": "Team Member 1",
+          "position": "Position Title",
+          "description": "Brief description about team member 1's role and expertise in the company."
+        },
+        "member2": {
+          "name": "Team Member 2",
+          "position": "Position Title",
+          "description": "Brief description about team member 2's role and expertise in the company."
+        },
+        "member3": {
+          "name": "Team Member 3",
+          "position": "Position Title",
+          "description": "Brief description about team member 3's role and expertise in the company."
+        },
+        "member4": {
+          "name": "Team Member 4",
+          "position": "Position Title",
+          "description": "Brief description about team member 4's role and expertise in the company."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We constantly push the boundaries of what's possible in investment technology."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "We believe in clear, honest communication and transparent business practices."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for excellence in everything we do, from product development to customer service."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "We make sophisticated investment tools accessible to everyone, regardless of their experience level."
+      }
+    }
+  },
   "componentTest": {
     "title": "UI Components Test Page",
     "description": "This page showcases all the available UI components in the design system.",
