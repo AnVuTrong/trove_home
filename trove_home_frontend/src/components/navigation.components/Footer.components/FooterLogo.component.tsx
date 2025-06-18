@@ -15,10 +15,14 @@ import {
  * A reusable footer logo component with configurable variants
  * Follows OOP principles with proper separation of concerns
  */
-class FooterLogo extends React.Component<FooterLogoProps> {
-  private renderLogo(): React.ReactNode {
-    const { variant = 'wordmark' } = this.props;
+const FooterLogo: React.FC<FooterLogoProps> = ({
+  variant = 'wordmark',
+  className = '',
+  'data-testid': dataTestId = 'footer-logo'
+}) => {
+  const { t } = useTranslation();
 
+  const renderLogo = (): React.ReactNode => {
     return (
       <div className={FOOTER_LOGO_IMAGE_CONTAINER_CLASSES}>
         {/* Light theme logo */}
@@ -35,40 +39,25 @@ class FooterLogo extends React.Component<FooterLogoProps> {
         />
       </div>
     );
-  }
+  };
 
-  private renderDescription(): React.ReactNode {
-    const { t } = useTranslation();
-
+  const renderDescription = (): React.ReactNode => {
     return (
       <p className={FOOTER_LOGO_DESCRIPTION_CLASSES}>
         {t('footer.description')}
       </p>
     );
-  }
+  };
 
-  render(): React.ReactNode {
-    const { 
-      className = '',
-      'data-testid': dataTestId = 'footer-logo'
-    } = this.props;
-
-    return (
-      <div 
-        className={`${FOOTER_LOGO_CONTAINER_CLASSES} ${className}`.trim()}
-        data-testid={dataTestId}
-      >
-        {this.renderLogo()}
-        {this.renderDescription()}
-      </div>
-    );
-  }
-}
-
-// Export functional component for backward compatibility
-const FooterLogoFC: React.FC<FooterLogoProps> = (props) => {
-  const { t } = useTranslation();
-  return <FooterLogo {...props} />;
+  return (
+    <div 
+      className={`${FOOTER_LOGO_CONTAINER_CLASSES} ${className}`.trim()}
+      data-testid={dataTestId}
+    >
+      {renderLogo()}
+      {renderDescription()}
+    </div>
+  );
 };
 
-export default FooterLogoFC; 
+export default FooterLogo; 

@@ -13,20 +13,21 @@ import {
  * A reusable footer contact component
  * Follows OOP principles with proper separation of concerns
  */
-class FooterContact extends React.Component<FooterContactProps> {
-  private renderTitle(): React.ReactNode {
-    const { t } = useTranslation();
+const FooterContact: React.FC<FooterContactProps> = ({
+  className = '',
+  'data-testid': dataTestId = 'footer-contact'
+}) => {
+  const { t } = useTranslation();
 
+  const renderTitle = (): React.ReactNode => {
     return (
       <h3 className={FOOTER_CONTACT_TITLE_CLASSES}>
         {t('footer.contact')}
       </h3>
     );
-  }
+  };
 
-  private renderContactItems(): React.ReactNode {
-    const { t } = useTranslation();
-
+  const renderContactItems = (): React.ReactNode => {
     return (
       <ul className={FOOTER_CONTACT_LIST_CLASSES}>
         <li>
@@ -52,30 +53,17 @@ class FooterContact extends React.Component<FooterContactProps> {
         </li>
       </ul>
     );
-  }
+  };
 
-  render(): React.ReactNode {
-    const { 
-      className = '',
-      'data-testid': dataTestId = 'footer-contact'
-    } = this.props;
-
-    return (
-      <div 
-        className={className}
-        data-testid={dataTestId}
-      >
-        {this.renderTitle()}
-        {this.renderContactItems()}
-      </div>
-    );
-  }
-}
-
-// Export functional component for backward compatibility
-const FooterContactFC: React.FC<FooterContactProps> = (props) => {
-  const { t } = useTranslation();
-  return <FooterContact {...props} />;
+  return (
+    <div 
+      className={className}
+      data-testid={dataTestId}
+    >
+      {renderTitle()}
+      {renderContactItems()}
+    </div>
+  );
 };
 
-export default FooterContactFC; 
+export default FooterContact; 
