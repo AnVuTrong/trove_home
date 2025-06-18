@@ -1,15 +1,52 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { FooterCopyrightProps } from '../Footer.types';
+import { FooterLogicUtils } from '../Footer.utils';
+import {
+  FOOTER_COPYRIGHT_CONTAINER_CLASSES,
+  FOOTER_COPYRIGHT_TEXT_CLASSES
+} from '../Footer.constants';
 
-const FooterCopyright: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+/**
+ * FooterCopyright Component
+ * 
+ * A reusable footer copyright component
+ * Follows OOP principles with proper separation of concerns
+ */
+class FooterCopyright extends React.Component<FooterCopyrightProps> {
+  private renderCopyrightText(): React.ReactNode {
+    const { t } = useTranslation();
+    const companyName = t('company.name', 'Trove Investment');
+    const copyrightText = FooterLogicUtils.formatCopyrightText(companyName);
 
-  return (
-    <div className="mt-8 pt-4 border-t border-primary-light dark:border-primary-dark text-center">
-      <p className="text-text-light dark:text-text-dark">
-        © {currentYear} TROVE INVESTMENT. All rights reserved.
+    return (
+      <p className={FOOTER_COPYRIGHT_TEXT_CLASSES}>
+        {copyrightText}
       </p>
-    </div>
-  );
+    );
+  }
+
+  render(): React.ReactNode {
+    const { 
+      className = '',
+      'data-testid': dataTestId = 'footer-copyright'
+    } = this.props;
+
+    return (
+      <div 
+        className={`${FOOTER_COPYRIGHT_CONTAINER_CLASSES} ${className}`.trim()}
+        data-testid={dataTestId}
+      >
+        {this.renderCopyrightText()}
+      </div>
+    );
+  }
+}
+
+// Export functional component for backward compatibility
+const FooterCopyrightFC: React.FC<FooterCopyrightProps> = (props) => {
+  const { t } = useTranslation();
+  return <FooterCopyright {...props} />;
 };
 
-export default FooterCopyright; 
+export default FooterCopyrightFC; 
