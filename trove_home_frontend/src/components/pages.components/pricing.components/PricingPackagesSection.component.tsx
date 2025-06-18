@@ -114,10 +114,14 @@ const PricingPackagesSection: React.FC<PricingPackagesSectionProps> = ({
   const packages = ['starter', 'professional', 'enterprise', 'premium'];
 
   return (
-    <section className={`${PricingPackagesSectionClass.getSectionContainerClasses()} ${className}`}>
+    <section 
+      className={`${PricingPackagesSectionClass.getSectionContainerClasses()} ${className}`}
+      role="region"
+      aria-labelledby="packages-title"
+    >
       <div className={PricingPackagesSectionClass.getContentContainerClasses()}>
         <div className={PricingPackagesSectionClass.getHeaderContainerClasses()}>
-          <h2 className={PricingPackagesSectionClass.getTitleClasses()}>
+          <h2 id="packages-title" className={PricingPackagesSectionClass.getTitleClasses()}>
             {t(titleKey)}
           </h2>
           <p className={PricingPackagesSectionClass.getSubtitleClasses()}>
@@ -159,18 +163,23 @@ const PricingPackagesSection: React.FC<PricingPackagesSectionProps> = ({
                   {(() => {
                     try {
                       const features = t(`pricing.packages.${packageKey}.features`, { returnObjects: true });
-                      const featuresArray = Array.isArray(features) ? features : [];
-                      return featuresArray.length > 0 ? featuresArray.map((feature, index) => (
+                      const featuresArray = Array.isArray(features) && features.length > 0 ? features : null;
+                      
+                      if (!featuresArray) {
+                        return (
+                          <li className={PricingPackagesSectionClass.getFeatureClasses()}>
+                            <CheckIcon />
+                            <span className="text-gray-700 dark:text-gray-300">Features coming soon...</span>
+                          </li>
+                        );
+                      }
+                      
+                      return featuresArray.map((feature, index) => (
                         <li key={index} className={PricingPackagesSectionClass.getFeatureClasses()}>
                           <CheckIcon />
                           <span className="text-gray-700 dark:text-gray-300">{String(feature)}</span>
                         </li>
-                      )) : (
-                        <li className={PricingPackagesSectionClass.getFeatureClasses()}>
-                          <CheckIcon />
-                          <span className="text-gray-700 dark:text-gray-300">Features coming soon...</span>
-                        </li>
-                      );
+                      ));
                     } catch (error) {
                       return (
                         <li className={PricingPackagesSectionClass.getFeatureClasses()}>

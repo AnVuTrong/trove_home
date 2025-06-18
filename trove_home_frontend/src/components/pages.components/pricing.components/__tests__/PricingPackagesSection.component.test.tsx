@@ -115,26 +115,37 @@ describe('PricingPackagesSection Component', () => {
   });
 
   it('handles empty or invalid features gracefully', () => {
-    // Mock t function that returns invalid features
-    const mockT = jest.fn((key: string, options?: any) => {
-      if (key.includes('.features') && options?.returnObjects) {
-        return null; // Invalid return
-      }
-      if (key.includes('.popular')) {
-        return 'false';
-      }
-      return 'Test Value';
-    });
+    // Create a temporary mock that returns null features
+    const originalMock = require('react-i18next').useTranslation;
     
-    jest.doMock('react-i18next', () => ({
-      ...jest.requireActual('react-i18next'),
-      useTranslation: () => ({ t: mockT }),
+    // Override the mock for this test
+    (require('react-i18next') as any).useTranslation = jest.fn(() => ({
+      t: (key: string, options?: any) => {
+        if (key.includes('.features') && options?.returnObjects) {
+          return null; // Invalid return to trigger fallback
+        }
+        if (key.includes('.popular')) {
+          return 'false';
+        }
+        if (key === 'pricing.packages.title') {
+          return 'Choose Your Plan';
+        }
+        if (key === 'pricing.packages.subtitle') {
+          return 'All plans include our core features';
+        }
+        return 'Test Value';
+      },
     }));
 
-    renderComponent();
-    
-    // Should show fallback text
-    expect(screen.getAllByText('Features coming soon...')).toHaveLength(4);
+    try {
+      renderComponent();
+      
+      // Should show fallback text
+      expect(screen.getAllByText('Features coming soon...')).toHaveLength(4);
+    } finally {
+      // Restore the original mock
+      (require('react-i18next') as any).useTranslation = originalMock;
+    }
   });
 });
 

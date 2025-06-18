@@ -116,7 +116,14 @@ const SimpleLineChart: React.FC = () => {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <svg width="100%" height="100%" viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full h-full">
+      <svg 
+        width="100%" 
+        height="100%" 
+        viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
+        className="w-full h-full"
+        role="img"
+        aria-label="Performance chart showing portfolio vs benchmark"
+      >
         {/* Grid lines */}
         {[0, 10, 20, 30, 40, 50].map(value => (
           <g key={value}>
@@ -250,10 +257,14 @@ const PricingPerformanceSection: React.FC<PricingPerformanceSectionProps> = ({
   const displayMetrics = Object.keys(metrics).length > 0 ? metrics : fallbackMetrics;
 
   return (
-    <section className={`${PricingPerformanceSectionClass.getSectionContainerClasses()} ${className}`}>
+    <section 
+      className={`${PricingPerformanceSectionClass.getSectionContainerClasses()} ${className}`}
+      role="region"
+      aria-labelledby="performance-title"
+    >
       <div className={PricingPerformanceSectionClass.getContentContainerClasses()}>
         <div className={PricingPerformanceSectionClass.getHeaderContainerClasses()}>
-          <h2 className={PricingPerformanceSectionClass.getTitleClasses()}>
+          <h2 id="performance-title" className={PricingPerformanceSectionClass.getTitleClasses()}>
             {t(titleKey)}
           </h2>
           <p className={PricingPerformanceSectionClass.getSubtitleClasses()}>

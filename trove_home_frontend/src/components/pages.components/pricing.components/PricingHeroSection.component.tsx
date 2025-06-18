@@ -39,9 +39,13 @@ const PricingHeroSection: React.FC<PricingHeroSectionProps> = ({
   const { t } = useTranslation();
 
   return (
-    <section className={`${PricingHeroSectionClass.getSectionContainerClasses()} ${className}`}>
+    <section 
+      className={`${PricingHeroSectionClass.getSectionContainerClasses()} ${className}`}
+      role="region"
+      aria-labelledby="pricing-hero-title"
+    >
       <div className={PricingHeroSectionClass.getContentContainerClasses()}>
-        <h1 className={PricingHeroSectionClass.getTitleClasses()}>
+        <h1 id="pricing-hero-title" className={PricingHeroSectionClass.getTitleClasses()}>
           {t(titleKey)}
         </h1>
         <p className={PricingHeroSectionClass.getDescriptionClasses()}>

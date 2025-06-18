@@ -74,24 +74,35 @@ describe('PricingTestimonialsSection Component', () => {
   });
 
   it('displays fallback testimonial when no testimonials are loaded', () => {
-    // Mock empty testimonials
-    const mockT = jest.fn((key: string, options?: any) => {
-      if (key === 'pricing.testimonials.items' && options?.returnObjects) {
-        return [];
-      }
-      return key;
-    });
+    // Create a temporary mock that returns empty testimonials
+    const originalMock = require('react-i18next').useTranslation;
     
-    jest.doMock('react-i18next', () => ({
-      ...jest.requireActual('react-i18next'),
-      useTranslation: () => ({ t: mockT }),
+    // Override the mock for this test
+    (require('react-i18next') as any).useTranslation = jest.fn(() => ({
+      t: (key: string, options?: any) => {
+        const translations: Record<string, any> = {
+          'pricing.testimonials.title': 'What Our Customers Say',
+          'pricing.testimonials.subtitle': 'Don\'t just take our word for it',
+          'pricing.testimonials.items': [] // Empty array to trigger fallback
+        };
+        
+        if (options?.returnObjects) {
+          return translations[key] || [];
+        }
+        return translations[key] || key;
+      },
     }));
 
-    renderComponent();
-    
-    expect(screen.getByText('Happy Customer')).toBeInTheDocument();
-    expect(screen.getByText('Investor')).toBeInTheDocument();
-    expect(screen.getByText('Trove User')).toBeInTheDocument();
+    try {
+      renderComponent();
+      
+      expect(screen.getByText('Happy Customer')).toBeInTheDocument();
+      expect(screen.getByText('Investor')).toBeInTheDocument();
+      expect(screen.getByText('Trove User')).toBeInTheDocument();
+    } finally {
+      // Restore the original mock
+      (require('react-i18next') as any).useTranslation = originalMock;
+    }
   });
 
   it('displays star ratings for testimonials', () => {
