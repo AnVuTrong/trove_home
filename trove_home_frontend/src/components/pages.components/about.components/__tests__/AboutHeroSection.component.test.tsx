@@ -46,6 +46,24 @@ describe('AboutHeroSection Component', () => {
       const section = container.querySelector('section');
       expect(section).toHaveClass(customClassName);
     });
+
+    it('should render overlay and content container', () => {
+      const { container } = renderWithI18n(<AboutHeroSection />);
+      
+      const overlay = container.querySelector('div[class*="absolute"]');
+      const contentContainer = container.querySelector('div[class*="relative"][class*="z-10"]');
+      
+      expect(overlay).toBeInTheDocument();
+      expect(contentContainer).toBeInTheDocument();
+    });
+
+    it('should have background image style applied', () => {
+      const { container } = renderWithI18n(<AboutHeroSection />);
+      
+      const section = container.querySelector('section');
+      expect(section).toHaveAttribute('style');
+      expect(section?.getAttribute('style')).toContain('background-image');
+    });
   });
 
   describe('AboutHeroSectionClass Utility', () => {
@@ -56,6 +74,22 @@ describe('AboutHeroSection Component', () => {
       expect(classes).toContain('flex-col');
       expect(classes).toContain('items-center');
       expect(classes).toContain('justify-center');
+      expect(classes).toContain('relative');
+      expect(classes).toContain('bg-cover');
+    });
+
+    it('should return correct CSS classes for overlay', () => {
+      const classes = AboutHeroSectionClass.getOverlayClasses();
+      expect(classes).toContain('absolute');
+      expect(classes).toContain('inset-0');
+      expect(classes).toContain('bg-gradient-to-br');
+    });
+
+    it('should return correct CSS classes for content container', () => {
+      const classes = AboutHeroSectionClass.getContentContainerClasses();
+      expect(classes).toContain('relative');
+      expect(classes).toContain('z-10');
+      expect(classes).toContain('text-center');
     });
 
     it('should return correct CSS classes for title', () => {
@@ -63,15 +97,23 @@ describe('AboutHeroSection Component', () => {
       expect(classes).toContain('text-4xl');
       expect(classes).toContain('md:text-6xl');
       expect(classes).toContain('font-bold');
-      expect(classes).toContain('text-primary');
+      expect(classes).toContain('text-white');
+      expect(classes).toContain('drop-shadow-lg');
     });
 
     it('should return correct CSS classes for description', () => {
       const classes = AboutHeroSectionClass.getDescriptionClasses();
       expect(classes).toContain('text-lg');
       expect(classes).toContain('md:text-xl');
+      expect(classes).toContain('text-white/95');
       expect(classes).toContain('max-w-3xl');
-      expect(classes).toContain('text-center');
+      expect(classes).toContain('drop-shadow-md');
+    });
+
+    it('should return background style with image URL', () => {
+      const style = AboutHeroSectionClass.getBackgroundStyle();
+      expect(style).toHaveProperty('backgroundImage');
+      expect(style.backgroundImage).toContain('url(');
     });
   });
 

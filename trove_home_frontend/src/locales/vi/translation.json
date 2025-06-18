@@ -13,7 +13,8 @@
     "settings": "Cài đặt",
     "logout": "Đăng xuất",
     "graphql": "API GraphQL",
-    "notFound": "Không tìm thấy trang"
+    "notFound": "Không tìm thấy trang",
+    "pricing": "Bảng giá"
   },
   "common": {
     "welcome": "Chào mừng đến với Trove Home",
@@ -210,6 +211,146 @@
       "dangerLink": "Link Nguy hiểm",
       "externalLink": "Link Ngoài",
       "disabledLink": "Link Vô hiệu hóa"
+    }
+  },
+  "pricing": {
+    "title": "Bảng Giá Các Gói",
+    "subtitle": "Chọn gói hoàn hảo cho hành trình đầu tư của bạn",
+    "hero": {
+      "title": "Bảng Giá Công Cụ Đầu Tư",
+      "description": "Khám phá sức mạnh của giao dịch chuyên nghiệp với bộ công cụ đầu tư toàn diện của chúng tôi. Chọn từ các gói linh hoạt được thiết kế cho mọi loại nhà đầu tư."
+    },
+    "packages": {
+      "title": "Chọn Gói Của Bạn",
+      "subtitle": "Tất cả các gói đều bao gồm các tính năng cốt lõi của chúng tôi với các cấp độ công cụ nâng cao khác nhau",
+      "starter": {
+        "name": "Khởi Đầu",
+        "price": "$29",
+        "period": "/tháng",
+        "description": "Hoàn hảo cho nhà đầu tư mới bắt đầu",
+        "features": [
+          "Theo dõi danh mục đầu tư cơ bản",
+          "Truy cập dữ liệu thị trường",
+          "5 danh sách theo dõi",
+          "Hỗ trợ qua email",
+          "Truy cập ứng dụng di động"
+        ],
+        "button": "Bắt Đầu",
+        "popular": "false"
+      },
+      "professional": {
+        "name": "Chuyên Nghiệp",
+        "price": "$79",
+        "period": "/tháng",
+        "description": "Dành cho nhà giao dịch và đầu tư nghiêm túc",
+        "features": [
+          "Phân tích danh mục đầu tư nâng cao",
+          "Dữ liệu thị trường thời gian thực",
+          "Danh sách theo dõi không giới hạn",
+          "Công cụ biểu đồ nâng cao",
+          "Truy cập API",
+          "Hỗ trợ ưu tiên",
+          "Công cụ quản lý rủi ro"
+        ],
+        "button": "Chọn Chuyên Nghiệp",
+        "popular": "true"
+      },
+      "enterprise": {
+        "name": "Doanh Nghiệp",
+        "price": "$199",
+        "period": "/tháng",
+        "description": "Dành cho tổ chức và nhóm",
+        "features": [
+          "Tất cả tính năng trong gói Chuyên nghiệp",
+          "Tài khoản đa người dùng",
+          "Tích hợp tùy chỉnh",
+          "Phân tích nâng cao",
+          "Quản lý tài khoản chuyên biệt",
+          "Báo cáo tùy chỉnh",
+          "Tùy chọn nhãn trắng"
+        ],
+        "button": "Liên Hệ Bán Hàng",
+        "popular": "false"
+      },
+      "premium": {
+        "name": "Cao Cấp",
+        "price": "$299",
+        "period": "/tháng",
+        "description": "Trải nghiệm giao dịch tối ưu",
+        "features": [
+          "Tất cả tính năng trong gói Doanh nghiệp",
+          "Thông tin chi tiết AI",
+          "Giao dịch thuật toán",
+          "Kiểm tra ngược nâng cao",
+          "Huấn luyện viên giao dịch cá nhân",
+          "Hỗ trợ VIP",
+          "Chiến lược tùy chỉnh"
+        ],
+        "button": "Chọn Cao Cấp",
+        "popular": "false"
+      }
+    },
+    "testimonials": {
+      "title": "Khách Hàng Nói Gì Về Chúng Tôi",
+      "subtitle": "Đừng chỉ tin lời chúng tôi - hãy nghe từ các nhà đầu tư thực sự đã thay đổi cách giao dịch",
+      "items": [
+        {
+          "name": "Sarah Johnson",
+          "position": "Quản Lý Danh Mục",
+          "company": "Investment Partners LLC",
+          "testimonial": "Công cụ của Trove đã hoàn toàn thay đổi cách tôi quản lý danh mục đầu tư. Phân tích cực kỳ chi tiết và dữ liệu thời gian thực giúp tôi đưa ra quyết định tốt hơn.",
+          "rating": 5
+        },
+        {
+          "name": "Michael Chen",
+          "position": "Nhà Giao Dịch Ngày",
+          "company": "Độc lập",
+          "testimonial": "Gói chuyên nghiệp cung cấp cho tôi mọi thứ cần thiết cho giao dịch ngày. Công cụ biểu đồ vượt trội so với bất kỳ thứ gì khác tôi từng sử dụng.",
+          "rating": 5
+        },
+        {
+          "name": "Emily Rodriguez",
+          "position": "Cố Vấn Đầu Tư",
+          "company": "Wealth Management Group",
+          "testimonial": "Công ty chúng tôi đã chuyển sang giải pháp doanh nghiệp của Trove và đã thấy sự cải thiện 40% trong sự hài lòng của khách hàng. Báo cáo tùy chỉnh thật xuất sắc.",
+          "rating": 5
+        },
+        {
+          "name": "David Kim",
+          "position": "Quản Lý Quỹ Phòng Hộ",
+          "company": "Alpha Capital",
+          "testimonial": "Các tính năng giao dịch thuật toán trong gói cao cấp đã mang lại cho chúng tôi lợi thế đáng kể. ROI được cải thiện 25% trong quý đầu tiên.",
+          "rating": 5
+        }
+      ]
+    },
+    "performance": {
+      "title": "Thành Tích Đã Chứng Minh",
+      "subtitle": "Công cụ đầu tư của chúng tôi đã liên tục mang lại kết quả cho hàng nghìn nhà đầu tư",
+      "metrics": {
+        "roi": {
+          "title": "Cải Thiện ROI Trung Bình",
+          "value": "32%",
+          "description": "Người dùng thấy cải thiện trung bình trong lợi nhuận"
+        },
+        "accuracy": {
+          "title": "Độ Chính Xác Dự Đoán",
+          "value": "87%",
+          "description": "Độ chính xác dự đoán của mô hình AI"
+        },
+        "users": {
+          "title": "Người Dùng Hoạt Động",
+          "value": "50K+",
+          "description": "Nhà đầu tư chuyên nghiệp tin tưởng nền tảng"
+        },
+        "satisfaction": {
+          "title": "Hài Lòng Khách Hàng",
+          "value": "4.9/5",
+          "description": "Dựa trên đánh giá và phản hồi người dùng"
+        }
+      },
+      "chartTitle": "Hiệu Suất Danh Mục Theo Thời Gian",
+      "chartDescription": "Biểu đồ này cho thấy sự cải thiện hiệu suất trung bình của danh mục đầu tư sử dụng công cụ Trove so với điểm chuẩn thị trường."
     }
   }
 } 

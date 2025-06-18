@@ -20,6 +20,12 @@ export const routeConfig: Record<keyof typeof ROUTES, RouteConfig> = {
     showInNavigation: true,
     icon: 'M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z'
   },
+  PRICING: {
+    path: ROUTES.PRICING,
+    translationKey: 'navigation.pricing',
+    showInNavigation: true,
+    icon: 'M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.467-.22-2.121-.659-1.172-.879-1.172-2.303 0-3.182s3.07-.879 4.242 0L15 9m-6 0h6'
+  },
   COMPONENT_TEST: {
     path: ROUTES.COMPONENT_TEST,
     translationKey: 'navigation.componentTest',
