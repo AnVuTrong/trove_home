@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor rules:
+- Always write and run unit test for every functions to check if it's in correct schemas, type and functionality. You don't have to test the appearance of the UI such as Tailwind CSS
+- Always follow OOP rules and industrial best practices
+- Each function can only do one job and single purposes
+- Keep code simple and easy to maintain, function and smooth operation so hundred of people can works on this project without getting mad
+
+## Frontend Code:
+- Use YARN
+- Use GraphQL
+- Use Typescript and always write for Responsive
+
+## Project stucture:
+- Use Prettier format
+- Use Tailwind CSS
+- All code must be placed in src directory with separate backend and frontend
+- Always add a suffix at the end of the files' name and directory to clarify its beloging.
+    - First example: a head component file name should be HomePageHeader.component.tsx
+    - Second example: a page file name should be HomePage.page.tsx
+    - Third example: a grouped components directory should be button.components and inside src/components
+- If a file is too long (for example above 100 lines), separate each sections into multiple components on different files
+- Group components by its functions. For example, a button is grouped in button.components, and using index.ts to export

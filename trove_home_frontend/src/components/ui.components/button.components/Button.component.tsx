@@ -12,6 +12,14 @@ class Button extends React.Component<ButtonProps> {
     }
   };
 
+  private handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    const { onMouseEnter, disabled, loading } = this.props;
+    
+    if (!disabled && !loading && onMouseEnter) {
+      onMouseEnter(event);
+    }
+  };
+
   private renderLoadingSpinner(): React.ReactNode {
     return <LoadingSpinner />;
   }
@@ -40,6 +48,7 @@ class Button extends React.Component<ButtonProps> {
         type={type}
         disabled={disabled || loading}
         onClick={this.handleClick}
+        onMouseEnter={this.handleMouseEnter}
         className={combinedClasses}
         data-testid={dataTestId}
       >

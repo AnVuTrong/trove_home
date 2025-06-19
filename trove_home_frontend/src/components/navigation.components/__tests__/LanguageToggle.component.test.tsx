@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import LanguageToggle from '../LanguageToggle.component';
+import LanguageToggle from '../LanguageSwitcher.components/LanguageToggle.component';
 import { LanguageProvider } from '../../../contexts/LanguageContext.context';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../../../i18n/i18n.config';

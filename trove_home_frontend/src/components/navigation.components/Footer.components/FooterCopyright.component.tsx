@@ -1,13 +1,41 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { FooterCopyrightProps } from './Footer.types';
+import { FooterLogicUtils } from './Footer.utils';
+import {
+  FOOTER_COPYRIGHT_CONTAINER_CLASSES,
+  FOOTER_COPYRIGHT_TEXT_CLASSES
+} from './Footer.constants';
 
-const FooterCopyright: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+/**
+ * FooterCopyright Component
+ * 
+ * A reusable footer copyright component
+ * Follows OOP principles with proper separation of concerns
+ */
+const FooterCopyright: React.FC<FooterCopyrightProps> = ({
+  className = '',
+  'data-testid': dataTestId = 'footer-copyright'
+}) => {
+  const { t } = useTranslation();
+
+  const renderCopyrightText = (): React.ReactNode => {
+    const companyName = t('company.name', 'Trove Investment');
+    const copyrightText = FooterLogicUtils.formatCopyrightText(companyName);
+
+    return (
+      <p className={FOOTER_COPYRIGHT_TEXT_CLASSES}>
+        {copyrightText}
+      </p>
+    );
+  };
 
   return (
-    <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 text-center">
-      <p className="text-text-light dark:text-text-dark">
-        © {currentYear} TROVE INVESTMENT. All rights reserved.
-      </p>
+    <div 
+      className={`${FOOTER_COPYRIGHT_CONTAINER_CLASSES} ${className}`.trim()}
+      data-testid={dataTestId}
+    >
+      {renderCopyrightText()}
     </div>
   );
 };

@@ -8,6 +8,7 @@ export interface ButtonProps {
   loading?: boolean;
   type?: 'button' | 'submit' | 'reset';
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   className?: string;
   'data-testid'?: string;
 }
