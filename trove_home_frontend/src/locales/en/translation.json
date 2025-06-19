@@ -352,5 +352,33 @@
       "chartTitle": "Portfolio Performance Over Time",
       "chartDescription": "This chart shows the average performance improvement of portfolios using Trove tools compared to market benchmarks."
     }
+  },
+  "home": {
+    "investments": {
+      "stocks": {
+        "title": "Stock Trading Platform",
+        "description": "Advanced tools for stock market analysis, real-time trading, and portfolio management with AI-powered insights.",
+        "buttonText": "Explore Stock Trading"
+      },
+      "realEstate": {
+        "title": "Real Estate Investment",
+        "description": "Discover lucrative real estate opportunities with comprehensive market analysis and investment tracking tools.",
+        "buttonText": "Discover Real Estate"
+      },
+      "crypto": {
+        "title": "Cryptocurrency Trading",
+        "description": "Navigate the crypto market with advanced charting tools, portfolio tracking, and automated trading strategies.",
+        "buttonText": "Start Crypto Trading"
+      }
+    },
+    "features": {
+      "secure": "Secure Platform",
+      "realtime": "Real-time Data",
+      "expert": "Expert Analysis"
+    },
+    "cta": {
+      "learnMore": "Learn More",
+      "scrollToExplore": "Scroll to explore"
+    }
   }
 } 

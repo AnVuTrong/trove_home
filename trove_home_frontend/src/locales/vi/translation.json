@@ -352,5 +352,33 @@
       "chartTitle": "Hiệu Suất Danh Mục Theo Thời Gian",
       "chartDescription": "Biểu đồ này cho thấy sự cải thiện hiệu suất trung bình của danh mục đầu tư sử dụng công cụ Trove so với điểm chuẩn thị trường."
     }
+  },
+  "home": {
+    "investments": {
+      "stocks": {
+        "title": "Nền tảng Giao dịch Cổ phiếu",
+        "description": "Công cụ tiên tiến để phân tích thị trường chứng khoán, giao dịch theo thời gian thực và quản lý danh mục đầu tư với thông tin chi tiết được hỗ trợ bởi AI.",
+        "buttonText": "Khám phá Giao dịch Cổ phiếu"
+      },
+      "realEstate": {
+        "title": "Đầu tư Bất động sản",
+        "description": "Khám phá những cơ hội bất động sản sinh lời với phân tích thị trường toàn diện và công cụ theo dõi đầu tư.",
+        "buttonText": "Khám phá Bất động sản"
+      },
+      "crypto": {
+        "title": "Giao dịch Tiền mã hóa",
+        "description": "Điều hướng thị trường tiền điện tử với công cụ biểu đồ tiên tiến, theo dõi danh mục và chiến lược giao dịch tự động.",
+        "buttonText": "Bắt đầu Giao dịch Crypto"
+      }
+    },
+    "features": {
+      "secure": "Nền tảng An toàn",
+      "realtime": "Dữ liệu Thời gian thực",
+      "expert": "Phân tích Chuyên gia"
+    },
+    "cta": {
+      "learnMore": "Tìm hiểu thêm",
+      "scrollToExplore": "Cuộn để khám phá"
+    }
   }
 } 
