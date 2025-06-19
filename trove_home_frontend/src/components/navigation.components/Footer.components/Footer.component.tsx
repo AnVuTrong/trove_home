@@ -4,7 +4,7 @@ import {
   FooterNavigation, 
   FooterContact, 
   FooterCopyright 
-} from './Footer.components';
+} from '.';
 import { FooterProps } from './Footer.types';
 import { FooterStyleUtils, FooterLogicUtils } from './Footer.utils';
 import { FOOTER_CONTAINER_CLASSES } from './Footer.constants';

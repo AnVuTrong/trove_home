@@ -1,6 +1,6 @@
 import React from 'react';
-import { Toggle } from '../ui.components';
-import { useLanguage } from '../../contexts/LanguageContext.context';
+import { Toggle } from '../../ui.components';
+import { useLanguage } from '../../../contexts/LanguageContext.context';
 import { EnIcon, ViIcon } from './LanguageSwitcherIcons.component';
 
 interface LanguageToggleProps {

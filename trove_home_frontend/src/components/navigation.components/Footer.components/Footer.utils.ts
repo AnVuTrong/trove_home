@@ -2,14 +2,14 @@ import { FooterVariant, FooterLogoVariant } from './Footer.types';
 import { FOOTER_BASE_CLASSES, FOOTER_VARIANT_CLASSES } from './Footer.constants';
 
 // Logo imports
-import TroveHorizontalGreen from '../../assets/trove_logo_v1/2_horizontal/2_horizontal_green_fit_svg.svg';
-import TroveHorizontalWhite from '../../assets/trove_logo_v1/2_horizontal/2_horizontal_white_fit_svg.svg';
-import TroveVerticalGreen from '../../assets/trove_logo_v1/3_vertical/3_verticle_green_svg.svg';
-import TroveVerticalWhite from '../../assets/trove_logo_v1/3_vertical/3_verticle_white_svg.svg';
-import TroveBrandmarkGreen from '../../assets/trove_logo_v1/4_brandmark/4_brandmark_green_svg.svg';
-import TroveBrandmarkWhite from '../../assets/trove_logo_v1/4_brandmark/4_brandmark_white_svg.svg';
-import TroveWordmarkGreen from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_green_fit_svg.svg';
-import TroveWordmarkWhite from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_white_fit_svg.svg';
+import TroveHorizontalGreen from '../../../assets/trove_logo_v1/2_horizontal/2_horizontal_green_fit_svg.svg';
+import TroveHorizontalWhite from '../../../assets/trove_logo_v1/2_horizontal/2_horizontal_white_fit_svg.svg';
+import TroveVerticalGreen from '../../../assets/trove_logo_v1/3_vertical/3_verticle_green_svg.svg';
+import TroveVerticalWhite from '../../../assets/trove_logo_v1/3_vertical/3_verticle_white_svg.svg';
+import TroveBrandmarkGreen from '../../../assets/trove_logo_v1/4_brandmark/4_brandmark_green_svg.svg';
+import TroveBrandmarkWhite from '../../../assets/trove_logo_v1/4_brandmark/4_brandmark_white_svg.svg';
+import TroveWordmarkGreen from '../../../assets/trove_logo_v1/5_wordmark/5_wordmark_green_fit_svg.svg';
+import TroveWordmarkWhite from '../../../assets/trove_logo_v1/5_wordmark/5_wordmark_white_fit_svg.svg';
 
 export class FooterStyleUtils {
   static getFooterClasses(

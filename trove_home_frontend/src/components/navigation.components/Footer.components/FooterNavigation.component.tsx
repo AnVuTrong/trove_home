@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { routeConfig } from '../../../routes/RouteConfig.route';
-import { FooterNavigationProps } from '../Footer.types';
+import { FooterNavigationProps } from './Footer.types';
 import {
   FOOTER_NAV_TITLE_CLASSES,
   FOOTER_NAV_LIST_CLASSES,
   FOOTER_NAV_ITEM_CLASSES
-} from '../Footer.constants';
+} from './Footer.constants';
 
 /**
  * Extended props interface that includes translation function

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../constants/Routes.constant';
-import { ThemeToggle } from '../ui.components';
-import LanguageToggle from './LanguageToggle.component';
-import NavigationMenu from './NavigationMenu.component';
+import { ROUTES } from '../../../constants/Routes.constant';
+import { ThemeToggle } from '../../ui.components';
+import LanguageToggle from '../LanguageSwitcher.components/LanguageToggle.component';
+import NavigationMenu from '../LanguageSwitcher.components/NavigationMenu.component';
 import { HeaderProps, HeaderState } from './Header.types';
 import { HeaderStyleUtils, HeaderLogicUtils } from './Header.utils';
 import {

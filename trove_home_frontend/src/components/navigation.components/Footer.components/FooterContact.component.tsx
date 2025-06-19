@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FooterContactProps } from '../Footer.types';
+import { FooterContactProps } from './Footer.types';
 import {
   FOOTER_CONTACT_TITLE_CLASSES,
   FOOTER_CONTACT_LIST_CLASSES,
   FOOTER_CONTACT_ITEM_CLASSES
-} from '../Footer.constants';
+} from './Footer.constants';
 
 /**
  * FooterContact Component

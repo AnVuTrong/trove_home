@@ -8,14 +8,14 @@ import {
 } from './Header.constants';
 
 // Logo imports
-import TroveLogoGreen from '../../assets/trove_logo_v1/2_horizontal/2_horizontal_green_fit_svg.svg';
-import TroveLogoWhite from '../../assets/trove_logo_v1/2_horizontal/2_horizontal_white_fit_svg.svg';
-import TroveVerticalGreen from '../../assets/trove_logo_v1/3_vertical/3_verticle_green_svg.svg';
-import TroveVerticalWhite from '../../assets/trove_logo_v1/3_vertical/3_verticle_white_svg.svg';
-import TroveBrandmarkGreen from '../../assets/trove_logo_v1/4_brandmark/4_brandmark_green_svg.svg';
-import TroveBrandmarkWhite from '../../assets/trove_logo_v1/4_brandmark/4_brandmark_white_svg.svg';
-import TroveWordmarkGreen from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_green_fit_svg.svg';
-import TroveWordmarkWhite from '../../assets/trove_logo_v1/5_wordmark/5_wordmark_white_fit_svg.svg';
+import TroveLogoGreen from '../../../assets/trove_logo_v1/2_horizontal/2_horizontal_green_fit_svg.svg';
+import TroveLogoWhite from '../../../assets/trove_logo_v1/2_horizontal/2_horizontal_white_fit_svg.svg';
+import TroveVerticalGreen from '../../../assets/trove_logo_v1/3_vertical/3_verticle_green_svg.svg';
+import TroveVerticalWhite from '../../../assets/trove_logo_v1/3_vertical/3_verticle_white_svg.svg';
+import TroveBrandmarkGreen from '../../../assets/trove_logo_v1/4_brandmark/4_brandmark_green_svg.svg';
+import TroveBrandmarkWhite from '../../../assets/trove_logo_v1/4_brandmark/4_brandmark_white_svg.svg';
+import TroveWordmarkGreen from '../../../assets/trove_logo_v1/5_wordmark/5_wordmark_green_fit_svg.svg';
+import TroveWordmarkWhite from '../../../assets/trove_logo_v1/5_wordmark/5_wordmark_white_fit_svg.svg';
 
 export class HeaderStyleUtils {
   static getMaxWidthClasses(maxWidth: HeaderMaxWidth = '6xl'): string {

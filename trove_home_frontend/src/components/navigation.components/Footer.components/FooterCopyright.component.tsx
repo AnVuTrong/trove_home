@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FooterCopyrightProps } from '../Footer.types';
-import { FooterLogicUtils } from '../Footer.utils';
+import { FooterCopyrightProps } from './Footer.types';
+import { FooterLogicUtils } from './Footer.utils';
 import {
   FOOTER_COPYRIGHT_CONTAINER_CLASSES,
   FOOTER_COPYRIGHT_TEXT_CLASSES
-} from '../Footer.constants';
+} from './Footer.constants';
 
 /**
  * FooterCopyright Component

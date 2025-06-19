@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FooterLogoProps } from '../Footer.types';
-import { FooterStyleUtils } from '../Footer.utils';
+import { FooterLogoProps } from './Footer.types';
+import { FooterStyleUtils } from './Footer.utils';
 import {
   FOOTER_LOGO_CONTAINER_CLASSES,
   FOOTER_LOGO_IMAGE_CONTAINER_CLASSES,
   FOOTER_LOGO_IMAGE_CLASSES,
   FOOTER_LOGO_DESCRIPTION_CLASSES
-} from '../Footer.constants';
+} from './Footer.constants';
 
 /**
  * FooterLogo Component

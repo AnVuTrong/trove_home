@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { routeConfig } from '../../routes/RouteConfig.route';
+import { routeConfig } from '../../../routes/RouteConfig.route';
 
 interface NavigationMenuProps {
   isMobile?: boolean;
