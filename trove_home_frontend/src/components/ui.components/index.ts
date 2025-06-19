@@ -31,3 +31,22 @@ export {
   HERO_SECTION_RESPONSIVE_SUBHEADER_CLASSES,
   HERO_SECTION_RESPONSIVE_PARAGRAPH_CLASSES
 } from './hero.components/HeroSection.constants';
+
+// Subpage Hero Components
+export {
+  SubpageHeroSection,
+  SubpageHeroSectionClass,
+  SubpageHeroSectionUtils,
+  SUBPAGE_HERO_VARIANT_CLASSES,
+  SUBPAGE_HERO_SIZE_CLASSES,
+  SUBPAGE_HERO_COMMON_CLASSES,
+  SUBPAGE_HERO_DEFAULTS
+} from './subpage_hero.components';
+export type {
+  SubpageHeroSectionProps,
+  SubpageHeroStyleConfig
+} from './subpage_hero.components';
+export {
+  SubpageHeroVariant,
+  SubpageHeroSize
+} from './subpage_hero.components';
