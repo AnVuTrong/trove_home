@@ -36,5 +36,10 @@ export const routeConfig: Record<keyof typeof ROUTES, RouteConfig> = {
     path: ROUTES.NOT_FOUND,
     translationKey: 'navigation.notFound',
     showInNavigation: false
+  },
+  LOGIN: {
+    path: ROUTES.LOGIN,
+    translationKey: 'navigation.login',
+    showInNavigation: false
   }
 }; 
