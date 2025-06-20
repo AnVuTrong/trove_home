@@ -8,4 +8,7 @@ export * from './pricing.components';
 export * from './testpage.components';
 
 // Auth Components
-export * from './auth.components'; 
+export * from './auth.components';
+
+// Home Page Components
+export * from './home.components'; 
