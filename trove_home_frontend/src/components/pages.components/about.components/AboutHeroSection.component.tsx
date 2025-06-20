@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutHeroSectionProps } from './AboutHeroSection.types';
-import holographicBg from '../../../assets/trove_abstract_bg/2_adobe_firefly/fluid_holographic_2.jpg';
+import holographicBg from '../../../assets/trove_abstract_bg/dark/green_fluid_holographic_2_dark.jpg';
 
 /**
  * AboutHeroSection Component

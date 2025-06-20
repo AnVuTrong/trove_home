@@ -74,7 +74,7 @@ class LoginPage extends React.Component {
   render(): React.ReactNode {
     return (
       <LoginSection
-        imageSrc="/assets/trove_abstract_bg/2_adobe_firefly/fluid_holographic.jpg"
+        imageSrc="/assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg"
         imageAlt="Trove authentication background"
         overlayTitle="Welcome to Trove"
         overlaySubtitle="Secure access to your digital world"

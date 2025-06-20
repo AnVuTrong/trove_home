@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui.components';
-import fluidHolographicDefault from '../assets/trove_abstract_bg/2_adobe_firefly/fluid_holographic.jpg';
-import fluidHolographicAlt from '../assets/trove_abstract_bg/2_adobe_firefly/fluid_holographic_2.jpg';
+import fluidHolographicDefault from '../assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg';
+import fluidHolographicAlt from '../assets/trove_abstract_bg/dark/green_fluid_holographic_2_dark.jpg';
 
 interface InvestmentOption {
   id: string;
