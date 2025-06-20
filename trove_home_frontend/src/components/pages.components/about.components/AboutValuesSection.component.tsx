@@ -9,7 +9,7 @@ import { AboutValuesSectionProps, CompanyValue } from './AboutValuesSection.type
  * Supports customizable values data and responsive grid layout
  */
 export class AboutValuesSectionClass {
-  private static readonly SECTION_CONTAINER_CLASSES = 'py-16 px-4 bg-white dark:bg-gray-900';
+  private static readonly SECTION_CONTAINER_CLASSES = 'py-16 px-4 bg-white dark:bg-background-dark';
   private static readonly CONTENT_CONTAINER_CLASSES = 'max-w-6xl mx-auto';
   private static readonly TITLE_CLASSES = 'text-3xl md:text-4xl font-bold text-primary mb-12 text-center';
   private static readonly GRID_CONTAINER_CLASSES = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8';

@@ -19,6 +19,6 @@ export const BUTTON_SIZE_CLASSES: Record<ButtonSize, string> = {
 };
 
 export const BUTTON_BASE_CLASSES =
-  'font-medium rounded-md border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-DEFAULT dark:focus:ring-accent-dark dark:focus:ring-offset-background-dark';
+  'font-medium rounded-md border transition-colors duration-200 focus:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-accent-DEFAULT dark:hover:ring-accent-dark dark:hover:ring-offset-background-dark';
 
 export const BUTTON_DISABLED_CLASSES = 'opacity-50 cursor-not-allowed';

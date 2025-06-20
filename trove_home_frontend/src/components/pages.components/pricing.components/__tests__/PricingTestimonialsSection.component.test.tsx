@@ -139,7 +139,7 @@ describe('PricingTestimonialsSectionClass', () => {
     const classes = PricingTestimonialsSectionClass.getSectionContainerClasses();
     expect(classes).toContain('py-20');
     expect(classes).toContain('bg-gray-50');
-    expect(classes).toContain('dark:bg-gray-800');
+    expect(classes).toContain('dark:bg-background-surface_dark');
   });
 
   it('returns correct CSS classes for testimonials grid', () => {
@@ -151,10 +151,7 @@ describe('PricingTestimonialsSectionClass', () => {
 
   it('returns correct CSS classes for testimonial cards', () => {
     const classes = PricingTestimonialsSectionClass.getTestimonialCardClasses();
-    expect(classes).toContain('bg-white');
-    expect(classes).toContain('dark:bg-gray-900');
-    expect(classes).toContain('rounded-xl');
-    expect(classes).toContain('shadow-lg');
+    expect(classes).toContain('p-0');
   });
 
   it('returns correct CSS classes for star icons', () => {

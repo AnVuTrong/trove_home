@@ -9,7 +9,7 @@ import { PricingPerformanceSectionProps, PerformanceMetric, ChartDataPoint } fro
  * Displays performance metrics and investment success chart
  */
 export class PricingPerformanceSectionClass {
-  private static readonly SECTION_CONTAINER_CLASSES = 'py-20 px-4 bg-white dark:bg-gray-900';
+  private static readonly SECTION_CONTAINER_CLASSES = 'py-20 px-4 bg-white dark:bg-background-dark';
   private static readonly CONTENT_CONTAINER_CLASSES = 'max-w-7xl mx-auto';
   private static readonly HEADER_CONTAINER_CLASSES = 'text-center mb-16';
   private static readonly TITLE_CLASSES = 'text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4';
@@ -19,11 +19,11 @@ export class PricingPerformanceSectionClass {
   private static readonly METRIC_VALUE_CLASSES = 'text-4xl md:text-5xl font-bold text-primary mb-2';
   private static readonly METRIC_TITLE_CLASSES = 'text-lg font-semibold text-gray-900 dark:text-white mb-2';
   private static readonly METRIC_DESCRIPTION_CLASSES = 'text-sm text-gray-600 dark:text-gray-400';
-  private static readonly CHART_CONTAINER_CLASSES = 'bg-gray-50 dark:bg-gray-800 rounded-xl p-8';
+  private static readonly CHART_CONTAINER_CLASSES = 'bg-gray-50 dark:bg-background-surface_dark rounded-xl p-8';
   private static readonly CHART_HEADER_CLASSES = 'text-center mb-8';
   private static readonly CHART_TITLE_CLASSES = 'text-2xl font-bold text-gray-900 dark:text-white mb-2';
   private static readonly CHART_DESCRIPTION_CLASSES = 'text-gray-600 dark:text-gray-300';
-  private static readonly CHART_CLASSES = 'relative h-80 bg-white dark:bg-gray-900 rounded-lg p-6 shadow-inner';
+  private static readonly CHART_CLASSES = 'relative h-80 bg-white dark:bg-background-dark rounded-lg p-6 shadow-inner';
 
   public static getSectionContainerClasses(): string {
     return this.SECTION_CONTAINER_CLASSES;

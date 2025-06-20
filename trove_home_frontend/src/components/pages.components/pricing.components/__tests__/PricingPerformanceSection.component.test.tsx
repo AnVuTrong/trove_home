@@ -135,7 +135,7 @@ describe('PricingPerformanceSectionClass', () => {
     const classes = PricingPerformanceSectionClass.getSectionContainerClasses();
     expect(classes).toContain('py-20');
     expect(classes).toContain('bg-white');
-    expect(classes).toContain('dark:bg-gray-900');
+    expect(classes).toContain('dark:bg-background-dark');
   });
 
   it('returns correct CSS classes for metrics grid', () => {
@@ -164,7 +164,7 @@ describe('PricingPerformanceSectionClass', () => {
   it('returns correct CSS classes for chart container', () => {
     const classes = PricingPerformanceSectionClass.getChartContainerClasses();
     expect(classes).toContain('bg-gray-50');
-    expect(classes).toContain('dark:bg-gray-800');
+    expect(classes).toContain('dark:bg-background-surface_dark');
     expect(classes).toContain('rounded-xl');
     expect(classes).toContain('p-8');
   });
@@ -174,7 +174,7 @@ describe('PricingPerformanceSectionClass', () => {
     expect(classes).toContain('relative');
     expect(classes).toContain('h-80');
     expect(classes).toContain('bg-white');
-    expect(classes).toContain('dark:bg-gray-900');
+    expect(classes).toContain('dark:bg-background-dark');
     expect(classes).toContain('rounded-lg');
   });
 }); 

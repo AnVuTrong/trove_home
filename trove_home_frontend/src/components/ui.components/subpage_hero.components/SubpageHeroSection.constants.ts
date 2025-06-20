@@ -19,7 +19,7 @@ export const SUBPAGE_HERO_VARIANT_CLASSES = {
     description: 'text-gray-600 dark:text-gray-300'
   },
   [SubpageHeroVariant.SOLID]: {
-    container: 'bg-white dark:bg-gray-900',
+    container: 'bg-white dark:bg-background-dark',
     overlay: '',
     content: 'text-center',
     title: 'text-gray-900 dark:text-white',

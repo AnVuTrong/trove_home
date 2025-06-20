@@ -167,13 +167,23 @@
         "realEstate": {
           "title": "Real Estate Investment",
           "description": "Discover lucrative real estate opportunities with comprehensive market analysis and investment tracking tools.",
-          "buttonText": "Discover Real Estate"
+          "buttonText": "COMING SOON" 
         },
         "crypto": {
           "title": "Cryptocurrency Trading",
           "description": "Navigate the crypto market with advanced charting tools, portfolio tracking, and automated trading strategies.",
-          "buttonText": "Start Crypto Trading"
+          "buttonText": "COMING SOON"
         }
+    },
+    "cta": {
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "Features",
+      "description": "Our platform offers a range of features to help you manage your investments.",
+      "secure": "Feature 1",
+      "realtime": "Feature 2",
+      "expert": "Feature 3"
     }
   },
   "about": {
@@ -229,6 +239,86 @@
       "accessibility": {
         "title": "Accessibility",
         "description": "Make investing accessible to everyone."
+      }
+    }
+  },
+  "pricing": {
+    "hero": {
+      "title": "Pricing",
+      "description": "Choose the plan that's right for you."
+    },
+    "packages": {
+      "title": "Pricing Packages",
+      "subtitle": "Choose the plan that's right for you.",
+      "starter": {
+        "name": "Starter",
+        "price": "$10",
+        "period": "/month",
+        "description": "For individuals and small teams",
+        "button": "Get Started"
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "$20",
+        "period": "/month",
+        "description": "For small businesses and startups",
+        "button": "Get Started"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "$50",
+        "period": "/month",
+        "description": "For large enterprises and organizations",
+        "button": "Get Started"
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "$100",
+        "period": "/month",
+        "description": "For large enterprises and organizations",
+        "button": "Get Started"
+      }
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "subtitle": "What our users say about us",
+      "testimonial1": {
+        "name": "John Doe",
+        "position": "CEO",
+        "description": "This is a testimonial"
+      }
+    },
+    "performance": {
+      "title": "Performance",
+      "subtitle": "Our performance metrics",
+      "chartTitle": "Our performance metrics",
+      "chartDescription": "Our performance metrics",
+      "metrics": {
+        "roi": {
+          "title": "ROI",
+          "description": "Our performance metrics",
+          "value": "100%"
+        },
+        "accuracy": {
+          "title": "Accuracy",
+          "description": "Our performance metrics",
+          "value": "100%"
+        },
+        "users": {
+          "title": "Users",
+          "description": "Our performance metrics",
+          "value": "100%"
+        },
+        "satisfaction": {
+          "title": "Satisfaction",
+          "description": "Our performance metrics",
+          "value": "100%"
+        },
+        "revenue": {
+          "title": "Revenue",
+          "description": "Our performance metrics",
+          "value": "100%"
+        }
       }
     }
   }

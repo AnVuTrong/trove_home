@@ -103,10 +103,7 @@ describe('AboutTeamSection Component', () => {
 
     it('should return correct CSS classes for member card', () => {
       const classes = AboutTeamSectionClass.getMemberCardClasses();
-      expect(classes).toContain('bg-white');
-      expect(classes).toContain('p-6');
-      expect(classes).toContain('rounded-lg');
-      expect(classes).toContain('shadow-lg');
+      expect(classes).toContain('p-0');
     });
 
     it('should generate correct initials from name', () => {

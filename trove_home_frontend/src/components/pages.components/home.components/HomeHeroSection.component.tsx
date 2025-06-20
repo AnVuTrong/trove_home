@@ -118,7 +118,7 @@ const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ defaultOptionId = 'de
             <h1 className='text-4xl lg:text-5xl xl:text-6xl font-bold text-text-dark lg:text-text-dark_h1 mb-6'>{currentData.title}</h1>
 
             {/* Description */}
-            <p className='text-lg lg:text-xl text-text-dark lg:text-text-dark mb-8 leading-relaxed'>{currentData.description}</p>
+            <p className='text-lg lg:text-xl text-text-light dark:text-text-dark mb-8 leading-relaxed'>{currentData.description}</p>
 
             {/* Investment Option Buttons */}
             <OptionButtonsGroup options={investmentOptions} currentOption={currentOption} onOptionChange={handleOptionChange} />
@@ -157,4 +157,4 @@ const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ defaultOptionId = 'de
   );
 };
 
-export default HomeHeroSection; 
+export default HomeHeroSection;

@@ -50,3 +50,6 @@ export {
   SubpageHeroVariant,
   SubpageHeroSize
 } from './subpage_hero.components';
+
+export { GradientCard } from './card.components';
+export type { GradientCardProps } from './card.components';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AboutTeamSectionProps, TeamMember } from './AboutTeamSection.types';
+import { GradientCard } from '../../ui.components';
 
 /**
  * AboutTeamSection Component
@@ -9,12 +10,12 @@ import { AboutTeamSectionProps, TeamMember } from './AboutTeamSection.types';
  * Supports customizable team member data and responsive grid layout
  */
 export class AboutTeamSectionClass {
-  private static readonly SECTION_CONTAINER_CLASSES = 'py-16 px-4 bg-gray-50 dark:bg-gray-800';
+  private static readonly SECTION_CONTAINER_CLASSES = 'py-16 px-4 bg-gray-50 dark:bg-background-dark';
   private static readonly CONTENT_CONTAINER_CLASSES = 'max-w-6xl mx-auto';
   private static readonly TITLE_CLASSES = 'text-3xl md:text-4xl font-bold text-primary mb-4 text-center';
   private static readonly SUBTITLE_CLASSES = 'text-lg text-gray-600 dark:text-gray-400 mb-12 text-center';
   private static readonly GRID_CONTAINER_CLASSES = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8';
-  private static readonly MEMBER_CARD_CLASSES = 'bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300';
+  private static readonly MEMBER_CARD_CLASSES = 'p-0';
   private static readonly MEMBER_AVATAR_CLASSES = 'w-24 h-24 bg-gradient-to-br from-primary to-green-400 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold';
   private static readonly MEMBER_NAME_CLASSES = 'text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center';
   private static readonly MEMBER_POSITION_CLASSES = 'text-primary font-medium mb-3 text-center';
@@ -123,10 +124,7 @@ const AboutTeamSection: React.FC<AboutTeamSectionProps> = ({
             const initials = AboutTeamSectionClass.getInitials(memberName);
             
             return (
-              <div 
-                key={member.id} 
-                className={AboutTeamSectionClass.getMemberCardClasses()}
-              >
+              <GradientCard key={member.id} className={AboutTeamSectionClass.getMemberCardClasses()}>
                 <div className={AboutTeamSectionClass.getMemberAvatarClasses()}>
                   {initials}
                 </div>
@@ -139,7 +137,7 @@ const AboutTeamSection: React.FC<AboutTeamSectionProps> = ({
                 <p className={AboutTeamSectionClass.getMemberDescriptionClasses()}>
                   {t(member.descriptionKey)}
                 </p>
-              </div>
+              </GradientCard>
             );
           })}
         </div>

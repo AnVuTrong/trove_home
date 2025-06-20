@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PricingPackagesSectionProps } from './PricingPackagesSection.types';
+import { GradientCard } from '../../ui.components';
 
 /**
  * PricingPackagesSection Component
@@ -9,14 +10,14 @@ import { PricingPackagesSectionProps } from './PricingPackagesSection.types';
  * Displays 4 different pricing packages with features
  */
 export class PricingPackagesSectionClass {
-  private static readonly SECTION_CONTAINER_CLASSES = 'py-20 px-4 bg-white dark:bg-gray-900';
+  private static readonly SECTION_CONTAINER_CLASSES = 'py-20 px-4 bg-white dark:bg-background-dark';
   private static readonly CONTENT_CONTAINER_CLASSES = 'max-w-7xl mx-auto';
   private static readonly HEADER_CONTAINER_CLASSES = 'text-center mb-16';
   private static readonly TITLE_CLASSES = 'text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4';
   private static readonly SUBTITLE_CLASSES = 'text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto';
   private static readonly PACKAGES_GRID_CLASSES = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8';
-  private static readonly PACKAGE_CARD_CLASSES = 'relative bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl transition-shadow duration-300';
-  private static readonly POPULAR_PACKAGE_CARD_CLASSES = 'relative bg-white dark:bg-gray-800 rounded-xl shadow-xl border-2 border-primary p-8 hover:shadow-2xl transition-shadow duration-300 transform scale-105';
+  private static readonly PACKAGE_CARD_CLASSES = 'relative p-0';
+  private static readonly POPULAR_PACKAGE_CARD_CLASSES = 'relative p-0 transform scale-105';
   private static readonly POPULAR_BADGE_CLASSES = 'absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold';
   private static readonly PACKAGE_HEADER_CLASSES = 'text-center mb-8';
   private static readonly PACKAGE_NAME_CLASSES = 'text-2xl font-bold text-gray-900 dark:text-white mb-2';
@@ -135,7 +136,7 @@ const PricingPackagesSection: React.FC<PricingPackagesSectionProps> = ({
             const isPopular = popularValue === 'true';
             
             return (
-              <div key={packageKey} className={PricingPackagesSectionClass.getPackageCardClasses(isPopular)}>
+              <GradientCard key={packageKey} className={PricingPackagesSectionClass.getPackageCardClasses(isPopular)}>
                 {isPopular && (
                   <div className={PricingPackagesSectionClass.getPopularBadgeClasses()}>
                     Most Popular
@@ -194,7 +195,7 @@ const PricingPackagesSection: React.FC<PricingPackagesSectionProps> = ({
                 <button className={PricingPackagesSectionClass.getPackageButtonClasses(isPopular)}>
                   {t(`pricing.packages.${packageKey}.button`)}
                 </button>
-              </div>
+              </GradientCard>
             );
           })}
         </div>

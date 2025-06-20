@@ -155,9 +155,9 @@ describe('PricingPackagesSectionClass', () => {
     const popularCard = PricingPackagesSectionClass.getPackageCardClasses(true);
     
     expect(regularCard).toContain('relative');
-    expect(regularCard).toContain('bg-white');
-    expect(popularCard).toContain('border-2');
-    expect(popularCard).toContain('border-primary');
+    expect(regularCard).toContain('p-0');
+    expect(popularCard).toContain('transform');
+    expect(popularCard).toContain('scale-105');
   });
 
   it('returns correct button classes for different package states', () => {
