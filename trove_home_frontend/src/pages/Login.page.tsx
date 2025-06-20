@@ -1,8 +1,13 @@
 import React from 'react';
 import { LoginSection } from '../components/pages.components/auth.components';
 import { AuthFormData, AuthFormMode } from '../components/pages.components/auth.components/Auth.types';
+import ThemeContext from '../contexts/ThemeContext.context';
+import holographicBgDark from '../assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg';
+import holographicBgLight from '../assets/trove_abstract_bg/light/green_fluid_holographic_light.png';
 
 class LoginPage extends React.Component {
+  static contextType = ThemeContext;
+
   private handleAuthSubmit = async (data: AuthFormData, mode: AuthFormMode): Promise<void> => {
     // TODO: Implement actual authentication logic
     console.log('Auth submission:', { data, mode });
@@ -72,9 +77,13 @@ class LoginPage extends React.Component {
   };
 
   render(): React.ReactNode {
+    const isDarkMode = (this.context as any)?.isDarkMode ?? false;
+
+    const holographicBg = isDarkMode ? holographicBgDark : holographicBgLight;
+
     return (
       <LoginSection
-        imageSrc="/assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg"
+        imageSrc={holographicBg}
         imageAlt="Trove authentication background"
         overlayTitle="Welcome to Trove"
         overlaySubtitle="Secure access to your digital world"

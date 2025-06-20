@@ -38,7 +38,12 @@
   },
   "footer": {
     "quickLinks": "Liên kết nhanh",
-    "contactUs": "Liên hệ"
+    "contactUs": "Liên hệ",
+    "contact": "Liên hệ",
+    "email": "anvu@trove.vn",
+    "phone": "(+84) 93 824 7283",
+    "address": "Ho Chi Minh City, Vietnam",
+    "copyright": "Bản quyền © 2025 Trove Home. Tất cả quyền được bảo lưu."
   },
   "componentTest": {
     "title": "Trang Test UI Components",
@@ -149,6 +154,81 @@
       "dangerLink": "Link Nguy hiểm",
       "externalLink": "Link Ngoài",
       "disabledLink": "Link Vô hiệu hóa"
+    },
+    "home": {
+      "investments": {
+        "stocks": {
+          "title": "Stock Trading Platform",
+          "description": "Advanced tools for stock market analysis, real-time trading, and portfolio management with AI-powered insights.",
+          "buttonText": "Explore Stock Trading"
+        },
+        "realEstate": {
+          "title": "Real Estate Investment",
+          "description": "Discover lucrative real estate opportunities with comprehensive market analysis and investment tracking tools.",
+          "buttonText": "Discover Real Estate"
+        },
+        "crypto": {
+          "title": "Cryptocurrency Trading",
+          "description": "Navigate the crypto market with advanced charting tools, portfolio tracking, and automated trading strategies.",
+          "buttonText": "Start Crypto Trading"
+        }
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Giới thiệu Trove Home",
+      "description": "Chúng tôi cam kết cách mạng hóa ngành đầu tư với công nghệ và dịch vụ đột phá."
+    },
+    "company": {
+      "title": "Công ty của chúng tôi",
+      "description": "Nền tảng đầu tư tiên tiến cung cấp thông tin chuyên sâu dựa trên dữ liệu và trải nghiệm liền mạch cho nhà đầu tư.",
+      "placeholder": "Phần này được dành riêng cho thông tin chi tiết về công ty."
+    },
+    "team": {
+      "title": "Đội ngũ của chúng tôi",
+      "subtitle": "Gặp gỡ những con người đam mê đứng sau Trove Home",
+      "members": {
+        "member1": {
+          "name": "Thành viên 1",
+          "position": "Chức danh",
+          "description": "Chuyên gia nhiều kinh nghiệm trong lĩnh vực fintech."
+        },
+        "member2": {
+          "name": "Thành viên 2",
+          "position": "Chức danh",
+          "description": "Chuyên gia tập trung vào việc mang lại giá trị cho người dùng."
+        },
+        "member3": {
+          "name": "Thành viên 3",
+          "position": "Chức danh",
+          "description": "Người đổi mới luôn khao khát tạo ra trải nghiệm liền mạch."
+        },
+        "member4": {
+          "name": "Thành viên 4",
+          "position": "Chức danh",
+          "description": "Nhà chiến lược dẫn dắt tầm nhìn của công ty."
+        }
+      }
+    },
+    "values": {
+      "title": "Giá trị cốt lõi",
+      "innovation": {
+        "title": "Đổi mới",
+        "description": "Không ngừng thúc đẩy ranh giới của những điều có thể."
+      },
+      "transparency": {
+        "title": "Minh bạch",
+        "description": "Hoạt động với sự cởi mở và rõ ràng trong mọi việc."
+      },
+      "excellence": {
+        "title": "Xuất sắc",
+        "description": "Phấn đấu cho sự xuất sắc trong mọi khía cạnh công việc."
+      },
+      "accessibility": {
+        "title": "Khả năng tiếp cận",
+        "description": "Mang cơ hội đầu tư đến với mọi người."
+      }
     }
   }
 } 

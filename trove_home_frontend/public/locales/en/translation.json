@@ -11,7 +11,8 @@
     "register": "Register",
     "dashboard": "Dashboard",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "pricing": "Pricing"
   },
   "common": {
     "welcome": "Welcome to Trove Home",
@@ -38,7 +39,12 @@
   },
   "footer": {
     "quickLinks": "Quick Links",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "contact": "Contact",
+    "email": "anvu@trove.vn",
+    "phone": "(+84) 93 824 7283",
+    "address": "Ho Chi Minh City, Vietnam",
+    "copyright": "Copyright © 2025 Trove Home. All rights reserved."
   },
   "componentTest": {
     "title": "UI Components Test Page",
@@ -150,5 +156,80 @@
       "externalLink": "External Link",
       "disabledLink": "Disabled Link"
     }
+  },
+  "home": {
+      "investments": {
+        "stocks": {
+          "title": "Stock Trading Platform",
+          "description": "Advanced tools for stock market analysis, real-time trading, and portfolio management with AI-powered insights.",
+          "buttonText": "Explore Stock Trading"
+        },
+        "realEstate": {
+          "title": "Real Estate Investment",
+          "description": "Discover lucrative real estate opportunities with comprehensive market analysis and investment tracking tools.",
+          "buttonText": "Discover Real Estate"
+        },
+        "crypto": {
+          "title": "Cryptocurrency Trading",
+          "description": "Navigate the crypto market with advanced charting tools, portfolio tracking, and automated trading strategies.",
+          "buttonText": "Start Crypto Trading"
+        }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Trove Home",
+      "description": "We are dedicated to revolutionizing the investment industry with innovative technology and services."
+    },
+    "company": {
+      "title": "Our Company",
+      "description": "Cutting-edge investment platform empowering investors with data-driven insights and seamless experiences.",
+      "placeholder": "This section is reserved for detailed company information."
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Meet the passionate individuals behind Trove Home",
+      "members": {
+        "member1": {
+          "name": "Team Member 1",
+          "position": "Position Title",
+          "description": "Dedicated professional with expertise in the fintech industry."
+        },
+        "member2": {
+          "name": "Team Member 2",
+          "position": "Position Title",
+          "description": "Experienced specialist focused on delivering value to users."
+        },
+        "member3": {
+          "name": "Team Member 3",
+          "position": "Position Title",
+          "description": "Innovator passionate about creating seamless user experiences."
+        },
+        "member4": {
+          "name": "Team Member 4",
+          "position": "Position Title",
+          "description": "Strategic thinker driving the company's vision forward."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Constantly push the boundaries of what's possible."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Operate with openness and clarity in everything we do."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Strive for excellence in all aspects of our work."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "Make investing accessible to everyone."
+      }
+    }
   }
-} 
+}

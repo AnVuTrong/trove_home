@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '../constants/Routes.constant';
 import { lazyLoad } from '../utils/LazyLoad.util';
+import RequireAuth from './RequireAuth.component';
 
 // Layouts
 import MainLayout from '../layouts/MainLayout.layout';
@@ -13,6 +14,8 @@ const PricingPage = lazyLoad(() => import('../pages/Pricing.page'), 'Loading Pri
 const ComponentTestPage = lazyLoad(() => import('../pages/hidden/ComponentTestPage.page'), 'Loading Components...');
 const NotFoundPage = lazyLoad(() => import('../pages/NotFound.page'), 'Loading...');
 const LoginPage = lazyLoad(() => import('../pages/Login.page'), 'Loading Login...');
+const DashboardPage = lazyLoad(() => import('../pages/Dashboard.page'), 'Loading Dashboard...');
+const AdminDashboardPage = lazyLoad(() => import('../pages/AdminDashboard.page'), 'Loading Admin Dashboard...');
 
 const AppRoutes: React.FC = () => {
   return (
@@ -24,6 +27,8 @@ const AppRoutes: React.FC = () => {
         <Route path={ROUTES.COMPONENT_TEST} element={<ComponentTestPage />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+        <Route path={ROUTES.DASHBOARD} element={<RequireAuth><DashboardPage /></RequireAuth>} />
+        <Route path={ROUTES.ADMIN} element={<RequireAuth requireAdmin><AdminDashboardPage /></RequireAuth>} />
       </Route>
     </Routes>
   );

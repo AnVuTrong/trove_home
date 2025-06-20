@@ -15,7 +15,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isMobile = false, onIte
   const navigationRoutes = Object.values(routeConfig).filter((route) => route.showInNavigation);
 
   return (
-    <nav className={`${isMobile ? 'flex flex-col space-y-2' : 'flex items-center space-x-6'}`}>
+    <nav className={`${isMobile ? 'flex flex-col space-y-2' : 'flex items-center justify-center space-x-6'}`}>
       {navigationRoutes.map((route) => (
         <NavLink
           key={route.path}
@@ -29,11 +29,17 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ isMobile = false, onIte
           }
           onClick={onItemClick}>
           {route.icon && (
-            <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5 mr-1' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d={route.icon} />
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5'
+              viewBox='0 0 24 24'
+              fill='currentColor'
+              aria-hidden='true'>
+              <path fillRule='evenodd' clipRule='evenodd' d={route.icon} />
             </svg>
           )}
-          <span>{t(route.translationKey)}</span>
+          {/* Keep label for screen readers only */}
+          <span className='sr-only'>{t(route.translationKey)}</span>
         </NavLink>
       ))}
     </nav>

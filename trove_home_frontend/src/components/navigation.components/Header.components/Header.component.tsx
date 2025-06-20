@@ -4,6 +4,7 @@ import { HeaderStyleUtils, HeaderLogicUtils } from './Header.utils';
 import { HEADER_CONTAINER_CLASSES, HEADER_CONTENT_CLASSES } from './Header.constants';
 import HeaderLogo from './HeaderLogo.component';
 import HeaderDesktopNavigation from './HeaderDesktopNavigation.component';
+import HeaderDesktopControls from './HeaderDesktopControls.component';
 import HeaderMobileMenuButton from './HeaderMobileMenuButton.component';
 import HeaderMobileMenu from './HeaderMobileMenu.component';
 
@@ -66,7 +67,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         <div className={HEADER_CONTAINER_CLASSES}>
           <div className={HEADER_CONTENT_CLASSES}>
             <HeaderLogo logoVariant={this.props.logoVariant} isScrolled={isScrolled} isHovered={this.state.isHovered} />
-            <HeaderDesktopNavigation showThemeToggle={this.props.showThemeToggle} showLanguageToggle={this.props.showLanguageToggle} />
+            <HeaderDesktopNavigation />
+            <HeaderDesktopControls showThemeToggle={this.props.showThemeToggle} showLanguageToggle={this.props.showLanguageToggle} />
             <HeaderMobileMenuButton
               showThemeToggle={this.props.showThemeToggle}
               isMobileMenuOpen={this.state.isMobileMenuOpen}

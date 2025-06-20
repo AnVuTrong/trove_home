@@ -115,10 +115,10 @@ const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ defaultOptionId = 'de
         <div className='flex-1 lg:w-1/2 flex items-center justify-center p-8 lg:p-16'>
           <div className='max-w-xl w-full'>
             {/* Header */}
-            <h1 className='text-4xl lg:text-5xl xl:text-6xl font-bold text-white lg:text-gray-900 mb-6 leading-tight'>{currentData.title}</h1>
+            <h1 className='text-4xl lg:text-5xl xl:text-6xl font-bold text-text-dark lg:text-text-dark_h1 mb-6'>{currentData.title}</h1>
 
             {/* Description */}
-            <p className='text-lg lg:text-xl text-gray-200 lg:text-gray-600 mb-8 leading-relaxed'>{currentData.description}</p>
+            <p className='text-lg lg:text-xl text-text-dark lg:text-text-dark mb-8 leading-relaxed'>{currentData.description}</p>
 
             {/* Investment Option Buttons */}
             <OptionButtonsGroup options={investmentOptions} currentOption={currentOption} onOptionChange={handleOptionChange} />
