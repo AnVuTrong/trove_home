@@ -7,6 +7,9 @@
 ARG SKELETON_IMAGE=trove_skeleton:latest
 FROM ${SKELETON_IMAGE} AS build
 
+# Install devDependencies for build
+ENV NODE_ENV=development
+
 # -------------------------------------------------
 # Copy frontend source and build
 # -------------------------------------------------

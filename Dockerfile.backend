@@ -16,6 +16,9 @@ WORKDIR /app/trove_home_backend
 # Copy source code
 COPY trove_home_backend ./
 
+# Ensure devDependencies are installed for compilation
+ENV NODE_ENV=development
+
 # Install ALL deps (including dev) needed for compilation
 RUN yarn install --frozen-lockfile
 
