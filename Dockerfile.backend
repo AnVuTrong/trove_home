@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1.5
+
+###############################################################################
+# Trove Home – GraphQL Backend image                                          #
+###############################################################################
+
+# The skeleton image tag will be overridden during build
+ARG SKELETON_IMAGE=trove_skeleton:latest
+FROM ${SKELETON_IMAGE} AS base
+
+# -------------------------------------------------
+# Copy backend source and build
+# -------------------------------------------------
+WORKDIR /app/trove_home_backend
+COPY trove_home_backend ./
+
+# Build Typescript → JS
+RUN yarn build
+
+# Expose port & define runtime command
+ENV NODE_ENV=production
+EXPOSE 4000
+CMD ["node", "dist/server.js"] 

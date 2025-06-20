@@ -1,0 +1,47 @@
+services:
+  # ---------------------------------------------------------------------------
+  # 1. Skeleton image – installs all Node workspaces once, reused by children
+  # ---------------------------------------------------------------------------
+  skeleton:
+    image: "${DOCKER_USER}/trove_skeleton:latest" # also built locally with the same name
+    build:
+      context: .
+      dockerfile: Dockerfile.skeleton
+    # No need to run a container in production; this stage only exists to
+    # provide the base image layer.  Keep it stopped.
+    command: ["echo", "Skeleton image – no runtime"]
+
+  # ---------------------------------------------------------------------------
+  # 2. GraphQL API backend (Apollo + Express)
+  # ---------------------------------------------------------------------------
+  backend:
+    image: "${DOCKER_USER}/trove_backend:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    depends_on:
+      - skeleton
+    environment:
+      - PORT=4000
+    ports:
+      - "4000:4000" # Expose GraphQL playground if you want to reach it directly
+
+  # ---------------------------------------------------------------------------
+  # 3. React Front-end served by Nginx
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: "${DOCKER_USER}/trove_frontend:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      - backend
+    environment:
+      # Adjust to real URL (used in React at build-time)
+      - REACT_APP_GRAPHQL_URL=/graphql
+    ports:
+      - "80:80"
+
+  # ---------------------------------------------------------------------------
+  #  (Optional) Add Caddy / Traefik here for HTTPS termination
+  # ---------------------------------------------------------------------------
