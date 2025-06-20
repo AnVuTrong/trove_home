@@ -5,7 +5,10 @@ import {
   AboutValuesSection
 } from '../components/pages.components/about.components';
 import { SubpageHeroSection, SubpageHeroVariant } from '../components/ui.components';
-import holographicBg from '../assets/trove_abstract_bg/dark/green_fluid_holographic_2_dark.jpg';
+import holographicBgDark from '../assets/trove_abstract_bg/dark/green_fluid_holographic_2_dark.jpg';
+import holographicBgLight from '../assets/trove_abstract_bg/light/green_fluid_holographic_light_2.png';
+import ThemeContext from '../contexts/ThemeContext.context';
+import { useContext } from 'react';
 
 /**
  * AboutPage Component
@@ -15,6 +18,11 @@ import holographicBg from '../assets/trove_abstract_bg/dark/green_fluid_holograp
  * Supports both English and Vietnamese languages
  */
 const AboutPage: React.FC = () => {
+  const themeContext = useContext(ThemeContext);
+  const isDarkMode = themeContext?.isDarkMode ?? false;
+
+  const holographicBg = isDarkMode ? holographicBgDark : holographicBgLight;
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

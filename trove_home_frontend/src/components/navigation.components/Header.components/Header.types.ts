@@ -17,4 +17,4 @@ export interface HeaderState {
 }
 
 export type LogoVariant = 'horizontal' | 'vertical' | 'brandmark' | 'wordmark';
-export type HeaderMaxWidth = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '6xl' | 'full'; 
+export type HeaderMaxWidth = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '6xl' | 'full';
