@@ -8,4 +8,13 @@ export {
   default as ThemeContext, 
   ThemeProvider, 
   useTheme 
-} from './ThemeContext.context'; 
+} from './ThemeContext.context';
+
+// Authentication Context
+export {
+  AuthProvider,
+  useAuth
+} from './AuthContext.context';
+
+// Re-export types
+export type { AuthUser, UserRole } from './AuthContext.context'; 

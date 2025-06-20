@@ -1,19 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { HomeHeroSection } from '../components/pages.components/home.components';
 
 const HomePage: React.FC = () => {
-  const { t } = useTranslation();
-  
   return (
-    <div className="prose max-w-none">
-      <h1 className="text-3xl font-bold text-light dark:text-primary-dark mb-6">
-        {t('app.title')}
-      </h1>
-      <p className="mb-4 text-text-DEFAULT dark:text-text-dark">
-        {t('app.description')}
-      </p>
+    <div className='min-h-screen'>
+      <HomeHeroSection />
     </div>
   );
 };
 
-export default HomePage; 
+export default HomePage;

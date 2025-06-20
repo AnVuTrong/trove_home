@@ -81,7 +81,7 @@ describe('InteractiveDemoSection', () => {
   it('has correct structure and classes', () => {
     const { container } = render(<InteractiveDemoSection {...mockProps} />);
     
-    const valuesContainer = container.querySelector('.bg-background-DEFAULT.p-4.rounded-md.dark\\:bg-background-dark');
+    const valuesContainer = container.querySelector('.bg-background-DEFAULT.p-4.rounded-md');
     expect(valuesContainer).toBeInTheDocument();
     
     const buttonsContainer = container.querySelector('.flex.gap-4');

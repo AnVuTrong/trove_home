@@ -1,0 +1,32 @@
+{
+  "name": "trove_home",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "trove_home_frontend",
+    "trove_home_backend"
+  ],
+  "scripts": {
+    "install:all": "yarn install && cd trove_home_frontend && yarn install && cd ../trove_home_backend && yarn install && cd ..",
+    "start:frontend": "cd trove_home_frontend && yarn start",
+    "start:backend": "cd trove_home_backend && yarn start",
+    "start:dev": "cd trove_home_frontend && yarn dev",
+    "build:frontend": "cd trove_home_frontend && yarn build",
+    "build:backend": "cd trove_home_backend && yarn build",
+    "test:frontend": "cd trove_home_frontend && yarn test",
+    "test:backend": "cd trove_home_backend && yarn test",
+    "test:all": "yarn test:backend && yarn test:frontend",
+    "clean:all": "rm -rf trove_home_frontend/node_modules trove_home_backend/node_modules node_modules",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "description": "Trove Home - A full-stack web application with React frontend and Node.js backend",
+  "repository": "https://github.com/AnVuTrong/trove_home",
+  "author": "An",
+  "license": "MIT"
+} 
