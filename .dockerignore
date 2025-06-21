@@ -1,0 +1,33 @@
+# Exclude dependency folders and build artifacts
+**/node_modules
+**/build
+**/coverage
+
+# Exclude environment files
+.env
+*.env
+
+# Ignore VCS
+.git
+
+# Editor directories and files (VSCode, IntelliJ, etc.)
+.vscode
+.idea
+*/.cursorrules
+*/.cursor
+
+# Mac/Windows system files (e.g. .DS_Store)
+.DS_Store
+Thumbs.db
+
+# Logs (e.g. npm, yarn, etc.)
+*.log
+
+# Exclude test results (e.g. Jest, Mocha, etc.)
+**/test_results.json 
+
+# Exclude build scripts
+build_images.sh
+
+# Exclude Docker Compose files
+docker-compose.yml

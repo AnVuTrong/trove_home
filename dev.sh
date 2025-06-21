@@ -5,6 +5,12 @@
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Automatically load environment variables from .env file if it exists
+if [ -f "$PROJECT_ROOT/.env" ]; then
+    # shellcheck disable=SC2046
+    export $(grep -v '^#' "$PROJECT_ROOT/.env" | xargs)
+fi
+
 # Function to ensure we're in the project root
 ensure_root() {
     cd "$PROJECT_ROOT"
@@ -36,6 +42,7 @@ show_help() {
     echo "  ./dev.sh docker:up     - Start Docker containers"
     echo "  ./dev.sh docker:down   - Stop Docker containers"
     echo "  ./dev.sh docker:build  - Build Docker images"
+    echo "  ./dev.sh docker:login  - Log in to Docker registry"
     echo ""
     echo "Utilities:"
     echo "  ./dev.sh clean         - Clean all node_modules"
@@ -95,8 +102,26 @@ case "$1" in
         echo "🏗️  Building backend..."
         yarn build:backend
         ;;
+    "docker:login")
+        ensure_root
+        echo "🔑 Logging in to Docker registry..."
+        if [ -z "$DOCKER_USER" ] || [ -z "$DOCKER_HUB_ACCESS_TOKEN" ]; then
+            echo "❌ DOCKER_USER or DOCKER_HUB_ACCESS_TOKEN environment variables not set."
+            echo "   Please export them or add them to an .env file before running this command."
+            exit 1
+        fi
+        echo "$DOCKER_HUB_ACCESS_TOKEN" | docker login --username "$DOCKER_USER" --password-stdin
+        ;;
     "docker:up")
         ensure_root
+        # Ensure we are logged in first so that private images can be pulled without errors
+        if [ -n "$DOCKER_USER" ] && [ -n "$DOCKER_HUB_ACCESS_TOKEN" ]; then
+            echo "🔑 Ensuring Docker registry login..."
+            if ! echo "$DOCKER_HUB_ACCESS_TOKEN" | docker login --username "$DOCKER_USER" --password-stdin >/dev/null 2>&1; then
+                echo "❌ Docker login failed – please verify DOCKER_USER and DOCKER_HUB_ACCESS_TOKEN."
+                exit 1
+            fi
+        fi
         echo "🐳 Starting Docker containers..."
         yarn docker:up
         ;;

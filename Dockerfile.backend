@@ -1,0 +1,40 @@
+# syntax=docker/dockerfile:1.5
+
+###############################################################################
+# Trove Home – GraphQL Backend image                                          #
+###############################################################################
+
+# -----------------------------------------------------------------------------
+# Build stage – installs dev deps & transpiles TypeScript                      #
+# -----------------------------------------------------------------------------
+# The skeleton image tag will be overridden during build
+ARG SKELETON_IMAGE=trove_skeleton:latest
+FROM ${SKELETON_IMAGE} AS builder
+
+WORKDIR /app/trove_home_backend
+
+# Copy source code
+COPY trove_home_backend ./
+
+# Ensure devDependencies are installed for compilation
+ENV NODE_ENV=development
+
+# Install ALL deps (including dev) needed for compilation
+RUN yarn install --frozen-lockfile
+
+# Transpile
+RUN yarn build
+
+# -----------------------------------------------------------------------------
+# Runtime stage – lightweight, prod deps only (already in skeleton)            #
+# -----------------------------------------------------------------------------
+FROM ${SKELETON_IMAGE} AS runtime
+
+WORKDIR /app/trove_home_backend
+
+# Bring compiled output to runtime image
+COPY --from=builder /app/trove_home_backend/dist ./dist
+
+ENV NODE_ENV=production
+EXPOSE 4000
+CMD ["node", "dist/server.js"] 
