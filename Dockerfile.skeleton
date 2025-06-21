@@ -1,0 +1,36 @@
+# syntax=docker/dockerfile:1.5
+
+###############################################################################
+# Trove Home – Skeleton base image                                            #
+# Contains all heavy Node.js dependencies for both frontend & backend.        #
+# Child images inherit from this to keep their layers small and builds fast.  #
+###############################################################################
+
+FROM node:18-alpine AS skeleton
+
+# Install tini for better signal handling (optional but recommended)
+RUN apk add --no-cache tini
+
+# Set workdir at the mono-repo root
+WORKDIR /app
+
+# ----- Install dependencies only (no source code yet) -----------------------
+# Copy lockfiles so Docker cache only breaks when they change
+COPY package.json yarn.lock ./
+COPY trove_home_backend/package.json trove_home_backend/yarn.lock ./trove_home_backend/
+
+# Copy lockfiles/package.json for frontend workspaces
+COPY trove_home_frontend/package.json trove_home_frontend/yarn.lock ./trove_home_frontend/
+
+# Install production dependencies only, leveraging Yarn workspaces (Classic)
+ENV NODE_ENV=production
+RUN yarn install --production --frozen-lockfile
+
+# Add Tini as entrypoint (makes child stages inherit it)
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["node", "--version"]  # placeholder, never run in production
+
+# -----------------------------------------------------------------------------
+# Export as named stage to reference locally without pushing to Hub            #
+# -----------------------------------------------------------------------------
+LABEL org.opencontainers.image.description="Skeleton layer for Trove Home" 

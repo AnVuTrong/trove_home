@@ -1,0 +1,40 @@
+name: trove
+
+services:
+  # GraphQL API
+  backend:
+    image: "${DOCKER_USER:-acetankace}/trove_backend:${VERSION:-latest}"
+    container_name: trove_backend
+    restart: unless-stopped
+    environment:
+      - PORT=4000
+    ports:
+      - "4000:4000"
+
+  # React + Nginx
+  frontend:
+    image: "${DOCKER_USER:-acetankace}/trove_frontend:${VERSION:-latest}"
+    container_name: trove_frontend
+    depends_on:
+      - backend
+    restart: unless-stopped
+    expose:
+      - "80"
+
+  caddy:
+    image: caddy:2
+    container_name: trove_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data        # certs
+      - caddy_config:/config
+    depends_on:
+      - frontend
+
+volumes:
+  caddy_data:
+  caddy_config:
