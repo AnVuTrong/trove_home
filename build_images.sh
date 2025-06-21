@@ -118,6 +118,12 @@ for IMAGE in skeleton backend frontend; do
   TAG_VAR="${DOCKER_USER}/trove_${IMAGE}:${VERSION}"
   printf "\n🚀  Pushing %s...\n" "$TAG_VAR"
   docker push "$TAG_VAR"
+
+  # Also tag and push as :latest so users who pull without specifying VERSION get the most recent build
+  LATEST_TAG="${DOCKER_USER}/trove_${IMAGE}:latest"
+  docker tag "$TAG_VAR" "$LATEST_TAG"
+  printf "\n🚀  Pushing %s...\n" "$LATEST_TAG"
+  docker push "$LATEST_TAG"
 done
 
-printf "\n✅  All images built and pushed successfully as version %s.\n" "$VERSION" 
+printf "\n✅  All images built and pushed successfully as version %s and tagged as 'latest'.\n" "$VERSION" 
