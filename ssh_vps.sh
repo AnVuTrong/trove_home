@@ -4,12 +4,22 @@
 # and ensure that errors in a pipeline cause the script to fail.
 set -euo pipefail
 
-# Load environment variables from the .env file located at the project root, if it exists.
-# This allows the script to pull in VPS_IP, VPS_USERNAME, VPS_PASSWORD, and VPS_SSH_PORT.
+# Load environment variables from the .env file located alongside this script (same directory).
+# This populates VPS_IP, VPS_USERNAME, VPS_PASSWORD, and optionally VPS_SSH_PORT.
 ENV_FILE="$(dirname "$0")/.env"
+
+# If the file exists, export every variable declared inside it. Using `set -a` (alias `allexport`)
+# ensures that each variable becomes part of the environment automatically when sourced, which is
+# safer than manually parsing with `grep | xargs` (handles quoted values, spaces, etc.).
 if [[ -f "$ENV_FILE" ]]; then
-  # shellcheck disable=SC2046
-  export $(grep -v "^#" "$ENV_FILE" | xargs)
+  # shellcheck disable=SC1090  # the .env file is in a dynamic location relative to this script.
+  set -o allexport
+  source "$ENV_FILE"
+  set +o allexport
+  echo "Environment variables loaded from $ENV_FILE"
+  echo "VPS_IP: $VPS_IP"
+  echo "VPS_USERNAME: $VPS_USERNAME"
+  echo "VPS_SSH_PORT: $VPS_SSH_PORT"
 fi
 
 # Validate that the mandatory variables are present.
