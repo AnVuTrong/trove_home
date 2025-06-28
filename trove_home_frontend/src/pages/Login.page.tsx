@@ -2,6 +2,7 @@ import React from 'react';
 import { LoginSection } from '../components/pages.components/auth.components';
 import { AuthFormData, AuthFormMode } from '../components/pages.components/auth.components/Auth.types';
 import ThemeContext from '../contexts/ThemeContext.context';
+import keycloak from '../keycloak';
 import holographicBgDark from '../assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg';
 import holographicBgLight from '../assets/trove_abstract_bg/light/green_fluid_holographic_light.png';
 
@@ -44,20 +45,7 @@ class LoginPage extends React.Component {
   };
 
   private handleKeycloakLogin = (): void => {
-    // TODO: Implement Keycloak authentication
-    console.log('Keycloak login initiated');
-    
-    try {
-      // This is where you would integrate with Keycloak
-      // Example: window.location.href = '/auth/realms/your-realm/protocol/openid-connect/auth?...';
-      // Or use the keycloak-js library
-      
-      // For development, you might want to redirect to a mock endpoint
-      // window.location.href = '/api/auth/keycloak';
-      
-    } catch (error) {
-      console.error('Keycloak authentication error:', error);
-    }
+    keycloak.login();
   };
 
   private handleGoogleLogin = (): void => {

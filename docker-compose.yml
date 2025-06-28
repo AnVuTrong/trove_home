@@ -29,7 +29,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile.local:/etc/caddy/Caddyfile
       - caddy_data:/data        # certs
       - caddy_config:/config
     depends_on:

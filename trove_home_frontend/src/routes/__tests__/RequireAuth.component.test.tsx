@@ -3,22 +3,37 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import RequireAuth from '../RequireAuth.component';
-import { AuthProvider, useAuth, AuthUser } from '../../contexts';
+import { AuthProvider, useAuth } from '../../contexts';
+
+// Mock Keycloak to avoid real network calls during unit tests
+jest.mock('../../keycloak', () => {
+  const mock = {
+    authenticated: false,
+    tokenParsed: undefined,
+    init: () => Promise.resolve(true),
+    login: jest.fn(() => {
+      mock.authenticated = true;
+    }),
+    logout: jest.fn(() => {
+      mock.authenticated = false;
+    }),
+  };
+  return {
+    __esModule: true,
+    default: mock,
+  };
+});
+
+const keycloakMock = require('../../keycloak').default;
 
 const Protected: React.FC = () => <div data-testid="protected">Protected Content</div>;
 
 const LoginPage: React.FC = () => {
   const { login } = useAuth();
-  const demoUser: AuthUser = {
-    id: '1',
-    email: 'admin@example.com',
-    name: 'Admin',
-    role: 'admin',
-  };
   return (
     <div>
       <span>Login Page</span>
-      <button onClick={() => login(demoUser)}>login</button>
+      <button onClick={() => login()}>Login</button>
     </div>
   );
 };
@@ -55,8 +70,9 @@ describe('RequireAuth', () => {
     );
 
     // Click login to authenticate
-    await user.click(screen.getByText('login'));
+    await user.click(screen.getByText('Login'));
 
-    expect(screen.getByTestId('protected')).toBeInTheDocument();
+    // Ensure keycloak login called
+    expect(keycloakMock.login).toHaveBeenCalled();
   });
 });

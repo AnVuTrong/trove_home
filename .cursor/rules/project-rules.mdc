@@ -8,6 +8,7 @@ alwaysApply: true
 - Always follow OOP rules and industrial best practices
 - Each function can only do one job and single purposes
 - Keep code simple and easy to maintain, function and smooth operation so hundred of people can works on this project without getting mad
+- There are trove_home_backend and trove_home_frontend, please use the appropriate packages.json to run CLI
 
 ## Frontend Code:
 - Use YARN

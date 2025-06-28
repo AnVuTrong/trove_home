@@ -28,8 +28,8 @@ const RequireAuth: React.FC<RequireAuthProps> = ({ children, requireAdmin = fals
     return (
       <div>
         <span>Login Page</span>
-        <button onClick={() => login({ id: '1', email: 'demo@example.com', name: 'Demo', role: 'user' })}>
-          login
+        <button onClick={() => login()}>
+          Login with Keycloak
         </button>
       </div>
     );

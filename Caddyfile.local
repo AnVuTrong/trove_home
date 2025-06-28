@@ -1,0 +1,16 @@
+# Caddy reverse-proxy configuration for local development
+
+:80, :443 {
+  auto_https off
+
+  encode gzip
+
+  # GraphQL API
+  reverse_proxy /api/* backend:4000
+
+  # Keycloak (if running)
+  # reverse_proxy /auth/* keycloak:8080
+
+  # React app frontend (nginx)
+  reverse_proxy frontend:80
+} 

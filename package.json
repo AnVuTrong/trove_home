@@ -8,9 +8,9 @@
   ],
   "scripts": {
     "install:all": "yarn install && cd trove_home_frontend && yarn install && cd ../trove_home_backend && yarn install && cd ..",
-    "start:frontend": "cd trove_home_frontend && yarn start",
-    "start:backend": "cd trove_home_backend && yarn start",
-    "start:dev": "cd trove_home_frontend && yarn dev",
+    "frontend": "cd trove_home_frontend && yarn start",
+    "backend": "cd trove_home_backend && yarn start",
+    "dev": "cd trove_home_frontend && yarn dev",
     "build:frontend": "cd trove_home_frontend && yarn build",
     "build:backend": "cd trove_home_backend && yarn build",
     "test:frontend": "cd trove_home_frontend && yarn test",
