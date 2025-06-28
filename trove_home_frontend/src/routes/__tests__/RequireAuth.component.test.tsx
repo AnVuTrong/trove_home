@@ -70,7 +70,7 @@ describe('RequireAuth', () => {
     );
 
     // Click login to authenticate
-    await user.click(screen.getByText('Login'));
+    await user.click(screen.getByText('Login with Keycloak'));
 
     // Ensure keycloak login called
     expect(keycloakMock.login).toHaveBeenCalled();

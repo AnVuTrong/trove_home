@@ -2,63 +2,40 @@ import React from 'react';
 import { LoginSection } from '../components/pages.components/auth.components';
 import { AuthFormData, AuthFormMode } from '../components/pages.components/auth.components/Auth.types';
 import ThemeContext from '../contexts/ThemeContext.context';
-import keycloak from '../keycloak';
+import { KeycloakAuthService } from '../services/auth/keycloakAuth.service';
 import holographicBgDark from '../assets/trove_abstract_bg/dark/green_fluid_holographic_dark.jpg';
 import holographicBgLight from '../assets/trove_abstract_bg/light/green_fluid_holographic_light.png';
 
 class LoginPage extends React.Component {
   static contextType = ThemeContext;
 
-  private handleAuthSubmit = async (data: AuthFormData, mode: AuthFormMode): Promise<void> => {
-    // TODO: Implement actual authentication logic
-    console.log('Auth submission:', { data, mode });
-    
+  private handleAuthSubmit = async (_data: AuthFormData, mode: AuthFormMode): Promise<void> => {
     try {
-      // This is where you would integrate with your authentication service
-      // For now, we'll just simulate the process
-      
       switch (mode) {
         case 'login':
-          console.log('Logging in user:', data.email);
-          // await authService.login(data.email, data.password);
+          KeycloakAuthService.login();
           break;
-          
         case 'register':
-          console.log('Registering user:', data.email, data.firstName, data.lastName);
-          // await authService.register(data);
+          KeycloakAuthService.register();
           break;
-          
         case 'forgot-password':
-          console.log('Sending password reset for:', data.email);
-          // await authService.sendPasswordReset(data.email);
+          KeycloakAuthService.resetPassword();
           break;
+        default:
+          KeycloakAuthService.login();
       }
-      
-      // Handle successful authentication
-      // For example: redirect to dashboard or show success message
-      
     } catch (error) {
-      console.error('Authentication error:', error);
-      // Handle authentication errors
-      // Show error message to user
+      console.error('Keycloak auth error:', error);
     }
   };
 
   private handleKeycloakLogin = (): void => {
-    keycloak.login();
+    KeycloakAuthService.login();
   };
 
   private handleGoogleLogin = (): void => {
-    // TODO: Implement Google OAuth authentication
-    console.log('Google login initiated');
-    
     try {
-      // This is where you would integrate with Google OAuth
-      // You might use libraries like react-google-login or google-auth-library
-      
-      // For development, you might want to redirect to a mock endpoint
-      // window.location.href = '/api/auth/google';
-      
+      KeycloakAuthService.googleLogin();
     } catch (error) {
       console.error('Google authentication error:', error);
     }
